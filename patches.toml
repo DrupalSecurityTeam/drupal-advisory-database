@@ -155,3 +155,9 @@ field_affected_versions = [
   '>1.0.0 < 1.2.4',
   '>=1.0.0 <1.2.4'
 ]
+
+[SA-CONTRIB-2025-096]
+field_affected_versions = [
+  '<2.1.4',
+  '<2.1.5'
+]
