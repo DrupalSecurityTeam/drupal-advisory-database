@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-115",
+  "modified": "2025-11-05T18:08:01.000Z",
+  "published": "2025-11-05T18:08:01.000Z",
+  "aliases": [
+    "CVE-2025-12760"
+  ],
+  "details": "The Email TFA module provides additional email-based two-factor authentication for Drupal logins.\n\nIn certain scenarios, the module does not fully protect all login mechanisms as expected.\n\nThis issue is mitigated by the fact that an attacker must already have valid user credentials (username and password) to take advantage of the weakness.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/email_tfa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-115"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
