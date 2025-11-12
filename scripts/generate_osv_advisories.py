@@ -419,6 +419,23 @@ def build_osv_advisory(
     'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
   }
 
+  # remove any entries related to Drupal 7 since those versions don't exist in
+  # Packagist, and will get flagged as not existing by the osv-linter
+  for affected in osv_advisory['affected']:
+    if affected['package']['name'] != 'drupal/core':
+      continue
+
+    affected['ranges'] = [
+      ranges
+      for ranges in affected['ranges']
+      if not any(
+        event.get('introduced', '').startswith('7.')
+        or event.get('fixed', '').startswith('7.')
+        or event.get('last_affected', '').startswith('7.')
+        for event in ranges['events']
+      )
+    ]
+
   if patched:
     for affected in osv_advisory['affected']:
       affected['database_specific']['patched'] = True
