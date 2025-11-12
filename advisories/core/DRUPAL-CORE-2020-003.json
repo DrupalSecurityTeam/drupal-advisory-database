@@ -14,22 +14,7 @@
         "name": "drupal/core"
       },
       "severity": [],
-      "ranges": [
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
-              "introduced": "7.0.0"
-            },
-            {
-              "fixed": "7.70.0"
-            }
-          ],
-          "database_specific": {
-            "constraint": ">=7.0 <7.70"
-          }
-        }
-      ],
+      "ranges": [],
       "database_specific": {
         "affected_versions": ">=7.0 <7.70"
       }
