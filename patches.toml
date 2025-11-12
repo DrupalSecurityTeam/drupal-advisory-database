@@ -114,6 +114,42 @@ field_affected_versions = [
   '>=1.0.0 <1.0.2'
 ]
 
+[SA-CONTRIB-2025-052]
+field_affected_versions = [
+  '<4.7.0 || >=5.0.0 <5.2.0',
+  '<4.7.0 || >=5.0.1 <5.2.0'
+]
+
+[SA-CONTRIB-2025-053]
+field_affected_versions = [
+  '<4.7.0 || >=5.0.0 <5.2.0',
+  '<4.7.0 || >=5.0.1 <5.2.0'
+]
+
+[SA-CONTRIB-2025-054]
+field_affected_versions = [
+  '<4.7.0 || >=5.0.0 <5.2.0',
+  '<4.7.0 || >=5.0.1 <5.2.0'
+]
+
+[SA-CONTRIB-2025-055]
+field_affected_versions = [
+  '<4.7.0 || >=5.0.0 <5.2.0',
+  '<4.7.0 || >=5.0.1 <5.2.0'
+]
+
+[SA-CONTRIB-2025-056]
+field_affected_versions = [
+  '<4.7.0 || >=5.0.0 <5.2.0',
+  '<4.7.0 || >=5.0.1 <5.2.0'
+]
+
+[SA-CONTRIB-2025-082]
+field_affected_versions = [
+  '<4.8.0 || >=5.2.0 <5.2.1 || 5.0.* || 5.1.*',
+  '<4.8.0 || >=5.0.1 <5.2.1'
+]
+
 [SA-CONTRIB-2025-087]
 field_affected_versions = [
   '>1.0.0 < 1.2.4',
