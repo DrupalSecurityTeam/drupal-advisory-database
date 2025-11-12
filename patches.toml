@@ -102,6 +102,12 @@ field_affected_versions = [
   ''
 ]
 
+[SA-CONTRIB-2024-067]
+field_affected_versions = [
+  '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19',
+  '>=3.32.0 <3.44.0 || >=4.0.1 <4.0.19'
+]
+
 [SA-CONTRIB-2025-001]
 field_affected_versions = [
   '>2.0.0 <2.0.3',
