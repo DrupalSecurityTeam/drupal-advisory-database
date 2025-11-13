@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2025-006",
+  "modified": "2025-11-13T00:13:48.000Z",
+  "published": "2025-11-12T18:34:02.000Z",
+  "aliases": [
+    "CVE-2025-13081"
+  ],
+  "details": "Drupal core contains a chain of methods that is exploitable when an insecure deserialization vulnerability exists on the site. This so-called \"gadget chain\" presents no direct threat, but is a vector that can be used to achieve remote code execution if the application deserializes untrusted data due to another vulnerability.\n\nIt is not directly exploitable.\n\nThis issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to `unserialize()`. There are no such known exploits in Drupal core.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.4.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.4.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.5.0"
+            },
+            {
+              "fixed": "10.5.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.5.0 < 10.5.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.1.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.2.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.2.0 < 11.2.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2025-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "anzuukino",
+      "contact": [
+        "https://www.drupal.org/u/anzuukino"
+      ]
+    }
+  ]
+}
