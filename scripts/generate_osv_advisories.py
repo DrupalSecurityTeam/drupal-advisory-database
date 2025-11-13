@@ -323,11 +323,7 @@ def get_credits_from_sa(
   return sorted(credit_list, key=lambda c: c['name'])
 
 
-def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
-  project = typing.cast(
-    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
-  )
-
+def determine_composer_package_name(project: drupal.Project) -> str:
   project_name = project['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
@@ -391,6 +387,13 @@ def build_osv_advisory(
     print(' \\- ' + text_is.notice('skipping as we do not have any affected versions'))
     return None
 
+  project = typing.cast(
+    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
+  )
+
+  if project['type'] == 'project_distribution':
+    return None
+
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
     'id': osv_id,
@@ -402,7 +405,7 @@ def build_osv_advisory(
       {
         'package': {
           'ecosystem': 'Packagist',
-          'name': determine_composer_package_name(sa_advisory),
+          'name': determine_composer_package_name(project),
         },
         # todo: figure out how to map field_sa_criticality to severity
         #  https://ossf.github.io/osv-schema/#severitytype-field
