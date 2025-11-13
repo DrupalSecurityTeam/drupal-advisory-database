@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2025-007",
+  "modified": "2025-11-13T00:13:58.000Z",
+  "published": "2025-05-29T20:16:21.000Z",
+  "aliases": [
+    "CVE-2025-13082"
+  ],
+  "details": "By generating and tricking a user into visiting a malicious URL, an attacker can perform site defacement.\n\nThe defacement is not stored and is only present when the URL has been crafted for that purpose. Only the defacement is present, so no other site content (such as branding) is rendered.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.4.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.4.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.5.0"
+            },
+            {
+              "fixed": "10.5.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.5.0 < 10.5.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.1.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.2.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.2.0 < 11.2.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2025-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kevin Quillen (kevinquillen)",
+      "contact": [
+        "https://www.drupal.org/u/kevinquillen"
+      ]
+    }
+  ]
+}

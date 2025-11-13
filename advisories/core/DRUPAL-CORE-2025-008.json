@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2025-008",
+  "modified": "2025-11-13T00:14:12.000Z",
+  "published": "2025-11-12T18:33:05.000Z",
+  "aliases": [
+    "CVE-2025-13083"
+  ],
+  "details": "The core `system` module handles downloads of private and temporary files. Contrib modules can define additional kinds of files (schemes) that may also be handled by the `system` module.\n\nIn some cases, files may be served with the HTTP header `Cache-Control: public` when they should be uncacheable. This can lead to some users getting cached versions of files with information they should not be able to access. For example, files may be cached by Varnish or a CDN.\n\nThis vulnerability is mitigated by the following:\n\n1. Drupal must be configured to handle non-public files using a custom or contributed module providing an additional file scheme.\n2. An attacker must know to request a file that has previously been  \n   requested by a more-privileged user, and that file must still be cached.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.4.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.4.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.5.0"
+            },
+            {
+              "fixed": "10.5.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.5.0 < 10.5.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.1.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.2.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.2.0 < 11.2.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2025-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Damien McKenna (damienmckenna)",
+      "contact": [
+        "https://www.drupal.org/u/damienmckenna"
+      ]
+    },
+    {
+      "name": "tame4tex",
+      "contact": [
+        "https://www.drupal.org/u/tame4tex"
+      ]
+    }
+  ]
+}
