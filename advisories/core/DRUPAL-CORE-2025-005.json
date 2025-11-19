@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CORE-2025-005",
-  "modified": "2025-11-13T00:13:33.000Z",
+  "modified": "2025-11-18T16:17:09.000Z",
   "published": "2025-11-12T18:33:05.000Z",
   "aliases": [
     "CVE-2025-13080"
   ],
-  "details": "Drupal Core has a rarely used feature, provided by an underlying library, which allows certain attributes of incoming HTTP requests to be overridden.\n\nThis functionality can be abused in a way that may cause Drupal to cache response data that it should not. This can lead to legitimate requests receiving inappropriate cached responses (cache poisoning).\n\nThis could be exploited in various ways:\n\n* Broken rendering of some pages\n* Unstyled or malformatted pages\n* Adverse impacts on client-side functionality\n\nChanges are being made in the underlying library which will mitigate this problem, but in the meantime Drupal core has been hardened to protect against this vulnerability.",
+  "details": "Drupal Core has a rarely used feature, provided by an underlying library, which allows certain attributes of incoming HTTP requests to be overridden.\n\nThis functionality can be abused in a way that may cause Drupal to cache response data that it should not. This can lead to legitimate requests receiving inappropriate cached responses (cache poisoning).\n\nThis could be exploited in various ways:\n\n* Broken rendering of some pages\n* Unstyled or malformatted pages\n* Adverse impacts on client-side functionality\n\nChanges are being made in the underlying library which will mitigate this problem, but in the meantime Drupal core has been hardened to protect against this vulnerability. The authors of the underlying library do not believe it is a source of vulnerabilities in other systems. Drupal's use of library leads to an implementation-specific vulnerability, so we've issued this advisory and reserved a CVE ID for the vulnerability in Drupal.",
   "affected": [
     {
       "package": {
