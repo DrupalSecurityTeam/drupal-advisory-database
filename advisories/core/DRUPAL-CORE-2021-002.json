@@ -19,20 +19,6 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "7.0.0"
-            },
-            {
-              "fixed": "7.80.0"
-            }
-          ],
-          "database_specific": {
-            "constraint": ">=7.0 <7.80"
-          }
-        },
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
               "introduced": "8.0.0"
             },
             {
