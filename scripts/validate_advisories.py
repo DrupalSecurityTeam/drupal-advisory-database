@@ -6,15 +6,22 @@ import typing
 from textwrap import indent
 
 import jsonschema
+import requests
 
 from typings import osv
 
 report_valid = False
 
-with open('schema.json') as f:
-  schema = json.load(f)
-  jsonschema.Draft202012Validator.check_schema(schema)
-  validator = jsonschema.Draft202012Validator(schema)
+resp = requests.get(
+  'https://raw.githubusercontent.com/ossf/osv-schema/refs/heads/main/validation/schema.json'
+)
+
+if resp.status_code != 200:
+  raise Exception(f'unexpected response when fetching OSV schema: {resp.status_code}')
+
+schema = resp.json()
+jsonschema.Draft202012Validator.check_schema(schema)
+validator = jsonschema.Draft202012Validator(schema)
 
 total = 0
 passed = 0
