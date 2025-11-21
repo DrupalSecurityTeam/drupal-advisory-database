@@ -1,6 +1,6 @@
 # Drupal Advisory Database
 
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/ackama/drupal-advisory-database/badge)](https://scorecard.dev/viewer/?uri=github.com/ackama/drupal-advisory-database)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/DrupalSecurityTeam/drupal-advisory-database/badge)](https://scorecard.dev/viewer/?uri=github.com/DrupalSecurityTeam/drupal-advisory-database)
 
 A community-driven database of known security vulnerabilities in Drupal packages
 sourced from [drupal.org](https://www.drupal.org/security) using the
@@ -19,7 +19,7 @@ can configure this database as an
 
 ```yaml
 extra-databases:
-  - url: https://github.com/ackama/drupal-advisory-database/archive/refs/heads/main.zip
+  - url: https://github.com/DrupalSecurityTeam/drupal-advisory-database/archive/refs/heads/main.zip
     name: Drupal Advisory Database
     working-directory: 'drupal-advisory-database-main/advisories'
 ```
@@ -46,7 +46,7 @@ poetry run scripts/generate_osv_advisories.py
 ### Landing automated advisory updates
 
 A
-[GitHub Actions workflow](https://github.com/ackama/drupal-advisory-database/blob/main/.github/workflows/generate.yml)
+[GitHub Actions workflow](https://github.com/DrupalSecurityTeam/drupal-advisory-database/blob/main/.github/workflows/generate.yml)
 runs regularly to regenerate the advisories, opening a pull request if there are
 changes.
 
