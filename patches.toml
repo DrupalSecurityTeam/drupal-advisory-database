@@ -1,15 +1,33 @@
 # this file defines "patches" for specific drupal.org advisories
 
+[SA-CONTRIB-2018-029]
+field_affected_versions = [
+  '*',
+  ''
+]
+
 [SA-CONTRIB-2019-019]
 field_affected_versions = [
   '<1.25.0 || >=2.0.0 >2.3.0',
   '<1.25.0 || >=2.0.0 <2.3.0'
 ]
 
+[SA-CONTRIB-2019-082]
+field_affected_versions = [
+  '<1.83.0',
+  ''
+]
+
 [SA-CORE-2022-002]
 field_affected_versions = [
   '>7.0 <=7.86',
   '>=7.0 <=7.86'
+]
+
+[SA-CONTRIB-2022-030]
+field_affected_versions = [
+  '*',
+  ''
 ]
 
 [SA-CONTRIB-2022-047]
@@ -28,6 +46,12 @@ field_affected_versions = [
 field_affected_versions = [
   '<1.06',
   '<1.6'
+]
+
+[SA-CONTRIB-2023-015]
+field_affected_versions = [
+  '<1.13',
+  ''
 ]
 
 [SA-CONTRIB-2023-030]
@@ -64,6 +88,18 @@ field_affected_versions = [
 field_affected_versions = [
   '<1.8.0 || >=2.0.0 <2.0.0-beta3',
   '<1.8.0 || >=2.0.0-beta1 <2.0.0-beta3'
+]
+
+[SA-CONTRIB-2024-065]
+field_affected_versions = [
+  '*',
+  ''
+]
+
+[SA-CONTRIB-2024-066]
+field_affected_versions = [
+  '*',
+  ''
 ]
 
 [SA-CONTRIB-2025-001]
