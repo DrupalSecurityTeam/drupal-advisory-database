@@ -408,6 +408,7 @@ def build_osv_advisory(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
 
+  # distributions don't fit within the Packagist ecosystem as they're not packages
   if project['type'] == 'project_distribution':
     return None
 
