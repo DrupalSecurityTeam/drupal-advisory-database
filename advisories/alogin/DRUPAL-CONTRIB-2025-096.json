@@ -22,16 +22,17 @@
               "introduced": "0"
             },
             {
-              "fixed": "2.1.4"
+              "fixed": "2.1.5"
             }
           ],
           "database_specific": {
-            "constraint": "<2.1.4"
+            "constraint": "<2.1.5"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<2.1.4"
+        "affected_versions": "<2.1.5",
+        "patched": true
       }
     }
   ],
