@@ -467,6 +467,8 @@ def is_existing_advisory_ahead(
 
 
 def generate_osv_advisories() -> None:
+  generated_advisories = []
+
   for file in os.scandir('cache/advisories'):
     if not file.is_file() or not file.name.endswith('.json'):
       continue
@@ -500,6 +502,16 @@ def generate_osv_advisories() -> None:
       with open(f'advisories/{name}/{osv_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
         f.write('\n')
+      generated_advisories.append(f'advisories/{name}/{osv_id}.json')
+
+  # remove any advisories that weren't (re)generated
+  for dirpath, _, filenames in os.walk('advisories'):
+    for filename in filenames:
+      advisory_filepath = os.path.join(dirpath, filename)
+
+      if advisory_filepath not in generated_advisories:
+        os.remove(advisory_filepath)
+        print(text_is.warning(f'removed #{advisory_filepath}'))
 
 
 if __name__ == '__main__':
