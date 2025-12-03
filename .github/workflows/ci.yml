@@ -36,6 +36,23 @@ jobs:
           persist-credentials: false
       - run:
           docker run -v $PWD:/src ghcr.io/google/osv-scanner:latest scan -r src
+  lint:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
+        with:
+          go-version: stable
+          check-latest: true
+      - run: git clone https://github.com/ossf/osv-schema /tmp/osv-schema
+      - run: go install ./cmd/osv
+        working-directory: /tmp/osv-schema/tools/osv-linter
+
+      - run: osv-linter
+
   ruff:
     permissions:
       contents: read # to fetch code (actions/checkout)
