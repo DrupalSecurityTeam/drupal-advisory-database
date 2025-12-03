@@ -25,6 +25,23 @@ jobs:
           persist-credentials: false
       - name: Audit dependencies for security vulnerabilities
         uses: g-rath/check-with-osv-detector@0e8c0f954d8618a3a4671eca1918b30b2d085af3 # v0.2.0
+  lint:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
+        with:
+          go-version: stable
+          check-latest: true
+      - run: git clone https://github.com/ossf/osv-schema /tmp/osv-schema
+      - run: go install ./cmd/osv
+        working-directory: /tmp/osv-schema/tools/osv-linter
+
+      - run: osv-linter
+
   ruff:
     permissions:
       contents: read # to fetch code (actions/checkout)
