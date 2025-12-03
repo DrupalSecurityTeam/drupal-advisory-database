@@ -38,10 +38,9 @@ jobs:
           cache-dependency-path: '/tmp/osv-schema/tools/osv-linter/go.sum'
           go-version: stable
           check-latest: true
-      - run: go install ./cmd/osv
+      - run: go build -o osv-linter ./cmd/osv
         working-directory: /tmp/osv-schema/tools/osv-linter
-
-      - run: osv-linter
+      - run: /tmp/osv-schema/tools/osv-linter/osv-linter
 
   ruff:
     permissions:
