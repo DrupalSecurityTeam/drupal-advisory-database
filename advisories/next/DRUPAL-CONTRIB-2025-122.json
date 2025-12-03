@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-122",
+  "modified": "2025-12-03T18:49:18.000Z",
+  "published": "2025-12-03T18:49:18.000Z",
+  "aliases": [
+    "CVE-2025-13984"
+  ],
+  "details": "This module enables integration between Next.js and Drupal for headless CMS functionality.\n\nWhen installed, the module automatically enables cross-origin resource sharing (CORS) with insecure default settings (`Access-Control-Allow-Origin: *`), overriding any `services.yml` CORS configuration. This allows any origin to make cross-origin requests to the site without administrator knowledge or consent.\n\nThis vulnerability affects all installations as there are no configuration options to disable this behavior.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/next"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.4 || >=2.0.0 <2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-122"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mike Decker (pookmish)",
+      "contact": [
+        "https://www.drupal.org/u/pookmish"
+      ]
+    }
+  ]
+}

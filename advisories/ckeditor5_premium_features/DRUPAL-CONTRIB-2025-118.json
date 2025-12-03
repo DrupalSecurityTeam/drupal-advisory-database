@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-118",
+  "modified": "2025-12-03T18:48:10.000Z",
+  "published": "2025-12-03T18:48:10.000Z",
+  "aliases": [
+    "CVE-2025-13980"
+  ],
+  "details": "The module provides instant integration of the official CKEditor 5 Premium plugins into the Drupal editor configuration.\n\nThis module has a path traversal vulnerability, which allows an access bypass to restricted image files in the system.\n\nThis access bypass is possible for any account with a *View published content* permission, but the risk is mitigated by the fact that only images can be opened.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ckeditor5_premium_features"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.10"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.3.0"
+            },
+            {
+              "fixed": "1.3.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.3.0 <1.3.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.4.0"
+            },
+            {
+              "fixed": "1.4.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.4.0 <1.4.3"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.0"
+            },
+            {
+              "fixed": "1.5.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.5.0 <1.5.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.6.0"
+            },
+            {
+              "fixed": "1.6.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.6.0 <1.6.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.10 || >=1.3.0 <1.3.6 || >=1.4.0 <1.4.3 || >=1.5.0 <1.5.1 || >=1.6.0 <1.6.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-118"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Wojciech Kukowski (salmonek)",
+      "contact": [
+        "https://www.drupal.org/u/salmonek"
+      ]
+    }
+  ]
+}

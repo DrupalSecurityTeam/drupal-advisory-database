@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-121",
+  "modified": "2025-12-03T18:48:57.000Z",
+  "published": "2025-12-03T18:48:57.000Z",
+  "aliases": [
+    "CVE-2025-13983"
+  ],
+  "details": "This module enables you to use the Tagify library to enhance text input fields with tag-style UI elements.\n\nThe module does not sufficiently sanitize the `infoLabel` value under certain configurations, which can result in a cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that only uncommon module configurations expose the affected `infoLabel` output, and an attacker must have user-level access to supply or manipulate this value.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/tagify"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.44"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.44"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.44"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-121"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

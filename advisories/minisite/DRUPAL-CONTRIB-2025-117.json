@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-117",
+  "modified": "2025-12-03T18:47:37.000Z",
+  "published": "2025-12-03T18:47:37.000Z",
+  "aliases": [
+    "CVE-2025-13979"
+  ],
+  "details": "This module allows uploading a zip file and extracting its content in the public file directory to serve this content from a Drupal website.\n\nThese zip files may contain arbitrary HTML or SVG content that could allow cross-site scripting vulnerabilities. While this is an expected feature, the module does not sufficiently restrict this functionality to trusted users with a \"restricted access\" permission. Users without a restricted permission should not be able to inject arbitrary JavaScript.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission *create [bundle] content* permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/minisite"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-117"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
