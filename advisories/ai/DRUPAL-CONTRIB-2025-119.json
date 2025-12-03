@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-119",
+  "modified": "2025-12-03T19:05:53.000Z",
+  "published": "2025-12-03T18:48:23.000Z",
+  "aliases": [
+    "CVE-2025-13981"
+  ],
+  "details": "This modules provides the ability to chat with an AI Agent using a large-language model (LLM) provider for different purposes.\n\nThe module doesn\u2019t sufficiently filter LLM responses. This leads to a cross-site scripting (XSS) vulnerability where an attacker can use prompt injections on user-generated content with the LLM as context.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.7"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.1.0"
+            },
+            {
+              "fixed": "1.1.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.1.0 <1.1.7"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.2.0"
+            },
+            {
+              "fixed": "1.2.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.2.0 <1.2.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.7 || >=1.1.0 <1.1.7 || >=1.2.0 <1.2.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-119"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

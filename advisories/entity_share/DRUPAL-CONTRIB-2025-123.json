@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-123",
+  "modified": "2025-12-03T18:49:40.000Z",
+  "published": "2025-12-03T18:49:40.000Z",
+  "aliases": [
+    "CVE-2025-13985"
+  ],
+  "details": "This module enables you to deploy content from one Drupal website to another.\n\nThe module provides some default configuration without sufficient access control.\n\nThis vulnerability is mitigated by the fact that an administrator can add some default access control permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_share"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.13.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.13.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.13.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-123"
+    }
+  ],
+  "credits": [
+    {
+      "name": "J\u00fcrgen Haas (jurgenhaas)",
+      "contact": [
+        "https://www.drupal.org/u/jurgenhaas"
+      ]
+    }
+  ]
+}
