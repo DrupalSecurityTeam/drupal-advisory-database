@@ -31,12 +31,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - run: git clone https://github.com/ossf/osv-schema /tmp/osv-schema
       - name: Set up Go
         uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
         with:
+          cache-dependency-path: '/tmp/osv-schema/tools/osv-linter/go.sum'
           go-version: stable
           check-latest: true
-      - run: git clone https://github.com/ossf/osv-schema /tmp/osv-schema
       - run: go install ./cmd/osv
         working-directory: /tmp/osv-schema/tools/osv-linter
 
