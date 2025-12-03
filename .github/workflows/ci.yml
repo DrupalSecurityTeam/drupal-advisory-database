@@ -32,7 +32,7 @@ jobs:
     timeout-minutes: 15
     steps:
       # build the osv-linter from source
-      - run: git clone https://github.com/ossf/osv-schema
+      - run: git clone --depth 1 https://github.com/ossf/osv-schema
       - name: Set up Go
         uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
         with:
