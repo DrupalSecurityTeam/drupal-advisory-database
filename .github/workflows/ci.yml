@@ -47,7 +47,9 @@ jobs:
         with:
           path: drupal-advisory-database
           persist-credentials: false
-      - run: ls -aoh
+      - run: |
+          osv-schema/tools/osv-linter/osv-linter record lint --parallel 2 \
+            drupal-advisory-database/advisories/
 
   ruff:
     permissions:
