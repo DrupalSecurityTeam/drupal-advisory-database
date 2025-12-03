@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      # build the osv-linter from source
       - run: git clone https://github.com/ossf/osv-schema
       - name: Set up Go
         uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
@@ -43,6 +44,7 @@ jobs:
 
       - run: osv-schema/tools/osv-linter/osv-linter
 
+      # run the linter against our advisories
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           path: drupal-advisory-database
