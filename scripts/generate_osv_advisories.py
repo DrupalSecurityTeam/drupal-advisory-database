@@ -352,7 +352,7 @@ def patch_advisory(osv_id: str, sa_advisory: drupal.Advisory) -> bool:
     before, after = patches[sa_id]['field_affected_versions']
 
     if before == sa_advisory['field_affected_versions']:
-      sa_advisory['field_affected_versions'] = after
+      sa_advisory['field_affected_versions'] = after or None
       print('  \\- ' + text_is.success('patched affected versions'))
       return True
     print(
