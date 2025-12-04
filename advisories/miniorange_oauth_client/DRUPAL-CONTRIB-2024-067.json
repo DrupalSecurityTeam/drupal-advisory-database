@@ -19,33 +19,34 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "3.0.0"
+              "introduced": "3.32.0"
             },
             {
               "fixed": "3.44.0"
             }
           ],
           "database_specific": {
-            "constraint": ">=3.0.0 <3.44.0"
+            "constraint": ">=3.32.0 <3.44.0"
           }
         },
         {
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "4.0.0"
+              "introduced": "4.0.1"
             },
             {
               "fixed": "4.0.19"
             }
           ],
           "database_specific": {
-            "constraint": ">=4.0.0 <4.0.19"
+            "constraint": ">=4.0.1 <4.0.19"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": ">=3.0.0 <3.44.0 || >=4.0.0 <4.0.19"
+        "affected_versions": ">=3.32.0 <3.44.0 || >=4.0.1 <4.0.19",
+        "patched": true
       }
     }
   ],
