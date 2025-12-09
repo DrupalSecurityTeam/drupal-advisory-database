@@ -8,7 +8,7 @@
   "affected": [
     {
       "package": {
-        "ecosystem": "Packagist",
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
         "name": "drupal/block_content_revision_ui"
       },
       "severity": [],

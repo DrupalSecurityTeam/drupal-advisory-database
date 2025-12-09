@@ -364,6 +364,23 @@ def patch_advisory(osv_id: str, sa_advisory: drupal.Advisory) -> bool:
   return False
 
 
+def fetch_drupal_packages_available_on_packagist() -> list[str]:
+  """
+  Fetches a list of all Drupal packages that are available on packagist.org
+  """
+  resp = requests.get('https://packagist.org/packages/list.json?vendor=drupal')
+
+  if resp.status_code != 200:
+    raise Exception(
+      f'unexpected response when fetching list of drupal packages available on packagist.org: {resp.status_code}'
+    )
+
+  return typing.cast(list[str], resp.json()['packageNames'])
+
+
+drupal_packages_available_on_packagist = fetch_drupal_packages_available_on_packagist()
+
+
 def unix_timestamp_to_rfc3339(unix: int) -> str:
   return datetime.fromtimestamp(int(unix), tz=UTC).strftime('%Y-%m-%dT%H:%M:%S.000Z')
 
@@ -391,6 +408,14 @@ def build_osv_advisory(
     print(' \\- ' + text_is.notice('skipping as we do not have any affected versions'))
     return None
 
+  composer_package_name = determine_composer_package_name(sa_advisory)
+
+  ecosystem = 'Packagist'
+
+  # record the Composer repository the affected package is sourced from
+  if composer_package_name not in drupal_packages_available_on_packagist:
+    ecosystem += ':https://packages.drupal.org/8'
+
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
     'id': osv_id,
@@ -401,8 +426,8 @@ def build_osv_advisory(
     'affected': [
       {
         'package': {
-          'ecosystem': 'Packagist',
-          'name': determine_composer_package_name(sa_advisory),
+          'ecosystem': ecosystem,
+          'name': composer_package_name,
         },
         # todo: figure out how to map field_sa_criticality to severity
         #  https://ossf.github.io/osv-schema/#severitytype-field
