@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-126",
+  "modified": "2025-12-17T17:47:13.000Z",
+  "published": "2025-12-17T17:47:13.000Z",
+  "aliases": [
+    "CVE-2025-14840"
+  ],
+  "details": "Http Client Manager introduces a new Guzzle based plugin which allows you to manage HTTP clients using Guzzle Service Descriptions via YAML, JSON or PHP files, in a simple and efficient way. The modules allows administrators to configure HTTP requests as part of Event Condition Action (ECA) automation.\n\nThe module does not sufficiently maintain separation of data from request operations, potentially leading to information disclosure in very uncommon situations.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/http_client_manager"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "9.3.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<9.3.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.0.0"
+            },
+            {
+              "fixed": "10.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.0.0 <10.0.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.0.0 <11.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<9.3.13 || >=10.0.0 <10.0.2 || >=11.0.0 <11.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-126"
+    }
+  ],
+  "credits": [
+    {
+      "name": "mxh",
+      "contact": [
+        "https://www.drupal.org/u/mxh"
+      ]
+    }
+  ]
+}
