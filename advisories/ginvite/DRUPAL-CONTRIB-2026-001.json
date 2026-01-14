@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-001",
+  "modified": "2026-01-14T17:53:33.000Z",
+  "published": "2026-01-14T17:53:33.000Z",
+  "aliases": [
+    "CVE-2026-0944"
+  ],
+  "details": "This module enables allows group managers to invite people into their group.\n\nThe module doesn't sufficiently check access under certain circumstances, allowing unauthorized users to access the group's content.\n\nThis vulnerability is mitigated by the fact that it only occurs when certain uncommon actions are taken by a user with the permission to create group invites.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ginvite"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.3.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.3.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.0.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.0.0 <4.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.3.9 || >=3.0.0 <3.0.4 || >=4.0.0 <4.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kevin Quillen (kevinquillen)",
+      "contact": [
+        "https://www.drupal.org/u/kevinquillen"
+      ]
+    }
+  ]
+}
