@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-005",
+  "modified": "2026-01-14T17:57:31.000Z",
+  "published": "2026-01-14T17:57:31.000Z",
+  "aliases": [
+    "CVE-2026-0948"
+  ],
+  "details": "This module enables Drupal sites to authenticate users via Microsoft Entra ID (formerly Azure AD) using OAuth 2.0.\n\nThe module doesn't sufficiently validate API responses from Microsoft allowing complete account takeover of any user, including site administrators, without requiring any credentials or access to the target's email account.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/social_auth_entra_id"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-005"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ashish Verma (ashish.verma85)",
+      "contact": [
+        "https://www.drupal.org/u/ashishverma85"
+      ]
+    },
+    {
+      "name": "Dheeraj Jhamtani (dheeraj jhamtani)",
+      "contact": [
+        "https://www.drupal.org/u/dheeraj-jhamtani"
+      ]
+    },
+    {
+      "name": "Marcelo Vani (marcelovani)",
+      "contact": [
+        "https://www.drupal.org/u/marcelovani"
+      ]
+    }
+  ]
+}

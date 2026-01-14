@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-004",
+  "modified": "2026-01-14T17:56:28.000Z",
+  "published": "2026-01-14T17:56:28.000Z",
+  "aliases": [
+    "CVE-2026-0947"
+  ],
+  "details": "This module integrates the AT Internet Piano Analytics service.\n\nThe module does not filter administrator-entered text leading to a persistent Cross-site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer pianoanalytics\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/pianoanalytics"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.1 || >=2.0.0 <2.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
