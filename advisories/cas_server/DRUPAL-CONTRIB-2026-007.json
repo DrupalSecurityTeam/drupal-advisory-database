@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-007",
+  "modified": "2026-01-28T17:29:32.000Z",
+  "published": "2026-01-28T17:29:32.000Z",
+  "aliases": [
+    "CVE-2026-1554"
+  ],
+  "details": "This module enables you to turn a Drupal install into the Central Authentication System (CAS). It makes your database the primary location for other systems to use for authentication in a SSO environment.\n\nThe module doesn't sufficiently sanitize user-supplied field values configured to be included as attributes in a CAS server response.\n\nThis vulnerability is mitigated by the fact that an attacker must be authenticated, have the ability to enter XML into a user entity field, and that field be configured as a CAS Attribute source leading to an XML Element Injection vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/cas_server"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.3"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.1.0"
+            },
+            {
+              "fixed": "2.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.1.0 <2.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.3 || >=2.1.0 <2.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ga\u00ebl Gosset (ga\u00eblg)",
+      "contact": [
+        "https://www.drupal.org/u/ga%C3%ABlg"
+      ]
+    }
+  ]
+}
