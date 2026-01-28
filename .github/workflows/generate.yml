@@ -30,6 +30,7 @@ jobs:
       - run: poetry install
       - run: poetry run scripts/download_sa_advisories.py
       - run: poetry run scripts/precache_nodes.py
+      - run: rm -rf advisories/
       - run: poetry run scripts/generate_osv_advisories.py
       - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
