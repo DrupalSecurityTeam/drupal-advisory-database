@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-009",
+  "modified": "2026-02-11T16:53:32.000Z",
+  "published": "2026-02-11T16:53:32.000Z",
+  "aliases": [
+    "CVE-2026-2348"
+  ],
+  "details": "This module allows content to be edited in-place.\n\nThe module doesn't sufficiently sanitize certain image-related values during the editing process leading to a persistent Cross-site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to create or edit an affected field.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/quickedit"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.5"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.5 || >=2.0.0 <2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-009"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
