@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-010",
+  "modified": "2026-02-11T16:54:18.000Z",
+  "published": "2026-02-11T16:54:18.000Z",
+  "aliases": [
+    "CVE-2026-2349"
+  ],
+  "details": "This module enables you to integrate and manage icons with Drupal.\n\nThe module doesn't sufficiently sanitize user input leading to a reflected Cross-site Scripting (XSS) vulnerability.\n\nThe vulnerability is mitigated by the fact that in order to be vulnerable, the \"UI Icons for CKEditor 5\" submodule must be enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ui_icons"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.1.0"
+            },
+            {
+              "fixed": "1.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.1.0 <1.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.1 || >=1.1.0 <1.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-010"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
