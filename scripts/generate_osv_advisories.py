@@ -323,11 +323,7 @@ def get_credits_from_sa(
   return sorted(credit_list, key=lambda c: c['name'])
 
 
-def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
-  project = typing.cast(
-    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
-  )
-
+def determine_composer_package_name(project: drupal.Project) -> str:
   project_name = project['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
@@ -408,7 +404,15 @@ def build_osv_advisory(
     print(' \\- ' + text_is.notice('skipping as we do not have any affected versions'))
     return None
 
-  composer_package_name = determine_composer_package_name(sa_advisory)
+  project = typing.cast(
+    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
+  )
+
+  # distributions don't fit within the Packagist ecosystem as they're not packages
+  if project['type'] == 'project_distribution':
+    return None
+
+  composer_package_name = determine_composer_package_name(project)
 
   ecosystem = 'Packagist'
 
