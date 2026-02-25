@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-015",
+  "modified": "2026-02-25T18:47:57.000Z",
+  "published": "2026-02-25T18:47:57.000Z",
+  "aliases": [
+    "CVE-2026-3214"
+  ],
+  "details": "This module enables you to protect web forms from automated spam by requiring users to pass a challenge.\n\nThe module doesn't sufficiently invalidate used security tokens under certain scenarios, which can lead to the CAPTCHA being bypassed on subsequent submissions.\n\nThis vulnerability is mitigated by the fact that an attacker must first successfully solve at least one CAPTCHA manually to harvest the valid tokens.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/captcha"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.17.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.17.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 < 2.0.10"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.17.0 || >=2.0.0 < 2.0.10"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-015"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andrew Belcher (andrewbelcher)",
+      "contact": [
+        "https://www.drupal.org/u/andrewbelcher"
+      ]
+    },
+    {
+      "name": "Chris Dudley (dudleyc)",
+      "contact": [
+        "https://www.drupal.org/u/dudleyc"
+      ]
+    },
+    {
+      "name": "Tim Wood (timwood)",
+      "contact": [
+        "https://www.drupal.org/u/timwood"
+      ]
+    },
+    {
+      "name": "tamasd",
+      "contact": [
+        "https://www.drupal.org/u/tamasd"
+      ]
+    }
+  ]
+}
