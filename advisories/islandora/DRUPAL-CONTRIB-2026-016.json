@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-016",
+  "modified": "2026-02-25T18:49:59.000Z",
+  "published": "2026-02-25T18:49:59.000Z",
+  "aliases": [
+    "CVE-2026-3215"
+  ],
+  "details": "This module integrates with Islandora, an open-source digital asset management (DAM) framework. Islandora integrates with various open-source services, which can be run in a distributed environment.\n\nThe module doesn't sufficiently sanitize URI paths for its custom route used for attaching media to nodes, which can also lead to cross-site scripting and other vulnerabilities.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"create media\" and the ability to edit the node the media is being attached to.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/islandora"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.17.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.17.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.17.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

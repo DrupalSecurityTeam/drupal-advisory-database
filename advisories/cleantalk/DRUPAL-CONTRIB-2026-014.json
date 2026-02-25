@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-014",
+  "modified": "2026-02-25T18:46:10.000Z",
+  "published": "2026-02-25T18:46:10.000Z",
+  "aliases": [
+    "CVE-2026-3213"
+  ],
+  "details": "This module enables you to block bots by Firewall.\n\nThe module doesn't sufficiently sanitize user input leading to a reflected Cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that the vulnerable functionality is only presented to users that are \"challenged\" or blocked by the firewall.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/cleantalk"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "9.7.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<9.7.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<9.7.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

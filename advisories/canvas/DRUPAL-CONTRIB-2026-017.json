@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-017",
+  "modified": "2026-02-25T18:51:01.000Z",
+  "published": "2026-02-25T18:51:01.000Z",
+  "aliases": [
+    "CVE-2026-3216"
+  ],
+  "details": "This module enables you to easily theme and build an entire website using only their browser, without the need to write code beyond basic JSX and CSS. Content creators are able to compose content on any part of the page without relying on developers.\n\nThe project has a hidden sub-module, **Drupal Canvas AI**, which is disabled by default. It is typically enabled as a dependency by Drupal Recipes or enabled directly via deployment scripts (e.g., Drush). When the submodule is enabled, the following vulnerability is exposed.\n\nThe module doesn't sufficiently sanitize user-supplied data via crafted API requests within the messages JSON payload.\n\nIt is mitigated by the fact that an attacker must have a role with the permission \"use Drupal Canvas AI\".\n\n**How the Canvas AI sub-module gets enabled:** As a hidden submodule, `canvas_ai` is not intended for manual activation via the UI. It is designed to be pulled in as a dependency by Drupal Recipes or enabled directly via deployment scripts (e.g., Drush).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/canvas"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-017"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
