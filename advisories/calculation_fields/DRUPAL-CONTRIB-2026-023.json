@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-023",
+  "modified": "2026-03-04T17:58:55.000Z",
+  "published": "2026-03-04T17:58:55.000Z",
+  "aliases": [
+    "CVE-2026-3528"
+  ],
+  "details": "This module extends the Drupal form API adding \"Calculation element\" form element types, which can evaluate a maths expression. It offers webform integration.\n\nThe module doesn't sufficiently validate user input; this could be exploited to achieve Information Disclosure or Cross-site Scripting (XSS).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/calculation_fields"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-023"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

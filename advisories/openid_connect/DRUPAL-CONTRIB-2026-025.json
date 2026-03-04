@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-025",
+  "modified": "2026-03-04T18:00:41.000Z",
+  "published": "2026-03-04T18:00:41.000Z",
+  "aliases": [
+    "CVE-2026-3530"
+  ],
+  "details": "This module enables you to use an external OpenID Connect login provider to authenticate and log in users on your site. If a user signs in with a login provider for the first time on the website, a new Drupal user will be created.\n\nThe module doesn't sufficiently validate certain fields coming from the identity provider, which could lead to SSRF and information disclosures.\n\nThis vulnerability is mitigated by:  \n- an attacker must have access to the identity provider to provide compromised data at the source profile.  \n- a site must have specific field mappings configured",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/openid_connect"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-025"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
