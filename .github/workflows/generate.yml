@@ -32,12 +32,15 @@ jobs:
       - run: poetry run scripts/precache_nodes.py
       - run: rm -rf advisories/
       - run: poetry run scripts/generate_osv_advisories.py
+      - run: |
+          echo "🤖 beep boop - looks like there's some changes to the advisories!" > pr-body
+          echo "" >> pr-body
+          poetry run scripts/list_changed_advisories.py >> pr-body
       - uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
           token: ${{ secrets.GENERATOR_GH_TOKEN }}
           title: 'feat: update advisories'
-          body: >
-            🤖 beep boop - looks like there's some changes to the advisories!
+          body-path: pr-body
           branch: 'bot/update-advisories'
           author: |
             github-actions <41898282+github-actions[bot]@users.noreply.github.com>
