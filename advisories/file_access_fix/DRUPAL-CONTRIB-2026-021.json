@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-021",
+  "modified": "2026-03-04T17:56:18.000Z",
+  "published": "2026-03-04T17:56:18.000Z",
+  "aliases": [
+    "CVE-2026-3526"
+  ],
+  "details": "This module moves files to and from private storage depending on the access of its owning entities.\n\nThe module does not always validate the access logic correctly, resulting in files attached to an entity not being protected in certain circumstances.\n\nThis vulnerability is mitigated by the fact that saving an entity a second time resolves the issue.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/file_access_fix"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-021"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
