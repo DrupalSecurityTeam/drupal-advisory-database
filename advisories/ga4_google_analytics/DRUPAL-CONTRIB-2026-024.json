@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-024",
-  "modified": "2026-03-04T17:59:51.000Z",
+  "modified": "2026-03-05T14:03:05.000Z",
   "published": "2026-03-04T17:59:51.000Z",
   "aliases": [
     "CVE-2026-3529"
   ],
-  "details": "The Google Analytics GA4 module enables users to add custom attributes to the script tag used to load the Google Analytics library. The module does not sufficiently sanitize these attributes.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the \"ga4 configure\" (or \"administer google analytics ga4 settings\") permission.\n\nAn attacker with this permission could inject malicious JavaScript via event handlers (such as onload) or override the script source, leading to a Cross-Site Scripting (XSS) attack on all pages where the GA4 script is loaded.",
+  "details": "The Google Analytics GA4 module enables users to add custom attributes to the script tag used to load the Google Analytics library. The module does not sufficiently sanitize these attributes.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the \"ga4 configure\" (or \"administer google analytics ga4 settings\") permission.\n\nAn attacker with this permission could inject malicious JavaScript via event handlers (such as onload) or override the script source, leading to a Cross-Site Scripting (XSS) attack on all pages where the GA4 script is loaded.\n\n*Note: this advisory initially suggested it was fixed in the 1.1.13 release, but the 1.1.13 releaes was missing the fix. Users of this module should switch to the 1.1.14 release.*",
   "affected": [
     {
       "package": {
@@ -22,16 +22,16 @@
               "introduced": "0"
             },
             {
-              "fixed": "1.1.13"
+              "fixed": "1.1.14"
             }
           ],
           "database_specific": {
-            "constraint": "<1.1.13"
+            "constraint": "<1.1.14"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<1.1.13"
+        "affected_versions": "<1.1.14"
       }
     }
   ],
