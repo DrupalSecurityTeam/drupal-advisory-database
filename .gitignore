@@ -8,3 +8,6 @@ __pycache__/
 cache/
 node_modules/
 vendor/
+
+# file used by "generate" workflow
+pr-body
