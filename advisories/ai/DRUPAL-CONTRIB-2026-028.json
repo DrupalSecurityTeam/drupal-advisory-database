@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-028",
+  "modified": "2026-03-11T16:33:14.000Z",
+  "published": "2026-03-11T16:33:14.000Z",
+  "aliases": [],
+  "details": "The module and certain submodules (AI Automators, AI Translate, AI API Explorer, AI Content Suggestions) provide the ability to use an LLM to generate HTML or Markdown and preview it in a browser.\n\nUnder certain circumstances, rendering of this HTML can lead to exposing secret communications in the context of the LLM request.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.2.0"
+            },
+            {
+              "fixed": "1.2.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.2.0 <1.2.12"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.11 || >=1.2.0 <1.2.12"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-028"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}
