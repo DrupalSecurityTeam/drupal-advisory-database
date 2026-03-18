@@ -413,7 +413,13 @@ def build_osv_advisory(
   ecosystem = 'Packagist'
 
   # record the Composer repository the affected package is sourced from
-  if composer_package_name not in drupal_packages_available_on_packagist:
+  #
+  # note there is a special case for drupal/currency as it was published
+  # on Packagist initially before later moving to the Drupal repository
+  if (
+    composer_package_name == 'drupal/currency'
+    or composer_package_name not in drupal_packages_available_on_packagist
+  ):
     ecosystem += ':https://packages.drupal.org/8'
 
   osv_advisory: osv.Vulnerability = {
