@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-015",
-  "modified": "2026-02-25T19:07:00.000Z",
+  "modified": "2026-03-17T13:20:54.000Z",
   "published": "2026-02-25T18:47:57.000Z",
   "aliases": [
     "CVE-2026-3214"
@@ -63,9 +63,21 @@
       ]
     },
     {
+      "name": "Andrew Wang (andrew.wang)",
+      "contact": [
+        "https://www.drupal.org/u/andrewwang"
+      ]
+    },
+    {
       "name": "Chris Dudley (dudleyc)",
       "contact": [
         "https://www.drupal.org/u/dudleyc"
+      ]
+    },
+    {
+      "name": "M Parker (mparker17)",
+      "contact": [
+        "https://www.drupal.org/u/mparker17"
       ]
     },
     {
