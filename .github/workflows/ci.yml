@@ -14,7 +14,7 @@ concurrency:
 permissions: {}
 
 jobs:
-  audit:
+  audit-detector:
     permissions:
       contents: read # to fetch code (actions/checkout)
     runs-on: ubuntu-latest
@@ -25,6 +25,17 @@ jobs:
           persist-credentials: false
       - name: Audit dependencies for security vulnerabilities
         uses: g-rath/check-with-osv-detector@0e8c0f954d8618a3a4671eca1918b30b2d085af3 # v0.2.0
+  audit-scanner:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run:
+          docker run -v $PWD:/src ghcr.io/google/osv-scanner:latest scan -r src
   ruff:
     permissions:
       contents: read # to fetch code (actions/checkout)
