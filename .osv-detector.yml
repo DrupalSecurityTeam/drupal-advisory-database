@@ -1,3 +1,5 @@
+ignore:
+  - GHSA-5239-wwwm-4pmq
 extra-databases:
   - url: file:/advisories/
     name: Local Drupal Advisory Database
