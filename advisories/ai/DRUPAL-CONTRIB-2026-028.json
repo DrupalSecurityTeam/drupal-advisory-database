@@ -1,9 +1,11 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-028",
-  "modified": "2026-03-11T16:33:14.000Z",
+  "modified": "2026-03-26T19:43:59.000Z",
   "published": "2026-03-11T16:33:14.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2026-3573"
+  ],
   "details": "The module and certain submodules (AI Automators, AI Translate, AI API Explorer, AI Content Suggestions) provide the ability to use an LLM to generate HTML or Markdown and preview it in a browser.\n\nUnder certain circumstances, rendering of this HTML can lead to exposing secret communications in the context of the LLM request.",
   "affected": [
     {

@@ -1,9 +1,11 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-029",
-  "modified": "2026-03-11T16:35:02.000Z",
+  "modified": "2026-03-26T19:50:52.000Z",
   "published": "2026-03-11T16:35:02.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2026-4933"
+  ],
   "details": "This module creates permissions per node content type to control access to unpublished nodes per content type.\n\nThe module does not consistently control access for unpublished translated nodes.",
   "affected": [
     {
