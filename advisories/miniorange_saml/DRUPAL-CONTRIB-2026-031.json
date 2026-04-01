@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-031",
+  "modified": "2026-04-01T16:39:23.000Z",
+  "published": "2026-04-01T16:38:14.000Z",
+  "aliases": [
+    "CVE-2026-5343"
+  ],
+  "details": "This module enables you to perform SAML-protocol-based single-sign-on (SSO) on a Drupal site.\n\nThe module doesn't sufficiently block access, leading to a authentication bypass vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/miniorange_saml"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-031"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tim de Jong | Freelance Drupal Developer (tim_dj)",
+      "contact": [
+        "https://www.drupal.org/u/tim_dj"
+      ]
+    }
+  ]
+}
