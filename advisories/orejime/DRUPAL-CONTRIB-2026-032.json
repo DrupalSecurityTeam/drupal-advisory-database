@@ -1,9 +1,11 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-032",
-  "modified": "2026-04-08T16:09:54.000Z",
+  "modified": "2026-04-10T16:51:06.000Z",
   "published": "2026-04-08T16:09:54.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2026-6095"
+  ],
   "details": "The IframeConsent element writes HTML attributes without escaping their value.\n\nThis module has a XSS vulnerability. If an attacker is able to write an `<iframe-consent>` tag, they may be able to insert arbitrary JavaScript.\n\nThis vulnerability is mitigated by the fact that a text format that allows `iframe-consent` HTML tags with alt attributes in the necessary option (*Enable JS Iframe consent*) must be enabled, and an attacker must have a role allowing the creation or modification of content in a field with text the format.",
   "affected": [
     {
