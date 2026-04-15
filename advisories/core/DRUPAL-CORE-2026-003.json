@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-003",
+  "modified": "2026-04-15T19:27:21.000Z",
+  "published": "2026-04-15T19:27:21.000Z",
+  "aliases": [
+    "CVE-2026-6367"
+  ],
+  "details": "Drupal 11.3 comes with support for completing entity suggestions whilst adding a link to CKEditor 5.\n\nThe suggestions aren't sufficiently sanitized and a malicious user could trigger a stored cross site scripting attack against another user.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.3.0 < 11.3.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 11.3.0 < 11.3.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dries Buytaert (dries)",
+      "contact": [
+        "https://www.drupal.org/u/dries"
+      ]
+    },
+    {
+      "name": "Shirsendu Mondal",
+      "contact": [
+        "https://www.drupal.org/u/shirsendu-mondal"
+      ]
+    },
+    {
+      "name": "cantina_security",
+      "contact": [
+        "https://www.drupal.org/u/cantina_security"
+      ]
+    }
+  ]
+}

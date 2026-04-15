@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-001",
+  "modified": "2026-04-15T19:24:30.000Z",
+  "published": "2026-04-15T19:24:30.000Z",
+  "aliases": [
+    "CVE-2026-6365"
+  ],
+  "details": "Drupal core's jQuery integration for AJAX modal dialog boxes does not sufficiently sanitize certain options, which which can lead to a cross-site scripting (XSS) vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.5.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.5.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.6.0"
+            },
+            {
+              "fixed": "10.6.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.6.0 < 10.6.7"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.2.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.2.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.3.0 < 11.3.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.5.9 || >= 10.6.0 < 10.6.7 || >= 11.0.0 < 11.2.11 || >= 11.3.0 < 11.3.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Murat Keki\u00e7 (murat_kekic)",
+      "contact": [
+        "https://www.drupal.org/u/murat_kekic"
+      ]
+    }
+  ]
+}

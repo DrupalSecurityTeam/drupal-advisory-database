@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-002",
+  "modified": "2026-04-15T19:25:23.000Z",
+  "published": "2026-04-15T19:25:23.000Z",
+  "aliases": [
+    "CVE-2026-6366"
+  ],
+  "details": "Drupal core contains a chain of methods that could be exploitable when an insecure deserialization vulnerability exists on the site. This so-called \"gadget chain\" presents no direct threat, but is a vector that can be used to achieve remote code execution or SQL injection if the application deserializes untrusted data due to another vulnerability.\n\nThis issue is not directly exploitable.\n\nThis issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to `unserialize()`. There are no such known exploits in Drupal core.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.5.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.5.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.6.0"
+            },
+            {
+              "fixed": "10.6.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.6.0 < 10.6.7"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.2.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.2.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.3.0 < 11.3.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.5.9 || >= 10.6.0 < 10.6.7 || >= 11.0.0 < 11.2.11 || >= 11.3.0 < 11.3.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-002"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Truong Le (hswww)",
+      "contact": [
+        "https://www.drupal.org/u/hswww"
+      ]
+    },
+    {
+      "name": "menon",
+      "contact": [
+        "https://www.drupal.org/u/menon"
+      ]
+    },
+    {
+      "name": "t-chen",
+      "contact": [
+        "https://www.drupal.org/u/t-chen"
+      ]
+    }
+  ]
+}
