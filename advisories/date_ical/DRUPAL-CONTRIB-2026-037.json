@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-037",
+  "modified": "2026-05-13T17:19:25.000Z",
+  "published": "2026-05-13T17:19:25.000Z",
+  "aliases": [
+    "CVE-2026-8495"
+  ],
+  "details": "This module enables you to export entity date fields as iCal feeds.\n\nThe module doesn't sufficiently check entity or field access or sanitize user inputs when generating iCal feeds.\n\nThis vulnerability is not mitigated by any permission, the routes are accessible to all anonymous users with no configuration required.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/date_ical"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.0.15"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.0.15"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.0.15"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-037"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
