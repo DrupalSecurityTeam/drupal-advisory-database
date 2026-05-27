@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-038",
+  "modified": "2026-05-27T18:32:18.000Z",
+  "published": "2026-05-27T18:32:18.000Z",
+  "aliases": [
+    "CVE-2026-9726"
+  ],
+  "details": "The Basket module enables e-commerce and checkout functionality for Drupal sites.\n\nThe module does not sufficiently sanitize user-supplied data before passing it to PHP's unserialize().\n\nAn attacker can supply a crafted payload and trigger PHP Object Injection. If a viable gadget chain exists in the site codebase or installed dependencies, this can result in arbitrary PHP code execution.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/basket"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.17"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.17"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.17"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-038"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
