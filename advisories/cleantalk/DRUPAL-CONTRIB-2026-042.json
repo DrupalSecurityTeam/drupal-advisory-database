@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-042",
+  "modified": "2026-06-03T16:14:56.000Z",
+  "published": "2026-06-03T16:14:56.000Z",
+  "aliases": [
+    "CVE-2026-10770"
+  ],
+  "details": "This module provides spam protection using the CleanTalk cloud service.\n\nThe module doesn't sufficiently sanitize API response messages before rendering them in HTML output. The `_cleantalk_die()` and `ct_die()` functions output the CleanTalk API response message directly into HTML without proper sanitization, allowing potential injection of arbitrary HTML or JavaScript.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to influence the CleanTalk cloud API response (e.g., through a man-in-the-middle attack or a compromised API server).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/cleantalk"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "9.7.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<9.7.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<9.7.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-042"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ra M\u00e4nd (ram4nd)",
+      "contact": [
+        "https://www.drupal.org/u/ram4nd"
+      ]
+    }
+  ]
+}

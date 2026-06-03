@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-040",
+  "modified": "2026-06-03T16:11:51.000Z",
+  "published": "2026-06-03T16:11:51.000Z",
+  "aliases": [
+    " CVE-2026-49977 "
+  ],
+  "details": "This module enables sites to comply with the European cookie law using tarteaucitron.js.\n\nThe module doesn't sufficiently filter user-supplied markup inside of content leading to an attacker being able to delete arbitrary cookies.\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to insert specific data attributes in the page.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/tacjs"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-040"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
