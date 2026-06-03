@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-041",
+  "modified": "2026-06-03T16:13:55.000Z",
+  "published": "2026-06-03T16:13:55.000Z",
+  "aliases": [
+    "CVE-2026-10769"
+  ],
+  "details": "The module doesn't sufficiently sanitize customer comments in the order receipt email template; this could be exploited to achieve Cross-site Scripting (XSS).\n\nThis vulnerability is mitigated by the fact that it only affects installations with Checkout (`commerce_checkout`) enabled, and the \"Comments\" checkout pane (id: `customer_comments`) is explicitly used, which is disabled by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/commerce"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.3.0"
+            },
+            {
+              "fixed": "3.3.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 3.3.0 < 3.3.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 3.3.0 < 3.3.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-041"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Brian Willows (hsjbrianwillows)",
+      "contact": [
+        "https://www.drupal.org/u/hsjbrianwillows"
+      ]
+    }
+  ]
+}
