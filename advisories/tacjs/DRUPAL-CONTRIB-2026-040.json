@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-040",
-  "modified": "2026-06-03T16:11:51.000Z",
+  "modified": "2026-06-03T19:47:39.000Z",
   "published": "2026-06-03T16:11:51.000Z",
   "aliases": [
     " CVE-2026-49977 "
   ],
-  "details": "This module enables sites to comply with the European cookie law using tarteaucitron.js.\n\nThe module doesn't sufficiently filter user-supplied markup inside of content leading to an attacker being able to delete arbitrary cookies.\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to insert specific data attributes in the page.",
+  "details": "This module enables sites to comply with the European cookie law using tarteaucitron.js.\n\nThe module doesn't sufficiently filter user-supplied markup inside of content leading to an attacker being able to delete arbitrary cookies.\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to insert specific data attributes in the page.\n\nFor additional information, see the [Github Security Advisory GHSA-jxj7-g6gm-49j7](https://github.com/AmauriC/tarteaucitron.js/security/advisories/GHSA-jxj7-g6gm-49j7) for the tarteaucitron.js library.",
   "affected": [
     {
       "package": {
@@ -42,6 +42,12 @@
     }
   ],
   "credits": [
+    {
+      "name": "Frank Mably (mably)",
+      "contact": [
+        "https://www.drupal.org/u/mably"
+      ]
+    },
     {
       "name": "Pierre Rudloff (prudloff)",
       "contact": [
