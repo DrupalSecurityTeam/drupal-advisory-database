@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-044",
+  "modified": "2026-06-10T17:07:55.000Z",
+  "published": "2026-06-10T17:07:55.000Z",
+  "aliases": [
+    "CVE-2026-11909"
+  ],
+  "details": "The Examples for Developers project aims to provide high-quality, well-documented API examples for a broad range of Drupal core functionality.\n\nThe \"Read from a file\" feature implemented by the file\\_example submodule can be used to expose any file that PHP can access. Therefore, the file\\_example sub-module is being removed from Examples for Developers until a version demonstrating file security best practices can be added back in the future. Developers who based a new module on this example should review their code for an access bypass.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/examples"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-044"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
