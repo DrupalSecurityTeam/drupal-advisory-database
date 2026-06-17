@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-007",
+  "modified": "2026-06-17T18:56:13.000Z",
+  "published": "2026-06-17T18:56:13.000Z",
+  "aliases": [
+    "CVE-2026-55806"
+  ],
+  "details": "Drupal core ships a `rebuild.php` front controller that can be used to rebuild Drupal (clearing the caches and rebuilding the container) when the site is in an unexpected condition.\n\nThis script doesn't correctly check the Host header against the list of trusted host patterns. This could result in cache poisoning or a redirect to an attacker-controlled domain.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "10.5.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<10.5.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.6.0"
+            },
+            {
+              "fixed": "10.6.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.6.0 <10.6.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.2.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.2.0 <11.2.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.3.0 <11.3.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.1.0"
+            },
+            {
+              "fixed": "11.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.1.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Melih Acikoz",
+      "contact": [
+        "https://www.drupal.org/u/melih-acikoz"
+      ]
+    },
+    {
+      "name": "Michael Winser (michaelwinser)",
+      "contact": [
+        "https://www.drupal.org/u/michaelwinser"
+      ]
+    },
+    {
+      "name": "Willem Drupal enthousiast (willempje2)",
+      "contact": [
+        "https://www.drupal.org/u/willempje2"
+      ]
+    }
+  ]
+}

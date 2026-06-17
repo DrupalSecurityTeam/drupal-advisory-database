@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-009",
+  "modified": "2026-06-17T18:37:09.000Z",
+  "published": "2026-06-02T23:24:26.000Z",
+  "aliases": [
+    "CVE-2026-55808"
+  ],
+  "details": "The JSON:API and REST modules allow you to upload image files to image fields.\n\nThe validation rules check the file extension of the uploaded file but not the file MIME type. This may allow a malicious user to upload a file that is not an image.\n\nCertain web-server configurations may serve the uploaded file with its actual MIME type rather than an image type. This may lead to cross-site scripting (XSS) or other unexpected behavior.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "10.5.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<10.5.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.6.0"
+            },
+            {
+              "fixed": "10.6.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.6.0 <10.6.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.2.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.2.0 <11.2.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.3.0 <11.3.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.1.0"
+            },
+            {
+              "fixed": "11.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.1.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-009"
+    }
+  ],
+  "credits": [
+    {
+      "name": "cantina_security",
+      "contact": [
+        "https://www.drupal.org/u/cantina_security"
+      ]
+    }
+  ]
+}
