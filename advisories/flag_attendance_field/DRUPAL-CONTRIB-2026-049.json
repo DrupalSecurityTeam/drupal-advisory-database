@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-049",
+  "modified": "2026-06-17T18:39:26.000Z",
+  "published": "2026-06-17T18:39:26.000Z",
+  "aliases": [
+    "CVE-2026-55809"
+  ],
+  "details": "The Flag attendance field module gives you the ability to add attendance by depending on [Flag module](https://www.drupal.org/project/flag).\n\n`flag_attendance_field` stores some data as PHP-serialized strings. In some situations, malicious data can be written directly to the field. This can lead to an object injection vulnerability when the data are unserialized.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to edit a content entity with an attached `flag_attendance_field` field. In addition, the core JSON:API module must be enabled with the option \"Accept all JSON:API create, read, update, and delete operations\", which is not the default, or the attacker needs some other way to edit field values directly.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/flag_attendance_field"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-049"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

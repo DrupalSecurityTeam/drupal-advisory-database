@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-008",
+  "modified": "2026-06-17T18:56:27.000Z",
+  "published": "2026-06-17T18:56:27.000Z",
+  "aliases": [
+    "CVE-2026-55807"
+  ],
+  "details": "The Media module comes with support for oEmbed. The oEmbed specification contains two discovery mechanisms, via `providers.json` and via URL discovery.\n\nThe URL discovery code could be leveraged to trick Drupal into making server-side requests to any URL.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "10.5.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<10.5.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.6.0"
+            },
+            {
+              "fixed": "10.6.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.6.0 <10.6.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.2.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.2.0 <11.2.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.3.0 <11.3.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.1.0"
+            },
+            {
+              "fixed": "11.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.1.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Albert Skibinski (askibinski)",
+      "contact": [
+        "https://www.drupal.org/u/askibinski"
+      ]
+    },
+    {
+      "name": "Francesco Placella (plach)",
+      "contact": [
+        "https://www.drupal.org/u/plach"
+      ]
+    },
+    {
+      "name": "Gabe Sullice (gabesullice)",
+      "contact": [
+        "https://www.drupal.org/u/gabesullice"
+      ]
+    },
+    {
+      "name": "Hamed Kohi (0xhamy)",
+      "contact": [
+        "https://www.drupal.org/u/0xhamy"
+      ]
+    },
+    {
+      "name": "Himanshu Anand (unknownhad)",
+      "contact": [
+        "https://www.drupal.org/u/unknownhad"
+      ]
+    },
+    {
+      "name": "John Morahan (john morahan)",
+      "contact": [
+        "https://www.drupal.org/u/john-morahan"
+      ]
+    },
+    {
+      "name": "Jon Minder (ayalon)",
+      "contact": [
+        "https://www.drupal.org/u/ayalon"
+      ]
+    },
+    {
+      "name": "Lautaro Casanova (betah4k)",
+      "contact": [
+        "https://www.drupal.org/u/betah4k"
+      ]
+    },
+    {
+      "name": "Michael Winser (michaelwinser)",
+      "contact": [
+        "https://www.drupal.org/u/michaelwinser"
+      ]
+    },
+    {
+      "name": "assaf alassaf (ama62)",
+      "contact": [
+        "https://www.drupal.org/u/ama62"
+      ]
+    },
+    {
+      "name": "nbanderson",
+      "contact": [
+        "https://www.drupal.org/u/nbanderson"
+      ]
+    },
+    {
+      "name": "offensive-ai",
+      "contact": [
+        "https://www.drupal.org/u/offensive-ai"
+      ]
+    },
+    {
+      "name": "quynh ho (qquynh)",
+      "contact": [
+        "https://www.drupal.org/u/qquynh"
+      ]
+    }
+  ]
+}
