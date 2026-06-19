@@ -438,6 +438,7 @@ def build_osv_advisory(
         'package': {
           'ecosystem': ecosystem,
           'name': composer_package_name,
+          'purl': f'pkg:composer/{composer_package_name.lower()}'
         },
         # todo: figure out how to map field_sa_criticality to severity
         #  https://ossf.github.io/osv-schema/#severitytype-field
