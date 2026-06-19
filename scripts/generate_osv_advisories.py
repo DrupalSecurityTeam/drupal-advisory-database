@@ -359,6 +359,38 @@ def patch_advisory(osv_id: str, sa_advisory: drupal.Advisory) -> bool:
     )
   return False
 
+def build_summary(project: drupal.Project, sa_advisory: drupal.Advisory) -> str:
+  """Build OSV summary"""
+  summary = None
+
+  package_name = project.get('title')
+  # strip for SA-CONTRIB-2020-038
+  package_name = package_name.strip()
+
+  # eg. Access Bypass, Cross site scripting
+  sa_type = sa_advisory['field_sa_type']
+
+  # function determine_sa_id() in download_sa_advisories.py (no duplicate)
+  # https://www.drupal.org/sa-contrib-2021-017 => SA-CONTRIB-2021-017
+  sa_name = sa_advisory['url'].split('/')[-1].upper()
+
+  # project_module => module
+  node_type = project.get('type').split('_', maxsplit=1)[-1]
+
+  # Exception for : SA-CONTRIB-2019-074, SA-CONTRIB-2024-022
+  if "for drupal " in node_type:
+    node_type = node_type.replace("for drupal ","")
+
+  # build summary    
+  if node_type == "core":
+    summary = f"Drupal {node_type} - {sa_type} - {sa_name}"
+  elif sa_type == "Unsupported":
+    summary = f"{package_name} {node_type} for Drupal is unsupported - {sa_name}"
+  else:
+    summary = f"{package_name} {node_type} for Drupal - {sa_type} - {sa_name}"
+
+  return summary
+
 
 def fetch_drupal_packages_available_on_packagist() -> list[str]:
   """
@@ -431,6 +463,7 @@ def build_osv_advisory(
     'id': osv_id,
     'modified': unix_timestamp_to_rfc3339(int(sa_advisory['changed'])),
     'published': unix_timestamp_to_rfc3339(int(sa_advisory['created'])),
+    'summary': build_summary(project, sa_advisory),
     'aliases': sa_advisory['field_sa_cve'],
     'details': markdownify(sa_advisory['field_sa_description']['value']),
     'affected': [
