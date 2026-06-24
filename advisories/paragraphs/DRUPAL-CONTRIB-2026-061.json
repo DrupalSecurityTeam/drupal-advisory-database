@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-061",
+  "modified": "2026-06-24T18:43:16.000Z",
+  "published": "2026-06-24T18:43:16.000Z",
+  "aliases": [
+    "CVE-2026-13241"
+  ],
+  "details": "The optional Paragraphs Library module allows the reuse of paragraphs in multiple places.  \nThe module doesn't sufficiently restrict access to direct child paragraphs of library items through API endpoints.  \nThis vulnerability is mitigated by the fact the paragraphs\\_library module must be in use and general write access to paragraphs through another module must be allowed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/paragraphs"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.21.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.21.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.21.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-061"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mustafa Ahmed (mustafa007)",
+      "contact": [
+        "https://www.drupal.org/u/mustafa007"
+      ]
+    }
+  ]
+}

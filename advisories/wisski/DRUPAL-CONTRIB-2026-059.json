@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-059",
+  "modified": "2026-06-24T18:40:57.000Z",
+  "published": "2026-06-24T18:40:57.000Z",
+  "aliases": [
+    "CVE-2026-13239"
+  ],
+  "details": "The module adds support for the mirador viewer in WissKI and enables annotations on images via the mirador viewer.\n\nIt does not sufficiently check the submitted parameters via a route and writes these to the session object without further checks, which can lead to Access Bypass.\n\nThis vulnerability is mitigated by the fact that it is specific to the wisski\\_mirador submodule.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/wisski"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-059"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
