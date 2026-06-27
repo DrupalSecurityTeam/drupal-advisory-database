@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-064",
-  "modified": "2026-06-24T18:49:32.000Z",
-  "published": "2026-06-24T18:49:32.000Z",
+  "modified": "2026-06-26T15:56:05.000Z",
+  "published": "2026-06-26T15:27:49.000Z",
   "aliases": [
     "CVE-2026-13244"
   ],
-  "details": "The security team is marking the Tealium iQ Tag Management module for Drupal project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: [https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-mai...](https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-maintainer-of-a-project-that-is-unsupported-for-security-reasons)",
+  "details": "The Tealium iQ Tag Management module provides Drupal integration with Tealium iQ.\n\n`tealiumiq` stores some data as PHP-serialized strings. In some situations, malicious data can be written directly to the field. This can lead to an Object Injection vulnerability when the data are unserialized.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to edit a content entity with an attached `tealiumiq` field. In addition, the core `jsonapi` module must be enabled with the option \"Accept all JSON:API create, read, update, and delete operations\", which is not the default, or the attacker needs some other way to edit field values directly.\n\n**Note:** This project was marked as Unsupported by the Drupal Security Team on 2026-06-24 but a fix was released and the project restored on 2026-06-26.",
   "affected": [
     {
       "package": {
@@ -20,15 +20,18 @@
           "events": [
             {
               "introduced": "0"
+            },
+            {
+              "fixed": "2.4.0"
             }
           ],
           "database_specific": {
-            "constraint": "*"
+            "constraint": "<2.4.0"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "*"
+        "affected_versions": "<2.4.0"
       }
     }
   ],
