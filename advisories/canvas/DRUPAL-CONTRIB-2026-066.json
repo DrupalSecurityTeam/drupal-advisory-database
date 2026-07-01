@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-066",
+  "modified": "2026-07-01T17:21:09.000Z",
+  "published": "2026-07-01T17:21:09.000Z",
+  "aliases": [
+    "CVE-2026-58588"
+  ],
+  "details": "The Canvas module allow you to upload image files via a custom API.\n\nThe validation rules check the file extension of the uploaded file but not the file MIME type. This may allow a malicious user to upload a file that is not an image.\n\nCertain web-server configurations may serve the uploaded file with its actual MIME type rather than an image type. This may lead to cross-site scripting (XSS) or other unexpected behavior.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/canvas"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.0"
+            },
+            {
+              "fixed": "1.5.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.5.0 <1.5.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.6.0"
+            },
+            {
+              "fixed": "1.6.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.6.0 <1.6.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.7.0"
+            },
+            {
+              "fixed": "1.7.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.7.0 <1.7.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.2 || >=1.5.0 <1.5.2 || >=1.6.0 <1.6.1 || >=1.7.0 <1.7.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-066"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Christian L\u00f3pez Esp\u00ednola (penyaskito)",
+      "contact": [
+        "https://www.drupal.org/u/penyaskito"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-069",
+  "modified": "2026-07-01T18:36:44.000Z",
+  "published": "2026-07-01T17:24:05.000Z",
+  "aliases": [
+    "CVE-2026-58591"
+  ],
+  "details": "The Colorbox module integrates with the Colorbox JavaScript library to display content in an overlay above the page.\n\nThe module doesn't sufficiently protect against injection of malicious JavaScript under certain scenarios.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role that permits them to enter HTML content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/colorbox"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "< 2.1.5"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.2.0"
+            },
+            {
+              "last_affected": "2.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "< 2.1.5 || 2.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-069"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

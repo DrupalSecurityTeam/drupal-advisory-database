@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-067",
+  "modified": "2026-07-01T17:21:57.000Z",
+  "published": "2026-07-01T17:21:57.000Z",
+  "aliases": [
+    "CVE-2026-58589"
+  ],
+  "details": "This module enables you to test and run AI-driven workflows interactively through a chat interface.\n\nThe module doesn't sufficiently enforce permissions on certain endpoints. Attackers may be able to trigger workflow execution (incurring LLM spend and tool side effects) or send messages into other user's sessions.\n\nThis vulnerability is mitigated by the fact that an attacker must have the permission \"View any session\", which is not granted to anonymous or authenticated users by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/flowdrop"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-067"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Aincient Labs  (aincient labs)",
+      "contact": [
+        "https://www.drupal.org/u/aincient-labs"
+      ]
+    }
+  ]
+}
