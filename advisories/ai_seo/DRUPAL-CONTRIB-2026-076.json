@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-076",
+  "modified": "2026-07-08T17:18:39.000Z",
+  "published": "2026-07-08T17:18:39.000Z",
+  "aliases": [
+    "CVE-2026-15085"
+  ],
+  "details": "The AI SEO/GEO Analyzer module generates SEO/GEO analysis reports by sending content of an entity (including its comments) to an LLM, then converts the model's Markdown response to HTML and stores it for display to privileged users.\n\nThe generated HTML was rendered without passing through Drupal's filtering pipeline, so it relied on the LLM output being safe. Under certain circumstances a crafted prompt injection \u2014 planted in content that is included in the analysis \u2014 can cause the LLM to emit markup that results in stored Cross-site Scripting when the report is later viewed.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to inject text into the content that is sent to the LLM, and that prompt injection is non-deterministic and not guaranteed to succeed on a given attempt.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai_seo"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-076"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
