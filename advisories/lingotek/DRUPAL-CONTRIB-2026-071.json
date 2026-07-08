@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-071",
+  "modified": "2026-07-08T17:13:44.000Z",
+  "published": "2026-07-08T17:13:44.000Z",
+  "aliases": [
+    "CVE-2026-15080"
+  ],
+  "details": "The Lingotek Ray Enterprise Translation provides multilingual site management.\n\nThe module fails to protect several state-changing administrative routes against Cross Site Request Forgery attacks. An attacker could trick a privileged user into visiting a crafted page that triggers actions such as updating callback settings, uploading or downloading translations, or changing translation state.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/lingotek"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.0.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.1.0"
+            },
+            {
+              "fixed": "4.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.1.0 <4.1.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.0.0 <11.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.0.4 || >=4.1.0 <4.1.4 || >=11.0.0 <11.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-071"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

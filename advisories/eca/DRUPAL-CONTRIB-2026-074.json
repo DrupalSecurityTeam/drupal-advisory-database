@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-074",
+  "modified": "2026-07-08T17:16:32.000Z",
+  "published": "2026-07-08T17:16:32.000Z",
+  "aliases": [
+    "CVE-2026-15083"
+  ],
+  "details": "The Events, Conditions, Actions (ECA) module's Render submodule enables you to build render arrays and render inline Twig templates as part of no-code ECA models.\n\nThe module doesn't sufficiently sanitize template code when rendering, which can lead to information disclosure.\n\nThis vulnerability is mitigated by the fact that a site must be running an ECA model that uses the \"Render: Twig\" action on a data flow.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/eca"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.20"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.20"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.0.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.0.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.1.0"
+            },
+            {
+              "fixed": "3.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.1.0 <3.1.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.20 || >=3.0.0 <3.0.12 || >=3.1.0 <3.1.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-074"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Changhai Qi (qichanghai)",
+      "contact": [
+        "https://www.drupal.org/u/qichanghai"
+      ]
+    }
+  ]
+}

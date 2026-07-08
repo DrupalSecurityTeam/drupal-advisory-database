@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-070",
+  "modified": "2026-07-08T17:12:32.000Z",
+  "published": "2026-07-08T17:12:32.000Z",
+  "aliases": [
+    "CVE-2026-15079"
+  ],
+  "details": "The Login Disable module prevents users from logging in to your Drupal site unless they know the secret key to add to the end of the login form page.\n\nThe module doesn't sufficiently protect the disabled login form from brute force attacks. Depending on the length of the key this could allow an attacker to use a brute force attack to bypass the protection provided by this module. The security fix blocks these attempts with flood control.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain a valid username & password.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/login_disable"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-070"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
