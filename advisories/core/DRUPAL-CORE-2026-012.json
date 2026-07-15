@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-012",
+  "modified": "2026-07-15T19:52:26.000Z",
+  "published": "2026-07-15T19:52:26.000Z",
+  "aliases": [
+    "CVE-2026-55805"
+  ],
+  "details": "The Layout Builder module doesn't sufficiently sanitize block labels in certain scenarios, which can lead to a cross-site scripting (XSS) vulnerability.\n\nThis is mitigated by the fact that both the attacker and the targeted user need to be using the Layout Builder editing interface.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "10.6.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<10.6.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.3.0 <11.3.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.4.0 <11.4.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.1.0"
+            },
+            {
+              "fixed": "11.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.1.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.2.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<10.6.13 || >=11.3.0 <11.3.14 || >=11.4.0 <11.4.4 || 11.0.* || 11.1.* || 11.2.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-012"
+    }
+  ],
+  "credits": [
+    {
+      "name": "haii haii (hai27ii2o)",
+      "contact": [
+        "https://www.drupal.org/u/hai27ii2o"
+      ]
+    }
+  ]
+}
