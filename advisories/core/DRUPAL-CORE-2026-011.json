@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-011",
+  "modified": "2026-07-15T19:51:57.000Z",
+  "published": "2026-07-15T19:51:57.000Z",
+  "aliases": [
+    "CVE-2026-15917"
+  ],
+  "details": "Drupal core 11.2 and above integrate the HTMX JavaScript library.\n\nDrupal core's XSS filter does not sufficiently sanitize certain HTMX attributes, which can lead to a cross-site scripting (XSS) vulnerability.\n\nThe vulnerability is mitigated by the fact an attacker must be able to insert HTML with specific attributes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.3.0"
+            },
+            {
+              "fixed": "11.3.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.3.0 <11.3.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.4.0 <11.4.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.2.0"
+            },
+            {
+              "fixed": "11.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "11.2.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=11.3.0 <11.3.14 || >=11.4.0 <11.4.4 || 11.2.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-011"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
