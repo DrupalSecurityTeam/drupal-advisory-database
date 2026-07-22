@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-082",
+  "modified": "2026-07-22T17:55:04.000Z",
+  "published": "2026-07-22T17:55:04.000Z",
+  "aliases": [
+    "CVE-2026-16640"
+  ],
+  "details": "This module enables you to add autocomplete suggestions for search forms created with the [Search API module](/project/search_api).\n\nThe module ships with a test script that is accessible to anonymous users and doesn't sufficiently validate user input, leading to a Cross Site Scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that the web server must be configured to display warning messages to users.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/search_api_autocomplete"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.12.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.12.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.12.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-082"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Elar Lang (elarlang)",
+      "contact": [
+        "https://www.drupal.org/u/elarlang"
+      ]
+    }
+  ]
+}
