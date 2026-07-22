@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-071",
-  "modified": "2026-07-08T17:13:44.000Z",
+  "modified": "2026-07-21T19:06:08.000Z",
   "published": "2026-07-08T17:13:44.000Z",
   "aliases": [
     "CVE-2026-15080"
   ],
-  "details": "The Lingotek Ray Enterprise Translation provides multilingual site management.\n\nThe module fails to protect several state-changing administrative routes against Cross Site Request Forgery attacks. An attacker could trick a privileged user into visiting a crafted page that triggers actions such as updating callback settings, uploading or downloading translations, or changing translation state.",
+  "details": "The Lingotek Ray Enterprise Translation module provides multilingual site management.\n\nThe module fails to protect several state-changing administrative routes against Cross Site Request Forgery attacks. An attacker could trick a privileged user into visiting a crafted page that triggers actions such as updating callback settings, uploading or downloading translations, or changing translation state.",
   "affected": [
     {
       "package": {
