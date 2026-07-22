@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-080",
+  "modified": "2026-07-22T17:52:45.000Z",
+  "published": "2026-07-22T17:52:45.000Z",
+  "aliases": [
+    "CVE-2026-16638"
+  ],
+  "details": "This module provides a better UI for managing and selecting Media entities in a folder structure.\n\nThe module doesn't sufficiently sanitize the names and descriptions of media items and folders when they are displayed in the media browser, resulting in a stored cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to create or edit media items or folders.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/media_folders"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-080"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

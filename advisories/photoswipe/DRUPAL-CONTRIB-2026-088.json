@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-088",
+  "modified": "2026-07-22T18:01:57.000Z",
+  "published": "2026-07-22T18:01:57.000Z",
+  "aliases": [
+    "CVE-2026-16645"
+  ],
+  "details": "The Photoswipe Drupal module provides integration for the widely used [PhotoSwipe lightbox library](https://photoswipe.com/) to display / zoom images in lightbox galleries using the provided image formatters.\n\nThe module didn't sufficiently check access permissions, when viewing an image using the photoswipe image gallery display formatter, in versions < 3.0.4 (Drupal 8) or < 3.2.0 (Drupal 9 / Drupal 10).\n\nThis vulnerability is mitigated by the fact that it only affects sites limiting access to the images shown in photoswipe (the most common use case for photoswipe lightboxes public images).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/photoswipe"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-088"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Aleksi Peebles (aleksip)",
+      "contact": [
+        "https://www.drupal.org/u/aleksip"
+      ]
+    }
+  ]
+}
