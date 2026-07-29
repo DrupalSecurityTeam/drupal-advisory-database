@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-090",
+  "modified": "2026-07-29T17:08:33.000Z",
+  "published": "2026-07-29T17:08:33.000Z",
+  "aliases": [
+    "CVE-2026-18259"
+  ],
+  "details": "The Token Content Access module enables site administrators to provide access to content using access tokens.\n\nThe module does not sufficiently protect access token comparison in some cases. This could allow a persistent attacker to use a timing attack to guess a valid access token and bypass access restrictions for content protected by this module.\n\nThis vulnerability is mitigated by the fact that an attacker must know or discover a URL for content protected by Token Content Access, and exploiting the issue requires measuring timing differences in token comparison responses.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/tca"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-090"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Robin  (robincs)",
+      "contact": [
+        "https://www.drupal.org/u/robincs"
+      ]
+    }
+  ]
+}
