@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-094",
+  "modified": "2026-08-05T17:59:29.000Z",
+  "published": "2026-08-05T17:59:29.000Z",
+  "aliases": [
+    "CVE-2026-18986"
+  ],
+  "details": "The Entity Browser module allows you to select entities from entity reference fields using a custom entity browser widget.\n\nThe module doesn't sufficiently sanitize the the tab titles, resulting in a stored cross-site scripting (XSS) vulnerability.\n\nThe vulnerability is mitigated by the fact an attacker must be able to insert HTML with specific attributes on a page that is displaying an entity browser.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/entity_browser"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.16.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.16.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.16.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-094"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
