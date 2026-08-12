@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-099",
+  "modified": "2026-08-12T17:56:54.000Z",
+  "published": "2026-08-12T17:56:54.000Z",
+  "aliases": [
+    "CVE-2026-73477"
+  ],
+  "details": "This module enables you to display content in tabs, where each tab renders a block, a node, a view, or another Quick Tabs instance.\n\nThe module did not correctly enforce access when rendering node and block tabs. It treated a neutral access result as a grant for node tabs and block plugins, and performed no access check for reusable custom blocks. Content that should have been denied was therefore rendered \u2014 for example, an unpublished node or unpublished reusable custom block could be shown to users without permission to view it.\n\nThe access bypass is mitigated by the fact that affected content is selected by a user with the \u201cadminister quicktabs\u201d permission when the tab is configured, so an attacker cannot choose which content is exposed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/quicktabs"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-099"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jo\u00ebl Pittet (joelpittet)",
+      "contact": [
+        "https://www.drupal.org/u/joelpittet"
+      ]
+    }
+  ]
+}
