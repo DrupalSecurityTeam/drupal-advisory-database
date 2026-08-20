@@ -118,7 +118,7 @@ def weigh_stability(stability: str) -> int:
 
 
 # noinspection PyDefaultArgument
-def parse_version_constraint(
+def parse_version_constraint(  # noqa: PLR0912, PLR0915
   constraint: str,
   extra_warnings: typing.Sequence[str] = [],
 ) -> tuple[list[osv.Event], list[str]]:
@@ -299,19 +299,19 @@ def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
 
 
 def get_credits_from_sa(
-  credits: drupal.RichTextField | list[typing.Never],
+  the_credits: drupal.RichTextField | list[typing.Never],
 ) -> list[osv.Credit]:
   credit_list: list[osv.Credit] = []
 
   # Sanity checks.
-  if not isinstance(credits, dict):
+  if not isinstance(the_credits, dict):
     return credit_list
-  # The credits['value'] is a sting with an ordered list of credits.
+  # The the_credits['value'] is a sting with an ordered list of credits.
   # A credit is a link to the user's profile on drupal.org with the user's name as the link text.
-  for credit in (
-    credits['value'].replace('<ul>', '').replace('</ul>', '').strip().split('<li>')
+  for the_credit in (
+    the_credits['value'].replace('<ul>', '').replace('</ul>', '').strip().split('<li>')
   ):
-    credit = credit.replace('</li>', '').strip()
+    credit = the_credit.replace('</li>', '').strip()
     if '<a' in credit:
       href = credit.split('href="')[1].split('"')[0]
       name = credit.split('">')[1].split('</a>')[0]

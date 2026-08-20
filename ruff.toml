@@ -4,15 +4,30 @@ indent-width = 2
 quote-style = 'single'
 
 [lint]
-ignore = ['E501']
+ignore = [
+  'E501',
+  'FIX002',
+  'PLR2004'  # most numbers are not magic
+]
 extend-select = [
-  'E',    # pycodestyle
-  'F',    # Pyflakes
-  'UP',   # pyupgrade
+  'A',
   'B',    # flake8-bugbear
-  'SIM',  # flake8-simplify
+  'E',    # pycodestyle
+  'EXE',
+  'F',    # Pyflakes
+  'FA',
+  'FIX',
+  'FLY',
   'I',    # isort
-  'PERF'  # performance
+  'PERF', # performance
+  'PLC',  # pylint conventions
+  'PLE',  # pylint errors
+  'PLR',  # pylint refactors
+  'PLW',  # pylint warnings
+#  'S',   # flake8-bandit
+  'SIM',  # flake8-simplify
+  'UP',   # pyupgrade
+  'W'     # pycodestyle
 ]
 
 [lint.isort]
