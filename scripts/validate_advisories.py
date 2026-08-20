@@ -2,6 +2,7 @@
 
 import json
 import os
+import sys
 import typing
 from textwrap import indent
 
@@ -71,4 +72,4 @@ for dirpath, _, filenames in os.walk('advisories'):
 print(f'ℹ️ validated {total} advisories, with {total - passed} invalid')
 
 if total != passed:
-  exit(1)
+  sys.exit(1)

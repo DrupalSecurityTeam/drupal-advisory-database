@@ -9,6 +9,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 import json
 import os
 import re
+import sys
 import tomllib
 import typing
 from datetime import UTC, datetime
@@ -532,7 +533,7 @@ def generate_osv_advisories() -> None:
             'error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
           )
         )
-        exit(1)
+        sys.exit(1)
 
       with open(f'advisories/{name}/{osv_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
