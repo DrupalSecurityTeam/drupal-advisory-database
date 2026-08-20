@@ -65,7 +65,9 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
       continue
 
     if response.status_code != 200:
-      raise Exception(f'unexpected {response.status_code} response when fetching {url}')
+      raise RuntimeError(
+        f'unexpected {response.status_code} response when fetching {url}'
+      )
 
     # allow (re)retrying for future requests
     retry = True

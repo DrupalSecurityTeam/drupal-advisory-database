@@ -18,7 +18,9 @@ resp = requests.get(
 )
 
 if resp.status_code != 200:
-  raise Exception(f'unexpected response when fetching OSV schema: {resp.status_code}')
+  raise RuntimeError(
+    f'unexpected response when fetching OSV schema: {resp.status_code}'
+  )
 
 schema = resp.json()
 jsonschema.Draft202012Validator.check_schema(schema)
