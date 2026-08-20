@@ -118,7 +118,7 @@ def weigh_stability(stability: str) -> int:
 
 
 # noinspection PyDefaultArgument
-def parse_version_constraint(
+def parse_version_constraint(  # noqa: PLR0912, PLR0915
   constraint: str,
   extra_warnings: typing.Sequence[str] = [],
 ) -> tuple[list[osv.Event], list[str]]:
