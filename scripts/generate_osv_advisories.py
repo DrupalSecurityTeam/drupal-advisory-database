@@ -308,10 +308,10 @@ def get_credits_from_sa(
     return credit_list
   # The the_credits['value'] is a sting with an ordered list of credits.
   # A credit is a link to the user's profile on drupal.org with the user's name as the link text.
-  for credit in (
+  for the_credit in (
     the_credits['value'].replace('<ul>', '').replace('</ul>', '').strip().split('<li>')
   ):
-    credit = credit.replace('</li>', '').strip()
+    credit = the_credit.replace('</li>', '').strip()
     if '<a' in credit:
       href = credit.split('href="')[1].split('"')[0]
       name = credit.split('">')[1].split('</a>')[0]
