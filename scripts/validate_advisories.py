@@ -2,6 +2,7 @@
 
 import json
 import os
+import sys
 import typing
 from textwrap import indent
 
@@ -17,7 +18,9 @@ resp = requests.get(
 )
 
 if resp.status_code != 200:
-  raise Exception(f'unexpected response when fetching OSV schema: {resp.status_code}')
+  raise RuntimeError(
+    f'unexpected response when fetching OSV schema: {resp.status_code}'
+  )
 
 schema = resp.json()
 jsonschema.Draft202012Validator.check_schema(schema)
@@ -71,4 +74,4 @@ for dirpath, _, filenames in os.walk('advisories'):
 print(f'ℹ️ validated {total} advisories, with {total - passed} invalid')
 
 if total != passed:
-  exit(1)
+  sys.exit(1)

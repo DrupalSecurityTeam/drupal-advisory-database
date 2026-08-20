@@ -9,6 +9,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 import json
 import os
 import re
+import sys
 import tomllib
 import typing
 from datetime import UTC, datetime
@@ -47,7 +48,7 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
         json.dump(node, f)
         f.write('\n')
       return node
-    raise Exception(
+    raise RuntimeError(
       f'unexpected response when fetching node {nid}: {resp.status_code}'
     ) from e
 
@@ -61,7 +62,7 @@ class ComposerVersionConstraintPart:
 
     if result is None:
       # todo: ensure this is handled appropriately
-      raise Exception(f'"{part}" is not a valid version constraint')
+      raise RuntimeError(f'"{part}" is not a valid version constraint')
 
     self.operator: str = result.group('operator') or ''
     self.first_component: str | None = result.group('major')
@@ -287,7 +288,7 @@ def build_affected_range(constraint: str) -> osv.Range:
 
 def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
   if sa_advisory['field_affected_versions'] is None:
-    raise Exception(
+    raise RuntimeError(
       'field_affected_versions must be present to determine affected ranges'
     )
 
@@ -367,7 +368,7 @@ def fetch_drupal_packages_available_on_packagist() -> list[str]:
   resp = requests.get('https://packagist.org/packages/list.json?vendor=drupal')
 
   if resp.status_code != 200:
-    raise Exception(
+    raise RuntimeError(
       f'unexpected response when fetching list of drupal packages available on packagist.org: {resp.status_code}'
     )
 
@@ -520,7 +521,7 @@ def generate_osv_advisories() -> None:
     affected_packages = fetch_affected_packages(osv_advisory)
 
     if len(affected_packages) == 0:
-      raise Exception('osv advisory has no affected packages')
+      raise RuntimeError('osv advisory has no affected packages')
 
     for affected_package in affected_packages:
       name = affected_package.removeprefix('drupal/')
@@ -532,7 +533,7 @@ def generate_osv_advisories() -> None:
             'error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
           )
         )
-        exit(1)
+        sys.exit(1)
 
       with open(f'advisories/{name}/{osv_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)

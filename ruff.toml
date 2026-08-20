@@ -5,7 +5,7 @@ quote-style = 'single'
 
 [lint]
 ignore = ['E501']
-select = [
+extend-select = [
   'E',    # pycodestyle
   'F',    # Pyflakes
   'UP',   # pyupgrade
