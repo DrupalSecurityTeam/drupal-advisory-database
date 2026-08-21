@@ -26,7 +26,7 @@ def fetch_drupal_nodes(nids: list[str], retry: bool = True) -> list[drupal.Node]
   for nid in nids:
     url += f'nid[]={nid}&'
 
-  resp = requests.get(url, headers={'user-agent': user_agent})
+  resp = requests.get(url, headers={'user-agent': user_agent}, timeout=60)
 
   if retry and resp.status_code == 429:
     seconds = int(resp.headers.get('Retry-After', 0))
