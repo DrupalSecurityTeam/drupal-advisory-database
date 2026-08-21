@@ -24,7 +24,7 @@ extend-select = [
   'PLE',  # pylint errors
   'PLR',  # pylint refactors
   'PLW',  # pylint warnings
-#  'S',   # flake8-bandit
+  'S',    # flake8-bandit
   'SIM',  # flake8-simplify
   'UP',   # pyupgrade
   'W'     # pycodestyle
@@ -35,4 +35,9 @@ known-first-party = [
   'generate_osv_advisories',
   'user_agent',
   'typings'
+]
+
+[lint.per-file-ignores]
+"**/test_*.py" = [
+  "S101" # allow using assert in tests
 ]
