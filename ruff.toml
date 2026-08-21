@@ -24,7 +24,7 @@ extend-select = [
   'PLE',  # pylint errors
   'PLR',  # pylint refactors
   'PLW',  # pylint warnings
-#  'S',   # flake8-bandit
+  'S',    # flake8-bandit
   'SIM',  # flake8-simplify
   'UP',   # pyupgrade
   'W'     # pycodestyle
