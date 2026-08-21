@@ -39,6 +39,7 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
     resp = requests.get(
       f'https://www.drupal.org/api-d7/node/{nid}.json',
       headers={'user-agent': user_agent},
+      timeout=60,
     )
 
     if resp.status_code == 200:
@@ -365,7 +366,9 @@ def fetch_drupal_packages_available_on_packagist() -> list[str]:
   """
   Fetches a list of all Drupal packages that are available on packagist.org
   """
-  resp = requests.get('https://packagist.org/packages/list.json?vendor=drupal')
+  resp = requests.get(
+    'https://packagist.org/packages/list.json?vendor=drupal', timeout=60
+  )
 
   if resp.status_code != 200:
     raise RuntimeError(

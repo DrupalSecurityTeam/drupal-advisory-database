@@ -14,7 +14,8 @@ from typings import osv
 report_valid = False
 
 resp = requests.get(
-  'https://raw.githubusercontent.com/ossf/osv-schema/refs/heads/main/validation/schema.json'
+  'https://raw.githubusercontent.com/ossf/osv-schema/refs/heads/main/validation/schema.json',
+  timeout=60,
 )
 
 if resp.status_code != 200:

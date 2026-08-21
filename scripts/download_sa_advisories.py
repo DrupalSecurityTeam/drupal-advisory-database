@@ -53,7 +53,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
   retry = True
   while url != '':
     print(f'fetching {url}')
-    response = requests.get(url, headers={'user-agent': user_agent})
+    response = requests.get(url, headers={'user-agent': user_agent}, timeout=60)
 
     # if we're making too many requests and have not already retried the current
     # url, wait the requested number of seconds before doing a retry
