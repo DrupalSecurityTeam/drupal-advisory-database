@@ -20,15 +20,19 @@
           "events": [
             {
               "introduced": "0"
+            },
+            {
+              "fixed": "1.1.4"
             }
           ],
           "database_specific": {
-            "constraint": "*"
+            "constraint": "<1.1.4"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "*"
+        "affected_versions": "<1.1.4",
+        "patched": true
       }
     }
   ],
