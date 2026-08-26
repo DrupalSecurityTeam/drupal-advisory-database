@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-115",
+  "modified": "2026-08-26T17:43:05.000Z",
+  "published": "2026-08-26T17:43:05.000Z",
+  "aliases": [
+    "CVE-2026-81205"
+  ],
+  "details": "This module enables users to authenticate using LDAP or Active Directory credentials.\n\nThe module does not sufficiently sanitize user-supplied input before incorporating it into an LDAP search filter. This allows an attacker to discover additional information they should not normally be able to.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ldap_auth"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.2.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.2.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-115"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

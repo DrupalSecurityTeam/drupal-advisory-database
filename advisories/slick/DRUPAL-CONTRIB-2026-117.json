@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-117",
+  "modified": "2026-08-26T17:45:39.000Z",
+  "published": "2026-08-26T17:45:39.000Z",
+  "aliases": [
+    "CVE-2026-81160"
+  ],
+  "details": "Slick UI, a sub-module of Slick, enables you to add Slick option sets that may contain HTML for carousel buttons.\n\nPrevious releases of the module did not sufficiently validate user input, leading to a Cross Site Scripting (XSS) vulnerability.\n\n*Note: This vulnerability was fixed in 8.x-2.1 but that was not marked as a security release at the time.*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/slick"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-117"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

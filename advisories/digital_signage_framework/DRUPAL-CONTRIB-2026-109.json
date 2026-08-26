@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-109",
+  "modified": "2026-08-26T17:38:08.000Z",
+  "published": "2026-08-26T17:38:08.000Z",
+  "aliases": [
+    "CVE-2026-81166"
+  ],
+  "details": "The Digital Signage Framework module provides a route that signage devices can call to refresh dynamic blocks on a display.\n\nThe route did not check whether the requester was a signage device, nor whether the requested block was one that the module delivers to displays. As a result, an anonymous visitor could read the rendered content of blocks they were not meant to see.\n\nThis vulnerability is mitigated by the fact that many block plugins perform their own access checks on the content they display, which limits what can be disclosed through this route.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/digital_signage_framework"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.6.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.6.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.6.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-109"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

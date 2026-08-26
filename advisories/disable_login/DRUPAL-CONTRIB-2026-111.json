@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-111",
+  "modified": "2026-08-26T17:51:10.000Z",
+  "published": "2026-08-26T17:39:32.000Z",
+  "aliases": [
+    "CVE-2026-81269"
+  ],
+  "details": "This module enables you to disable access to the `/user/login` form unless a secret key is provided.\n\nThe module does not invalidate the relevant caches when login page access restrictions are enabled. As a result, previously cached login page responses may remain accessible until caches are cleared. An attacker may continue to access the login page despite the restriction having been enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/disable_login"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.4",
+        "patched": true
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-111"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Brian Osborne (bkosborne)",
+      "contact": [
+        "https://www.drupal.org/u/bkosborne"
+      ]
+    },
+    {
+      "name": "Jason Partyka (partyka)",
+      "contact": [
+        "https://www.drupal.org/u/partyka"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-108",
+  "modified": "2026-08-26T17:37:11.000Z",
+  "published": "2026-08-26T17:37:11.000Z",
+  "aliases": [
+    "CVE-2026-81269"
+  ],
+  "details": "This module enables you to store structured data in configurable fields and expose Data Field values through JSON endpoints.\n\nThe module doesn't sufficiently check access when returning Data Field values through its JSON endpoint. This may allow anonymous users to access field values belonging to entities they cannot otherwise view, including unpublished content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/datafield"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.13"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.13"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-108"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    },
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    },
+    {
+      "name": "Steven Jones (steven jones)",
+      "contact": [
+        "https://www.drupal.org/u/steven-jones"
+      ]
+    }
+  ]
+}

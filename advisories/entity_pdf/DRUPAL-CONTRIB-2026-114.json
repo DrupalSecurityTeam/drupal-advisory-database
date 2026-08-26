@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-114",
+  "modified": "2026-08-26T17:42:20.000Z",
+  "published": "2026-08-26T17:42:20.000Z",
+  "aliases": [
+    "CVE-2026-81164"
+  ],
+  "details": "The Entity PDF module can create a PDF from any entity based on any View mode.\n\nThis module does not check entity view access when fetching a PDF route. This could result in a user accessing a PDF of an entity that they should not be able to view.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/entity_pdf"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-114"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

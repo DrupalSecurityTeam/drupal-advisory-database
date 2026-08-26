@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-110",
+  "modified": "2026-08-26T17:50:10.000Z",
+  "published": "2026-08-26T17:38:47.000Z",
+  "aliases": [
+    "CVE-2026-18260"
+  ],
+  "details": "This module enables you to disable access to the `/user/login` form unless a secret key is provided.\n\nThe module does not sufficiently restrict repeated attempts to guess that key, allowing brute-force attacks against the access-control mechanism.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/disable_login"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.4",
+        "patched": true
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-110"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
