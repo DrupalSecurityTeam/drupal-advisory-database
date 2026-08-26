@@ -22,16 +22,17 @@
               "introduced": "0"
             },
             {
-              "last_affected": "1.1.4"
+              "fixed": "1.1.4"
             }
           ],
           "database_specific": {
-            "constraint": "<= 1.1.4"
+            "constraint": "<1.1.4"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<= 1.1.4"
+        "affected_versions": "<1.1.4",
+        "patched": true
       }
     }
   ],
