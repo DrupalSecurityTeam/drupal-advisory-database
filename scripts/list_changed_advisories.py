@@ -8,7 +8,8 @@ import re
 import subprocess
 
 output = subprocess.check_output(
-  ['git', 'status', '--untracked-files', '--porcelain'], text=True
+  ['git', 'status', '--untracked-files', '--porcelain'],  # noqa: S607
+  text=True,
 )
 
 for line in output.split('\n'):
