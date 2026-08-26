@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-091",
-  "modified": "2026-07-29T17:11:14.000Z",
+  "modified": "2026-08-26T17:52:30.000Z",
   "published": "2026-07-29T17:11:14.000Z",
   "aliases": [
     "CVE-2026-18260"
   ],
-  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: [https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-mai...](https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-maintainer-of-a-project-that-is-unsupported-for-security-reasons)",
+  "details": "An advisory for this issue has been issued at <https://www.drupal.org/sa-contrib-2026-110> and an additional issue was identified and fixed via <https://www.drupal.org/sa-contrib-2026-111>\n\nThis module is now resupported. See that advisory for more details.\n\n*Original content*  \nThe security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: [https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-mai...](https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-maintainer-of-a-project-that-is-unsupported-for-security-reasons)",
   "affected": [
     {
       "package": {

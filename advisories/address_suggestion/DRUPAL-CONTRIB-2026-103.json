@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-103",
+  "modified": "2026-08-26T17:32:54.000Z",
+  "published": "2026-08-26T17:32:54.000Z",
+  "aliases": [
+    "CVE-2026-81167"
+  ],
+  "details": "The Address Suggestion module provides address autocomplete functionality using configured address providers.\n\nThe module doesn't sufficiently sanitize address suggestion data returned by configured providers, which can lead to a cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to inject malicious content into data returned by a configured address provider, and a user must perform a search that returns the malicious suggestion.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/address_suggestion"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.25"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.25"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.25"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-103"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara (cmlara)",
+      "contact": [
+        "https://www.drupal.org/u/cmlara"
+      ]
+    }
+  ]
+}

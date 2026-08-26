@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-112",
+  "modified": "2026-08-26T17:40:40.000Z",
+  "published": "2026-08-26T17:40:40.000Z",
+  "aliases": [
+    "CVE-2026-81162"
+  ],
+  "details": "The [DXPR Builder](https://www.drupal.org/project/dxpr_builder) module provides a visual / AI page builder for Drupal. The module uses a JSON Web Token for licensing, user license management, AI services, and subscription metadata.\n\nThe 2.x version of the module does not sufficiently restrict access to API credentials in JavaScript settings. When AI agent features are enabled, the token is exposed to all page visitors (including anonymous users) via `drupalSettings`.\n\nThis vulnerability is mitigated by the fact that a site must have DXPR Builder AI features enabled and configured with an API token.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/dxpr_builder"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.8.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.8.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.8.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-112"
+    }
+  ],
+  "credits": [
+    {
+      "name": "jurriaanroelofs",
+      "contact": [
+        "https://www.drupal.org/u/jurriaanroelofs"
+      ]
+    }
+  ]
+}

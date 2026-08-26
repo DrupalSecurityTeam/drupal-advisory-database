@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-105",
+  "modified": "2026-08-26T17:34:35.000Z",
+  "published": "2026-08-26T17:34:35.000Z",
+  "aliases": [
+    "CVE-2026-81168"
+  ],
+  "details": "This module enables site administrators to require CAPTCHA confirmation on specific pages.\n\nThe module does not sufficiently validate its CAPTCHA verification cookies. Under certain circumstances, an unauthenticated user or automated bot can forge the cookie and bypass CAPTCHA verification entirely.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/captcha_protected_page"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-105"
+    }
+  ],
+  "credits": [
+    {
+      "name": "lovasoa",
+      "contact": [
+        "https://www.drupal.org/u/lovasoa"
+      ]
+    }
+  ]
+}
