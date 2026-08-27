@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-110",
-  "modified": "2026-08-26T17:50:10.000Z",
+  "modified": "2026-08-27T04:24:41.000Z",
   "published": "2026-08-26T17:38:47.000Z",
   "aliases": [
     "CVE-2026-18260"
@@ -31,8 +31,7 @@
         }
       ],
       "database_specific": {
-        "affected_versions": "<1.1.4",
-        "patched": true
+        "affected_versions": "<1.1.4"
       }
     }
   ],
