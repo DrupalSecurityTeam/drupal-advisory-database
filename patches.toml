@@ -203,15 +203,3 @@ field_affected_versions = [
   '<2.1.4',
   '<2.1.5'
 ]
-
-[SA-CONTRIB-2026-110]
-field_affected_versions = [
-  '<= 1.1.4',
-  '<1.1.4'
-]
-
-[SA-CONTRIB-2026-111]
-field_affected_versions = [
-  '<= 1.1.4',
-  '<1.1.4'
-]
