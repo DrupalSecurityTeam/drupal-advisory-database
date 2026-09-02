@@ -1,10 +1,10 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-111",
-  "modified": "2026-08-27T04:25:02.000Z",
+  "modified": "2026-09-02T12:54:37.000Z",
   "published": "2026-08-26T17:39:32.000Z",
   "aliases": [
-    "CVE-2026-81269"
+    "CVE-2026-16647"
   ],
   "details": "This module enables you to disable access to the `/user/login` form unless a secret key is provided.\n\nThe module does not invalidate the relevant caches when login page access restrictions are enabled. As a result, previously cached login page responses may remain accessible until caches are cleared. An attacker may continue to access the login page despite the restriction having been enabled.",
   "affected": [

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-121",
+  "modified": "2026-09-02T16:28:20.000Z",
+  "published": "2026-09-02T16:28:20.000Z",
+  "aliases": [
+    "CVE-2026-84913"
+  ],
+  "details": "This module enables you to automatically translate entities.\n\nThe module doesn't sufficiently check access on the entity to be translated, related fields or referenced entities when performing an AI translation on an entity or when those fields / entities have a different access level than the parent entity. This permission bypass is only applicable to the translate operation - no unwarranted read or update access is granted to the affected entities",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai_translate"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.4.0"
+            },
+            {
+              "fixed": "1.4.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.4.0 <1.4.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.2 || >=1.4.0 <1.4.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-121"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

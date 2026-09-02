@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-129",
+  "modified": "2026-09-02T18:29:24.000Z",
+  "published": "2026-09-02T16:35:30.000Z",
+  "aliases": [
+    "CVE-2026-81163"
+  ],
+  "details": "A module to import media files into media library.\n\nThe import folder is a plain textfield with no validation. Point it at any directory the web user can read, and the importer copies every file whose extension matches a selected media type into the public files directory and publishes it as a Media entity. Files that were deliberately kept outside the webroot, such as a private file store, become downloadable by anonymous visitors at a predictable URL.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/media_library_importer"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-129"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

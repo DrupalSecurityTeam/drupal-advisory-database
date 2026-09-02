@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-133",
+  "modified": "2026-09-02T16:39:21.000Z",
+  "published": "2026-09-02T16:39:21.000Z",
+  "aliases": [
+    "CVE-2026-84921"
+  ],
+  "details": "This module enables you to delete Webform submissions in bulk using a specified date range.\n\nThe module doesn't sufficiently restrict access to the delete form.\n\nA [separate PHP fatal error issue](https://www.drupal.org/project/webform_submissions_delete/issues/3396717) may prevent exploitation in practice on Drupal 10+.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/webform_submissions_delete"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-133"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Bernhard Karimi (bernhardk_oww)",
+      "contact": [
+        "https://www.drupal.org/u/bernhardk_oww"
+      ]
+    }
+  ]
+}

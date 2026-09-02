@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-131",
+  "modified": "2026-09-02T16:37:37.000Z",
+  "published": "2026-09-02T16:37:37.000Z",
+  "aliases": [
+    "CVE-2026-84919"
+  ],
+  "details": "This module enables you to add dynamic caption support to PhotoSwipe image galleries.\n\nThe module doesn't sufficiently sanitize user-supplied input (such as image alt tags) in its dynamic caption script, leading to a Cross-Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role that permits them to enter HTML content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/photoswipe"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "5.0.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<5.0.9"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<5.0.9"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-131"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

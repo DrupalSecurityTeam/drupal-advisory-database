@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-132",
+  "modified": "2026-09-02T16:38:32.000Z",
+  "published": "2026-09-02T16:38:32.000Z",
+  "aliases": [
+    "CVE-2026-84920"
+  ],
+  "details": "This module creates permissions per node content type to control access to unpublished content.\n\nThe module has allowed view access for published content, overriding other access mechanisms that might have been in place.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/unpublished_node_permissions"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.8.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.8.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-132"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Erwin Eggenberger (eeg)",
+      "contact": [
+        "https://www.drupal.org/u/eeg"
+      ]
+    },
+    {
+      "name": "Jon Jordan (joncjordan)",
+      "contact": [
+        "https://www.drupal.org/u/joncjordan"
+      ]
+    }
+  ]
+}

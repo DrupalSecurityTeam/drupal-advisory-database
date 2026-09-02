@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-130",
+  "modified": "2026-09-02T16:36:28.000Z",
+  "published": "2026-09-02T16:36:28.000Z",
+  "aliases": [
+    "CVE-2026-84918"
+  ],
+  "details": "The Monobank payment API module provides integration with Monobank acquiring payments.\n\nThe module did not verify the Monobank webhook signature before processing payment status callbacks.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/monobank"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-130"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}
