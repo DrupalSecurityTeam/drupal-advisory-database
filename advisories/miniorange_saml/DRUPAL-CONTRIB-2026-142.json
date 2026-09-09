@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-142",
+  "modified": "2026-09-09T17:20:12.000Z",
+  "published": "2026-09-09T17:20:12.000Z",
+  "aliases": [
+    "CVE-2026-87944"
+  ],
+  "details": "This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.\n\nThe module does not properly validate TLS certificates when making outbound HTTPS requests.\n\nAn attacker in a position to intercept network traffic could impersonate a trusted remote service and influence communications performed by the module.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to  \nintercept or redirect network traffic originating from the site.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/miniorange_saml"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-142"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jonni Kalpio (thatguy)",
+      "contact": [
+        "https://www.drupal.org/u/thatguy"
+      ]
+    }
+  ]
+}

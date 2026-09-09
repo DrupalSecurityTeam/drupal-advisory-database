@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-151",
+  "modified": "2026-09-09T17:23:34.000Z",
+  "published": "2026-09-09T17:23:34.000Z",
+  "aliases": [
+    "CVE-2026-87953"
+  ],
+  "details": "This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.\n\nThe module does not sufficiently validate URLs obtained from identity provider metadata. An attacker with the ability to configure identity provider metadata could cause the application to make requests to unintended destinations, potentially allowing access to internal network resources.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to configure identity provider metadata.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/miniorange_saml"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-151"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Brian Willows (hsjbrianwillows)",
+      "contact": [
+        "https://www.drupal.org/u/hsjbrianwillows"
+      ]
+    }
+  ]
+}

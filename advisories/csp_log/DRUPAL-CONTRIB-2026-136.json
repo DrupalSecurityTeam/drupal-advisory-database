@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-136",
+  "modified": "2026-09-09T17:16:33.000Z",
+  "published": "2026-09-09T17:16:33.000Z",
+  "aliases": [
+    "CVE-2026-87938"
+  ],
+  "details": "The CSP Log module enhances any module that adds the CSP header to a site, by providing a reporting endpoint, custom storage, and aggregated reports that can be used to trace issues or adapt the CSP headers.\n\nThe module did not sufficiently sanitize user-supplied values used in database queries, resulting in an SQL injection vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker needs access to an account with the *Access CSP reports* permission to exploit the SQL Injection.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/csp_log"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-136"
+    }
+  ],
+  "credits": [
+    {
+      "name": "eduardo morales alberti",
+      "contact": [
+        "https://www.drupal.org/u/eduardo-morales-alberti"
+      ]
+    }
+  ]
+}
