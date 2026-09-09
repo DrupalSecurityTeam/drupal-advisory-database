@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-141",
+  "modified": "2026-09-09T17:19:43.000Z",
+  "published": "2026-09-09T17:19:43.000Z",
+  "aliases": [
+    "CVE-2026-87943"
+  ],
+  "details": "This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.\n\nThe miniorange\\_saml module does not correctly restrict access to certain functionality intended for administrative use. This could allow unauthorized users to access functionality or modify configuration values that should only be available to privileged users.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/miniorange_saml"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-141"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Brian Willows (hsjbrianwillows)",
+      "contact": [
+        "https://www.drupal.org/u/hsjbrianwillows"
+      ]
+    }
+  ]
+}

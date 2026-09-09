@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-152",
+  "modified": "2026-09-09T17:24:26.000Z",
+  "published": "2026-09-09T17:24:26.000Z",
+  "aliases": [
+    "CVE-2026-87954"
+  ],
+  "details": "This module adds automatic highlighting of taxonomy terms in content.\n\nThe module doesn't sufficiently check access on taxonomy terms. As a result, anonymous users can view any of the site's taxonomy terms at the module's JSON endpoint, including taxonomy terms that are unpublished or otherwise restricted.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/term_glossary"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-152"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Hemant Gupta (guptahemant)",
+      "contact": [
+        "https://www.drupal.org/u/guptahemant"
+      ]
+    },
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    },
+    {
+      "name": "Serhii Checheniev (serhii-che)",
+      "contact": [
+        "https://www.drupal.org/u/serhii-che"
+      ]
+    }
+  ]
+}

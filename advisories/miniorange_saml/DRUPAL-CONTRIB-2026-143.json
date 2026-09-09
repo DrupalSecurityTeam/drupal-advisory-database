@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-143",
+  "modified": "2026-09-09T17:20:35.000Z",
+  "published": "2026-09-09T17:20:35.000Z",
+  "aliases": [
+    "CVE-2026-87945"
+  ],
+  "details": "This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.\n\nThe miniorange\\_saml module does not sufficiently validate certain user-supplied URLs before performing redirects.\n\nAn attacker could cause users to be redirected to an external website after authentication. This could be used in phishing attacks or to increase the credibility of malicious links.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/miniorange_saml"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-143"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sudhanshu Dhage (sudhanshu0542)",
+      "contact": [
+        "https://www.drupal.org/u/sudhanshu0542"
+      ]
+    }
+  ]
+}
