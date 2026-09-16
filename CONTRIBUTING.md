@@ -32,6 +32,21 @@ poetry run ruff check
 poetry run ruff check --fix
 ```
 
+We also run the
+[OSV Record Linter](https://github.com/ossf/osv-schema/tree/main/tools/osv-linter)
+in CI to check advisories for common issues.
+
+This generally should not need to be something you run locally since advisories
+are not manually authored, but can be done with:
+
+```
+go run github.com/ossf/osv-schema/tools/osv-linter/cmd/osv@latest record lint advisories
+```
+
+> [!NOTE]
+>
+> You need to have Go installed to run the linter locally
+
 # Formatting
 
 We use `ruff` to format Python files, which can be run with:
