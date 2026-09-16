@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-013",
+  "modified": "2026-09-16T16:21:04.000Z",
+  "published": "2026-09-16T16:21:04.000Z",
+  "aliases": [],
+  "details": "The Drupal project uses the [CKEditor](https://github.com/ckeditor/ckeditor5) library for WYSIWYG editing. CKEditor has released [a security update that impacts Drupal](https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-rh54-vffm-5fvp).\n\nVulnerabilities are possible if Drupal is configured to use CKEditor for WYSIWYG editing. An attacker that can create or edit content (even without access to CKEditor themselves) may be able to exploit this Cross-Site Scripting (XSS) vulnerability to target users with access to the WYSIWYG CKEditor, including site admins with privileged access.\n\nFor more information, see CKEditor's security advisory:\n\n* [High-severity Cross-site scripting (XSS) in the engine package](https://github.com/ckeditor/ckeditor5/security/advisories/GHSA-rh54-vffm-5fvp)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.5.0"
+            },
+            {
+              "fixed": "10.6.17"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.5.0 <10.6.17"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.3.17"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.0.0 <11.3.17"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.4.0 <11.4.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=10.5.0 <10.6.17 || >=11.0.0 <11.3.17 || >=11.4.0 <11.4.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-013"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Piotrek Koszuli\u0144ski (Reinmar)",
+      "contact": [
+        "https://www.drupal.org/u/reinmar"
+      ]
+    }
+  ]
+}

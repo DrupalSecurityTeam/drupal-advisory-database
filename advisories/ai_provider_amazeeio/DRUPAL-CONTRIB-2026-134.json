@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-134",
-  "modified": "2026-09-09T17:14:57.000Z",
+  "modified": "2026-09-11T12:42:14.000Z",
   "published": "2026-09-09T17:14:00.000Z",
   "aliases": [
     "CVE-2026-87936"
   ],
-  "details": "This module integrates amazee.ai's AI services into Drupal, including a Postgres/pgvector vector database backend for use with Search API AI Search.\n\nThe module doesn't sufficiently sanitize filter values before using them to build SQL queries in its Postgres/pgvector backend, allowing SQL injection.\n\nThis vulnerability is mitigated by the fact that a site must be using the module's Postgres/pgvector vector database backend for a Search API AI Search index, and must expose one of that index's non-string fields as a filter (for example, through a View) that is reachable by the attacker.",
+  "details": "**Update 2026-09-11:** Increased risk score to reflect publicly documented methods for developing exploits.\n\nThis module integrates amazee.ai's AI services into Drupal, including a Postgres/pgvector vector database backend for use with Search API AI Search.\n\nThe module doesn't sufficiently sanitize filter values before using them to build SQL queries in its Postgres/pgvector backend, allowing SQL injection.\n\nThis vulnerability is mitigated by the fact that a site must be using the module's Postgres/pgvector vector database backend for a Search API AI Search index, and must expose one of that index's non-string fields as a filter (for example, through a View) that is reachable by the attacker.",
   "affected": [
     {
       "package": {
