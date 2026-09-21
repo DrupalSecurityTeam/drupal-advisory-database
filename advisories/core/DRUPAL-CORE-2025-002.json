@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CORE-2025-002",
-  "modified": "2025-03-31T21:57:22.000Z",
+  "modified": "2026-09-19T14:48:16.000Z",
   "published": "2025-02-19T16:58:10.000Z",
   "aliases": [
     "CVE-2025-31673"
