@@ -36,6 +36,18 @@ jobs:
           persist-credentials: false
       - run:
           docker run -v $PWD:/src ghcr.io/google/osv-scanner:latest scan -r src
+  lint:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        with:
+          persist-credentials: false
+      - run: |
+          go run github.com/ossf/osv-schema/tools/osv-linter/cmd/osv@latest record lint --parallel 2 advisories
+
   ruff:
     permissions:
       contents: read # to fetch code (actions/checkout)
