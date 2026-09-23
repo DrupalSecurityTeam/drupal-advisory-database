@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-188",
+  "modified": "2026-09-23T17:30:51.000Z",
+  "published": "2026-09-23T17:21:51.000Z",
+  "aliases": [
+    "CVE-2026-96377"
+  ],
+  "details": "This module enables you to combine multiple image styles into a single image derivative.\n\nThe module does not sufficiently validate image style names when generating image derivatives. Under certain circumstances, this allows anonymous users to generate image derivatives without a valid token, potentially leading to a denial of service.\n\nSites are affected simply by having the module installed, even when no combined image styles are configured or in use.\n\nThis vulnerability is mitigated by the fact that only public files can be targeted, and derivatives of private files are still protected by core's token check.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/combined_image_style"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-188"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sven Decabooter (svendecabooter)",
+      "contact": [
+        "https://www.drupal.org/u/svendecabooter"
+      ]
+    }
+  ]
+}

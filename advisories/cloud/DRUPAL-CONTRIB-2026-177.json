@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-177",
+  "modified": "2026-09-23T16:54:03.000Z",
+  "published": "2026-09-23T16:51:09.000Z",
+  "aliases": [
+    "CVE-2026-96376"
+  ],
+  "details": "The Cloud module enables users to manage cloud resources through Drupal.\n\nThe module does not sufficiently sanitize user-controlled Git branch and repository URL values before passing them to shell commands in the Kubernetes integration. This vulnerability allows an attacker to execute arbitrary operating-system commands as the web-server user.\n\nThis vulnerability is mitigated by the fact that the Kubernetes submodule must be enabled and configured, Git must be available on the server, and an attacker must have permission to add or edit cloud server templates. Exploiting the clone path additionally requires the \"launch cloud server template\" permission, or the \"launch approved cloud server template\" permission when using the approved-template flow.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/cloud"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "7.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<7.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<7.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-177"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
