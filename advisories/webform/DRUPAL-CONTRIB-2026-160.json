@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-160",
+  "modified": "2026-09-23T16:23:19.000Z",
+  "published": "2026-09-23T16:14:14.000Z",
+  "aliases": [
+    "CVE-2026-96362"
+  ],
+  "details": "The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Site builders may also configure handlers for processing submissions. Remote Post Handlers send webform data to other servers via APIs.\n\nThe module does not sufficiently filter response values from the Remote Post handler before those values are rendered through handler response tokens. If a site uses Remote Post handler response tokens in rendered output, values returned by a configured remote endpoint could be rendered as HTML, resulting in a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to control or influence the response from a configured remote endpoint, and the site must use Remote Post handler response tokens in rendered output.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.2.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.2.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.3.0"
+            },
+            {
+              "fixed": "6.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=6.3.0 <6.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.2.12 || >=6.3.0 <6.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-160"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Brian Willows (hsjbrianwillows)",
+      "contact": [
+        "https://www.drupal.org/u/hsjbrianwillows"
+      ]
+    }
+  ]
+}

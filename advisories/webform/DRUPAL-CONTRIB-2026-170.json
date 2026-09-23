@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-170",
+  "modified": "2026-09-23T16:31:59.000Z",
+  "published": "2026-09-23T16:26:17.000Z",
+  "aliases": [
+    "CVE-2026-96365"
+  ],
+  "details": "The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Site builders may also configure handlers for processing submissions. Forms may be displayed in blocks.\n\nWebform does not sufficiently validate an optional token query value before using it. Under specific configurations where a Webform is rendered for anonymous visitors, a malicious request can cause the request to consume significant resources leading to a Denial of Service.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.2.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.2.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.3.0"
+            },
+            {
+              "fixed": "6.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=6.3.0 <6.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.2.12 || >=6.3.0 <6.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-170"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Majdi Alomari (majdi)",
+      "contact": [
+        "https://www.drupal.org/u/majdi"
+      ]
+    }
+  ]
+}

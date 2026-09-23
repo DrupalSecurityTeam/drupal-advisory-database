@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-172",
+  "modified": "2026-09-23T16:26:49.000Z",
+  "published": "2026-09-23T16:26:49.000Z",
+  "aliases": [
+    "CVE-2026-96357"
+  ],
+  "details": "The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Form submissions may include uploaded files.\n\nThe module does not sufficiently force certain uploaded file types to download when served. Under certan site configurations, a file uploaded through a webform could be rendered inline by a browser, resulting in a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that a user with permission to create or edit webforms must configure the form to allow the affected file extensions, and a user must specifically open the uploaded file.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.2.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.2.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.3.0"
+            },
+            {
+              "fixed": "6.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=6.3.0 <6.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.2.12 || >=6.3.0 <6.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-172"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Maturi (michaelmaturi)",
+      "contact": [
+        "https://www.drupal.org/u/michaelmaturi"
+      ]
+    }
+  ]
+}

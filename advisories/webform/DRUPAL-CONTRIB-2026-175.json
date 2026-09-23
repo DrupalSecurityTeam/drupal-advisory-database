@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-175",
+  "modified": "2026-09-23T16:27:38.000Z",
+  "published": "2026-09-23T16:27:38.000Z",
+  "aliases": [
+    "CVE-2026-96355"
+  ],
+  "details": "The Webform module allows site builders to create forms, collect submissions, and render submitted values in configurable formats.\n\nWebform does not sufficiently exclude certain format templates from token replacement. This can allow an attacker to submit data that is evaluated as template code when a submission is rendered. Depending on the site configuration and enabled modules, this may lead to information disclosure, stored cross-site scripting, or remote code execution.\n\nThis vulnerability is mitigated by the fact that an affected webform must be configured with a custom multiple-value item format that includes submission-value tokens. Some impacts may also depend on additional enabled modules or site-specific configuration.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.2.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.2.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.3.0"
+            },
+            {
+              "fixed": "6.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=6.3.0 <6.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.2.12 || >=6.3.0 <6.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-175"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Maturi (michaelmaturi)",
+      "contact": [
+        "https://www.drupal.org/u/michaelmaturi"
+      ]
+    }
+  ]
+}

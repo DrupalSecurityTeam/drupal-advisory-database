@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-165",
+  "modified": "2026-09-23T16:37:05.000Z",
+  "published": "2026-09-23T16:17:08.000Z",
+  "aliases": [
+    "CVE-2026-96369"
+  ],
+  "details": "The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.\n\nWhen Webform is used with JSON:API enabled, submissions may be cached without varying correctly by the authenticated user. If a webform is configured so that authenticated users can view their own submissions, a request to the JSON:API webform submission collection can return a cached response generated for a different user.\n\nThis can allow an authenticated user to view another user's webform submission data through the JSON:API collection endpoint.\n\nThis vulnerability is mitigated by the fact that JSON:API must be enabled, the affected webform must expose submissions through JSON:API, and the attacker must have an account with permission to view their own submissions for the affected webform.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.2.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.2.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.3.0"
+            },
+            {
+              "fixed": "6.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=6.3.0 <6.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.2.12 || >=6.3.0 <6.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-165"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Giuseppe  (giuseppe87)",
+      "contact": [
+        "https://www.drupal.org/u/giuseppe87"
+      ]
+    }
+  ]
+}
