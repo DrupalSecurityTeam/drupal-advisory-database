@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-183",
+  "modified": "2026-09-23T17:11:27.000Z",
+  "published": "2026-09-23T17:11:27.000Z",
+  "aliases": [
+    "CVE-2026-96387"
+  ],
+  "details": "This module enables sites to block access for the administrative user account (user 1) or users with the administrator role.\n\nThe module does not sufficiently enforce these access restrictions across all supported authentication mechanisms. As a result, a blocked administrative user may still be able to authenticate through certain alternative authentication methods.\n\nThis vulnerability is mitigated by the fact that an attacker must possess valid credentials for a user with the administrator role, and must authenticate using a less commonly used authentication mechanism.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/stop_admin"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.0 <1.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=1.0 <1.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-183"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-191",
+  "modified": "2026-09-23T17:33:10.000Z",
+  "published": "2026-09-23T17:24:33.000Z",
+  "aliases": [
+    "CVE-2026-96382"
+  ],
+  "details": "The Diba Carousel Slider adds a Bootstrap carousel slider block that can be used directly without creating a View or custom integration.\n\nWhen the \"Allow HTML description\" option is enabled, slide descriptions are rendered using the raw stored field value instead of the field's rendered output. This bypasses Drupal's text format filtering and output sanitization mechanisms.\n\nThis vulnerability affects sites that use a formatted text field as the carousel description source and have enabled the \"Allow HTML description\" option.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/diba_carousel"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-191"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kalle Kipin\u00e4 (kekkis)",
+      "contact": [
+        "https://www.drupal.org/u/kekkis"
+      ]
+    }
+  ]
+}

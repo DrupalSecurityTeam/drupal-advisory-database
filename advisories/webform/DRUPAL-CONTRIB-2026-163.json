@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-163",
-  "modified": "2026-09-23T16:35:38.000Z",
+  "modified": "2026-09-23T16:46:18.000Z",
   "published": "2026-09-23T16:16:18.000Z",
   "aliases": [
     "CVE-2026-96368"
