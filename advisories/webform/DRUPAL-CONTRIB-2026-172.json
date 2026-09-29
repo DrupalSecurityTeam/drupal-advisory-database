@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-172",
-  "modified": "2026-09-23T16:47:17.000Z",
+  "modified": "2026-09-28T18:55:26.000Z",
   "published": "2026-09-23T16:26:49.000Z",
   "aliases": [
     "CVE-2026-96357"
   ],
-  "details": "The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Form submissions may include uploaded files.\n\nThe module does not sufficiently force certain uploaded file types to download when served. Under certan site configurations, a file uploaded through a webform could be rendered inline by a browser, resulting in a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that a user with permission to create or edit webforms must configure the form to allow the affected file extensions, and a user must specifically open the uploaded file.",
+  "details": "The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Form submissions may include uploaded files.\n\nThe module does not sufficiently force certain uploaded file types to download when served. Under certain site configurations, a file uploaded through a webform could be rendered inline by a browser, resulting in a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that a user with permission to create or edit webforms must configure the form to allow the affected file extensions, and a user must specifically open the uploaded file.",
   "affected": [
     {
       "package": {
