@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-209",
+  "modified": "2026-10-07T16:34:32.000Z",
+  "published": "2026-10-07T16:34:32.000Z",
+  "aliases": [
+    "CVE-2026-107306"
+  ],
+  "details": "This module enables you to add HTML attributes to menu links and their container elements (`<li>`).\n\nThe module doesn't sufficiently sanitize the attributes it applies to menu link container elements.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permissions \"*Administer menus and menu links*\" and \"*Use menu link attributes*\". In addition, an unsafe container attribute must already be configured by a user with the restricted permission \"*Administer menu link attributes*\". The default configuration is not affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/menu_link_attributes"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.8.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.8.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-209"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

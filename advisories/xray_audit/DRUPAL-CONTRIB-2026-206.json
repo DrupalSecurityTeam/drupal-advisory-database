@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-206",
+  "modified": "2026-10-07T19:50:05.000Z",
+  "published": "2026-10-07T16:30:05.000Z",
+  "aliases": [
+    "CVE-2026-96389"
+  ],
+  "details": "This module enables you to audit a Drupal site by generating reports about its content, entities, display modes and configuration.\n\nThe module doesn't sufficiently check entity access when rendering an entity through the display-mode example route. This allows an attacker to view unpublished or otherwise access-restricted content.\n\nThis vulnerability is mitigated by the fact that field-level access is still enforced, so fields that are themselves access-restricted (for example a user's email or password hash) are not disclosed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/xray_audit"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.3"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.3 || >=2.0.0 <2.0.4 || >=3.0.0 <3.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-206"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    },
+    {
+      "name": "Hemant Gupta (guptahemant)",
+      "contact": [
+        "https://www.drupal.org/u/guptahemant"
+      ]
+    },
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    },
+    {
+      "name": "eduardo morales alberti",
+      "contact": [
+        "https://www.drupal.org/u/eduardo-morales-alberti"
+      ]
+    }
+  ]
+}

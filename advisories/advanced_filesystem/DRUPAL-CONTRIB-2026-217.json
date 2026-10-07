@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-217",
+  "modified": "2026-10-07T16:58:12.000Z",
+  "published": "2026-10-07T16:58:12.000Z",
+  "aliases": [
+    "CVE-2026-107262"
+  ],
+  "details": "Advanced File System turns Drupal's file storage into a manageable, observable and maintainable subsystem.\n\nThe Advanced Filesystem: Backup submodule does not sufficiently validate certain requests. This may allow an attacker to trick an authenticated user into performing unintended actions through a Cross-Site Request Forgery (CSRF) vulnerability.\n\nThe vulnerability is mitigated by the fact that `advanced_filesystem_backup` module must be enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/advanced_filesystem"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.28"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.28"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.28"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-217"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

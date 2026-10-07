@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-194",
+  "modified": "2026-10-07T16:16:05.000Z",
+  "published": "2026-10-07T16:16:05.000Z",
+  "aliases": [
+    "CVE-2026-107251"
+  ],
+  "details": "Entity Reference Manager is an advanced administrative module for Drupal that allows site administrators to identify, analyze, and replace entity references across the system.\n\nThe module does not sufficiently restrict access to all entity management operations. Users who can view content can access the entity merge functionality and delete arbitrary nodes, taxonomy terms, or media entities.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/entity_reference_manager"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-194"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Joshua Sedler (grevil)",
+      "contact": [
+        "https://www.drupal.org/u/grevil"
+      ]
+    }
+  ]
+}

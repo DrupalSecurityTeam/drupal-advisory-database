@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-215",
+  "modified": "2026-10-07T17:14:03.000Z",
+  "published": "2026-10-07T16:39:53.000Z",
+  "aliases": [
+    "CVE-2026-107312"
+  ],
+  "details": "The Examples for Developers project aims to provide high-quality, well-documented API examples for a broad range of Drupal core functionality.\n\nThe \"Email Example\" feature implemented by the email\\_example submodule can be used to send illegitimate emails to arbitrary email addresses.\n\nTherefore, the email\\_example sub-module is being removed from Examples for Developers until a version demonstrating security best practices can be added back in the future. Developers who based a new module on this example should review their code.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/examples"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.0.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.0.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.0.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-215"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Alberto Paderno (avpaderno)",
+      "contact": [
+        "https://www.drupal.org/u/avpaderno"
+      ]
+    }
+  ]
+}
