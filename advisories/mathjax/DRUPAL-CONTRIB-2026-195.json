@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-195",
+  "modified": "2026-10-07T16:16:31.000Z",
+  "published": "2026-10-07T16:16:31.000Z",
+  "aliases": [
+    "CVE-2026-107252"
+  ],
+  "details": "This module integrates the MathJax library into your Drupal site. MathJax is the modern JavaScript-based LaTeX rendering solution for the Internet.\n\nThe module ships with library configurations that do not escape JavaScript within the TeX it formats.\n\n**Notice:** This release updates CDN URLs where possible and adds a system status warning for unsafe configurations. If you are unable to upgrade immediately, you can modify either the CDN URL or the custom MathJax JavaScript configuration according to the instructions in [MathJax Safe-mode](https://docs.mathjax.org/en/v2.7/safe-mode.html).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/mathjax"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-195"
+    }
+  ],
+  "credits": [
+    {
+      "name": "cilefen  (cilefen)",
+      "contact": [
+        "https://www.drupal.org/u/cilefen"
+      ]
+    }
+  ]
+}

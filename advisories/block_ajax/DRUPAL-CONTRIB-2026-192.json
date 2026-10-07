@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-192",
+  "modified": "2026-10-07T16:14:51.000Z",
+  "published": "2026-10-07T16:14:51.000Z",
+  "aliases": [
+    "CVE-2026-107249"
+  ],
+  "details": "The Block AJAX module enables you to load blocks asynchronously via Ajax.\n\nThe module doesn't sufficiently validate user-supplied data which is used to construct a block. In the worst case scenario, this can lead to PHP Object Injection and Remote Code Execution.\n\nThe vulnerability is mitigated by the fact that it only affects sites that have Layout Builder enabled (or another block plugin that handles the data this module passes to it in a potentially unsafe way).\n\nPlease see the release notes for details of potentially breaking changes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/block_ajax"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-192"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

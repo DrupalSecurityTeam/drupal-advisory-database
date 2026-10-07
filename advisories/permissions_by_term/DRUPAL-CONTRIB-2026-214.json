@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-214",
+  "modified": "2026-10-07T19:46:34.000Z",
+  "published": "2026-10-07T16:39:13.000Z",
+  "aliases": [
+    "CVE-2026-107311"
+  ],
+  "details": "This module enables you to restrict view access to single nodes via taxonomy terms.\n\nThe module doesn't sufficiently check access rights when in \"Permission mode\" and a node referencing a deleted taxonomy term is accessed via JSON:API.\n\nThis vulnerability is mitigated by the fact that it requires a specific module configuration, references to a deleted term, and access via JSON:API to be present.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/permissions_by_term"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.41"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.41"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.41"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-214"
+    }
+  ],
+  "credits": [
+    {
+      "name": "ayrmax",
+      "contact": [
+        "https://www.drupal.org/u/ayrmax"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-212",
+  "modified": "2026-10-07T16:37:06.000Z",
+  "published": "2026-10-07T16:37:06.000Z",
+  "aliases": [
+    "CVE-2026-107309"
+  ],
+  "details": "This module enables you to show a breadcrumb trail for taxonomy term hierarchies.\n\nThe module doesn't sufficiently check for view access of parent terms before rendering the crumb segment.\n\nThis vulnerability is mitigated by the fact that the setting \"Add parent hierarchy\" (term\\_hierarchy) must be enabled, and at least one term has a term in the parent hierarchy that is unpublished.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/easy_breadcrumb"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.11"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.11"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-212"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

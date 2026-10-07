@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-199",
+  "modified": "2026-10-07T16:22:57.000Z",
+  "published": "2026-10-07T16:22:57.000Z",
+  "aliases": [
+    "CVE-2026-107258"
+  ],
+  "details": "This module renders entity add/edit forms inside an AJAX dialog for use with entity reference fields.\n\nThis module relies only on the \"access administration pages\" permission, without checking whether the current user had create or update access to the entity itself.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access administration pages\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/inline_entity_form_dialog"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-199"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

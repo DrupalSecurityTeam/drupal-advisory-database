@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-200",
+  "modified": "2026-10-07T16:23:38.000Z",
+  "published": "2026-10-07T16:23:38.000Z",
+  "aliases": [
+    "CVE-2026-107259"
+  ],
+  "details": "This module enables you to link the output of a field to a URL or to the value of another field.\n\nThe module doesn't sufficiently separate field content from template code when rendering linked field output. Depending on the Twig extensions installed on the site, this can be used to expose site configuration values, which may include sensitive information such as API keys or credentials.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to create or edit content in a field that has Linked Field enabled in its display settings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/linked_field"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.8.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.8.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-200"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Maksim Hayder (tr_jan)",
+      "contact": [
+        "https://www.drupal.org/u/tr_jan"
+      ]
+    }
+  ]
+}

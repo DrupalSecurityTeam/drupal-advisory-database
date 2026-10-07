@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-216",
+  "modified": "2026-10-07T16:55:41.000Z",
+  "published": "2026-10-07T16:55:41.000Z",
+  "aliases": [
+    "CVE-2026-107255"
+  ],
+  "details": "This module enables you to restrict access to routes by IP address.\n\nThe module doesn't reliably restrict a subset of dynamic routes, leading to an access bypass vulnerability. The impact depends on how a site uses this module and whether it has any routes that are dynamic.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/restrict_route_by_ip"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.1 || >=2.0.0 <2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-216"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Elia Wehbe (ewehbe)",
+      "contact": [
+        "https://www.drupal.org/u/ewehbe"
+      ]
+    }
+  ]
+}
