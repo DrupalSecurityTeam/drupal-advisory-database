@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-014",
+  "modified": "2026-10-14T16:08:43.000Z",
+  "published": "2026-10-14T16:10:00.000Z",
+  "aliases": [
+    "CVE-2026-108097"
+  ],
+  "details": "A remote code execution vulnerability exists within the Field UI module in Drupal core.\n\nThe vulnerability is not directly exploitable with core alone, but multiple serious exploit paths exist with contributed modules. At least one known exploit path does not require authentication. Custom code may also expose the vulnerable functionality.\n\nThe vulnerability can be mitigated by uninstalling the core Field UI module (`field_ui`), which will provide protection while sites are updated.\n\n#### Drupal Steward protection:\n\nThis issue is being protected by [Drupal Steward](https://www.drupal.org/steward). Sites that use Drupal Steward are already protected from some known attack vectors, but the protection offered will not cover all possible exploits. Sites should upgrade in the near future in case additional attack vectors are discovered.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "10.6.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.9.0 < 10.6.19"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.3.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.3.19"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.4.0 < 11.4.10"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12.0.0-alpha1"
+            },
+            {
+              "fixed": "12.0.0-beta2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 12.0.0-alpha1 < 12.0.0-beta2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.9.0 < 10.6.19 || >= 11.0.0 < 11.3.19 || >= 11.4.0 < 11.4.10 || >= 12.0.0-alpha1 < 12.0.0-beta2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    },
+    {
+      "name": "Octavio Galland (ogalland-tob)",
+      "contact": [
+        "https://www.drupal.org/u/ogalland-tob"
+      ]
+    }
+  ]
+}
