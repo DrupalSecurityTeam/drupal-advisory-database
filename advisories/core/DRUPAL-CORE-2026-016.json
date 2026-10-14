@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-016",
+  "modified": "2026-10-14T17:25:38.000Z",
+  "published": "2026-10-14T17:25:38.000Z",
+  "aliases": [
+    "CVE-2026-108514"
+  ],
+  "details": "The Navigation module doesn't sufficiently sanitize certain attributes, which can lead to a cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to enter HTML tags containing specific data attributes, or the `administer menu` permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.3.0"
+            },
+            {
+              "fixed": "10.6.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.3.0 < 10.6.19"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.3.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.3.19"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.4.0 < 11.4.10"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12.0.0-alpha1"
+            },
+            {
+              "fixed": "12.0.0-beta2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 12.0.0-alpha1 < 12.0.0-beta2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 10.3.0 < 10.6.19 || >= 11.0.0 < 11.3.19 || >= 11.4.0 < 11.4.10 || >= 12.0.0-alpha1 < 12.0.0-beta2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Eric Tee (erictee2802)",
+      "contact": [
+        "https://www.drupal.org/u/erictee2802"
+      ]
+    },
+    {
+      "name": "haii haii (hai27ii2o)",
+      "contact": [
+        "https://www.drupal.org/u/hai27ii2o"
+      ]
+    }
+  ]
+}
