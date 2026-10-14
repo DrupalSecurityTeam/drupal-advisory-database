@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CORE-2026-015",
-  "modified": "2026-10-14T17:25:19.000Z",
+  "modified": "2026-10-14T17:40:25.000Z",
   "published": "2026-10-14T17:25:19.000Z",
   "aliases": [
     "CVE-2026-108515"
