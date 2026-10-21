@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-252",
+  "modified": "2026-10-21T18:12:28.000Z",
+  "published": "2026-10-21T18:12:28.000Z",
+  "aliases": [
+    "CVE-2026-114571"
+  ],
+  "details": "Rabbit Hole lets site builders control what happens when an entity's page is viewed: show it, return an access denied or not found response, or redirect the visitor to another URL.\n\nThe module has two vulnerabilities.\n\nRabbit Hole behavior can be skipped with a specific query parameter. In these cases, an affected entity made Rabbit Hole treat the request as an error page and do nothing. An anonymous visitor could view content a site had configured to return an access denied or not found response, or avoid a configured redirect.\n\nThe per-entity settings are stored in fields that the module adds to supported entity types. The module only checks the \"Administer Rabbit Hole settings for `<entity type>`\" permission when it decides whether to show those settings on the entity edit form. The fields themselves carry no access control, so Drupal's default field access applies and anyone who can edit the entity can also edit these fields.\n\nThe first vulnerability affects every site that relies on Rabbit Hole to deny access to or hide entities. The second is mitigated by the fact that an attacker must have a role with permission to edit the affected entities, and the site must expose a write path that bypasses the entity form, such as JSON:API with writes enabled, REST, or Views Bulk Operations.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/rabbit_hole"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-252"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

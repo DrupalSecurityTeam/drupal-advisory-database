@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-248",
+  "modified": "2026-10-21T18:07:51.000Z",
+  "published": "2026-10-21T18:07:51.000Z",
+  "aliases": [
+    "CVE-2026-107256"
+  ],
+  "details": "The Shield module enables you to protect a site behind an HTTP basic authentication prompt, so that an unfinished or non-public site cannot be viewed, crawled or indexed by anonymous visitors.\n\nThe module doesn't sufficiently limit the number of authentication attempts it will evaluate under the scenario where an anonymous visitor repeatedly submits basic authentication credentials.\n\nThis vulnerability is mitigated by the fact that the configured Shield credentials must be guessable \u2014 a long, randomly generated password is not practically brute forceable \u2014 and by the fact that Shield is intended as a supplementary barrier in front of a site rather than the site's user access control systems.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/shield"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.9.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.9.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.9.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-248"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

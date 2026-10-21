@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-250",
+  "modified": "2026-10-21T18:09:53.000Z",
+  "published": "2026-10-21T18:09:53.000Z",
+  "aliases": [
+    "CVE-2026-114555"
+  ],
+  "details": "Data Field allows you to create custom fields with multiple values under the default table form.\n\nThe `file_uri` formatter does not properly escape filenames when rendering links to uploaded files.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to upload files into a Data Field file subfield.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/datafield"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.14"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.14"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-250"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
