@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-231",
+  "modified": "2026-10-21T17:45:29.000Z",
+  "published": "2026-10-21T17:45:29.000Z",
+  "aliases": [
+    "CVE-2026-114533"
+  ],
+  "details": "This theme provides a front-end design for transparency and open-government sites, including a table preview of CSV files attached to content.\n\nThe theme doesn't sufficiently check file access when it renders that preview. It reads the file directly, so a visitor who may view the content, but whose download of the file is refused, can still read the file's contents on the page. A preview rendered for one visitor can also be cached and shown to another.\n\nThis vulnerability is mitigated by the fact that the site must store the CSV files outside the public file system, and must restrict their download beyond access to the content itself with an additional module or custom code. Files in the public file system are not affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/agora_theme"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-231"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andr\u00e9s Moreno Rubio (andresmoreno28)",
+      "contact": [
+        "https://www.drupal.org/u/andresmoreno28"
+      ]
+    }
+  ]
+}

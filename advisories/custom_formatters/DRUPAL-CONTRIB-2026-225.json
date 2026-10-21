@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-225",
+  "modified": "2026-10-21T17:39:16.000Z",
+  "published": "2026-10-21T17:39:16.000Z",
+  "aliases": [
+    "CVE-2026-114524"
+  ],
+  "details": "The Custom Formatters module allows users to easily create custom Field Formatters through an admin UI without writing a custom module.\n\nThe PHP formatter engine runs eval() to execute user-provided PHP code and allows arbitrary PHP execution on the site. The permissions UI gives no indication about this behavior.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/custom_formatters"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.2.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.2.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.2.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-225"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

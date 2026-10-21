@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-227",
+  "modified": "2026-10-21T17:40:37.000Z",
+  "published": "2026-10-21T17:40:37.000Z",
+  "aliases": [
+    "CVE-2026-114530"
+  ],
+  "details": "The Dopup module provides functionality for selecting and working with Webforms.\n\nThe module does not perform sufficient entity access checking in some cases and may expose the title of private Webforms.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/dopup"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.7"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-227"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    },
+    {
+      "name": "Rodel Duterte (rduterte)",
+      "contact": [
+        "https://www.drupal.org/u/rduterte"
+      ]
+    }
+  ]
+}

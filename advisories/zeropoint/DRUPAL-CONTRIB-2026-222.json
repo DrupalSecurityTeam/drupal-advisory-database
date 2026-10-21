@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-222",
+  "modified": "2026-10-21T17:37:23.000Z",
+  "published": "2026-10-21T17:37:23.000Z",
+  "aliases": [
+    "CVE-2026-114528"
+  ],
+  "details": "The ZeroPoint theme provides configurable layouts and visual styling for Drupal websites, including support for Font Awesome icons in navigation menus.\n\nThe theme does not sufficiently sanitize menu link titles before inserting them into HTML class attributes.\n\nThis vulnerability is mitigated by the requirement that the attacker must be able to create or modify menu link titles, either through menu administration or through content menu settings where permitted.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/zeropoint"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.30.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.30.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.30.0 || >=2.0.0 <2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-222"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

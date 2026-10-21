@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-243",
+  "modified": "2026-10-21T17:56:34.000Z",
+  "published": "2026-10-21T17:56:34.000Z",
+  "aliases": [
+    "CVE-2026-114544"
+  ],
+  "details": "This module enables users to upload files and create media items in bulk.\n\nThe module doesn't sufficiently check user permission to create specific media types if the bulk upload form is configured for that media type.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"bulk upload form\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/media_bulk_upload"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-243"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Stuart Rowlands (stooit)",
+      "contact": [
+        "https://www.drupal.org/u/stooit"
+      ]
+    }
+  ]
+}

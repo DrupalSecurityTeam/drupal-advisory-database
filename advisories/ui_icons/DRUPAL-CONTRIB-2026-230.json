@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-230",
+  "modified": "2026-10-21T17:44:58.000Z",
+  "published": "2026-10-21T17:44:58.000Z",
+  "aliases": [
+    "CVE-2026-114532"
+  ],
+  "details": "This module provides a user interface to select and configure icons, including a CKEditor 5 button and widget that embed an icon in formatted text.\n\nUnder uncommon situations, the CKEditor 5 widget displays admin-controlled text with appropriate filtering leading to a Cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have access to edit content with a text format that allows the UI Icons CKEditor 5 button.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ui_icons"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.3"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.3 || >=2.0.0 <2.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-230"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jean Valverde (mogtofu33)",
+      "contact": [
+        "https://www.drupal.org/u/mogtofu33"
+      ]
+    }
+  ]
+}
