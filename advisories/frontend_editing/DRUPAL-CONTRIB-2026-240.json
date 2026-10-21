@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-240",
+  "modified": "2026-10-21T17:53:08.000Z",
+  "published": "2026-10-21T17:53:08.000Z",
+  "aliases": [
+    "CVE-2026-114541"
+  ],
+  "details": "This module enables editors to edit content, including paragraphs, directly on the rendered page.\n\nThe module doesn't sufficiently protect the routes used to delete and reorder paragraphs against Cross-Site Request Forgery (CSRF). An attacker could trick an editor into visiting a crafted link, which deletes or reorders paragraphs on a node using the editor's permissions.\n\nThis vulnerability is mitigated by the fact that the victim must be logged in with permission to edit the content and to delete or move paragraphs.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/frontend_editing"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.9.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.9.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.9.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-240"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Artem Dmitriiev (a.dmitriiev)",
+      "contact": [
+        "https://www.drupal.org/u/admitriiev"
+      ]
+    }
+  ]
+}

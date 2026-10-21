@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-228",
+  "modified": "2026-10-21T17:42:01.000Z",
+  "published": "2026-10-21T17:42:01.000Z",
+  "aliases": [
+    "CVE-2026-114531"
+  ],
+  "details": "The module provides integration with third party JS library SwiperJs.\n\nUser-entered text is used as part of the slide without appropriate filtering leading to a cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker would need a role with permission to edit the caption.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/swiper_formatter"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.2 || >=3.0.0 <3.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-228"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    },
+    {
+      "name": "Joshua Sedler (grevil)",
+      "contact": [
+        "https://www.drupal.org/u/grevil"
+      ]
+    },
+    {
+      "name": "Julian Pustkuchen (anybody)",
+      "contact": [
+        "https://www.drupal.org/u/anybody"
+      ]
+    }
+  ]
+}

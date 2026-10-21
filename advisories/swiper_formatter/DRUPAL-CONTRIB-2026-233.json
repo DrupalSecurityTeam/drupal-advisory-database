@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-233",
+  "modified": "2026-10-21T17:46:29.000Z",
+  "published": "2026-10-21T17:46:29.000Z",
+  "aliases": [
+    "CVE-2026-114535"
+  ],
+  "details": "Swiper is mobile first, layout and gestures wise, it provides great amount of options for designing your own widget and related events.\n\nThis module provides a route for displaying published content entities in a dialog. The route does not sufficiently verify the current user's access to the specific entity.\n\nThis vulnerability is mitigated by the fact that only rendered output is returned, and field-level access controls are still enforced.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/swiper_formatter"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.2 || >=3.0.0 <3.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-233"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Joshua Sedler (grevil)",
+      "contact": [
+        "https://www.drupal.org/u/grevil"
+      ]
+    },
+    {
+      "name": "Julian Pustkuchen (anybody)",
+      "contact": [
+        "https://www.drupal.org/u/anybody"
+      ]
+    },
+    {
+      "name": "Ryan Solomon (phizes)",
+      "contact": [
+        "https://www.drupal.org/u/phizes"
+      ]
+    }
+  ]
+}
