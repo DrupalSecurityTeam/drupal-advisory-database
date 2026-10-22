@@ -1,9 +1,11 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-238",
-  "modified": "2026-10-21T17:50:53.000Z",
+  "modified": "2026-10-22T21:43:25.000Z",
   "published": "2026-10-21T17:50:53.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2026-114540"
+  ],
   "details": "This module enables you to share users, content and configuration across a group of domains from a single Drupal installation. Its Domain Access submodule controls which domains a user may edit content on, and has an optional setting to grant user access per content type.\n\nThe module doesn't sufficiently check which domains a user is assigned to when the per-content-type grant setting is enabled.\n\nThis vulnerability is mitigated by the fact that the per-content-type grants setting must be enabled (it is off by default), and an attacker must have a role with the permission \"Edit any content on assigned domains\" or \"Delete any content on assigned domains\" together with a per-content-type permission such as \"Article: Edit any content on assigned domains\", and must be assigned to at least one domain.",
   "affected": [
     {
@@ -17,19 +19,19 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "3.0.0"
             },
             {
               "fixed": "3.0.2"
             }
           ],
           "database_specific": {
-            "constraint": "<3.0.2"
+            "constraint": ">=3.0.0 <3.0.2"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<3.0.2"
+        "affected_versions": ">=3.0.0 <3.0.2"
       }
     }
   ],
