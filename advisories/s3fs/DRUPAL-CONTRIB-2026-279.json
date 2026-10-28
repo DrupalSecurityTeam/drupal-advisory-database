@@ -1,12 +1,12 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-279",
-  "modified": "2026-10-28T17:33:39.000Z",
+  "modified": "2026-10-28T20:17:00.000Z",
   "published": "2026-10-28T17:33:39.000Z",
   "aliases": [
     "CVE-2026-118574"
   ],
-  "details": "S3 File System (s3fs) provides an additional file system to your Drupal site that stores files in Amazon's Simple Storage Service (S3) storage.\n\nThe module doesn't sufficiently isolate upload context between separate object(file) operations in the same request resulting in the potential for objects to be uploaded with incorrect access control list (ACL) entries or corruption through incorrect operation metadata.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to trigger multiple file operations on S3FS.\n\nSome vectors are mitigated by:\n\n* Not enabling private:// takeover (`$settings['s3fs.use_s3_for_private'] = TRUE;`) or only enabled with `$settings['s3fs.upload_as_private'] = TRUE;`\n* The deployment does not utilize `hook_s3fs_stream_open_params_alter()`, `hook_s3fs_upload_params_alter()`, `hook_s3fs_copy_params_alter()`, or `hook_s3fs_command_params_alter()`\n\nIf both points above have always been true, all currently known vectors are mitigated.",
+  "details": "S3 File System (s3fs) provides an additional file system to your Drupal site that stores files in Amazon's Simple Storage Service (S3) storage.\n\nThe module doesn't sufficiently isolate upload context between separate object(file) operations in the same request resulting in the potential for objects to be uploaded with incorrect access control list (ACL) entries or corruption through incorrect operation metadata.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to trigger multiple file operations on S3FS.\n\nSome vectors are mitigated by:\n\n* Not enabling private:// takeover (`$settings['s3fs.use_s3_for_private'] = FALSE;`) or only enabled with `$settings['s3fs.upload_as_private'] = TRUE;`\n* The deployment does not utilize `hook_s3fs_stream_open_params_alter()`, `hook_s3fs_upload_params_alter()`, `hook_s3fs_copy_params_alter()`, or `hook_s3fs_command_params_alter()`\n\nIf both points above have always been true, all currently known vectors are mitigated.",
   "affected": [
     {
       "package": {
@@ -42,6 +42,12 @@
     }
   ],
   "credits": [
+    {
+      "name": "Benjamin Wheeler (bennybobw)",
+      "contact": [
+        "https://www.drupal.org/u/bennybobw"
+      ]
+    },
     {
       "name": "Justin Keiser (keiserjb)",
       "contact": [
