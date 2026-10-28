@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-283",
+  "modified": "2026-10-28T17:34:41.000Z",
+  "published": "2026-10-28T17:28:08.000Z",
+  "aliases": [
+    "CVE-2026-118570"
+  ],
+  "details": "This module enables you to quickly toggle the publication status, promotion and stickiness of nodes, and the publication status of comments, from links on the page.\n\nThe module doesn't sufficiently protect against cross-site request forgery (CSRF) on its toggle URL, under the scenario where a user with the \"Use Fasttoggle\" permission visits a page controlled by an attacker while logged in. This allows the attacker to change the publication status of arbitrary content on behalf of that user.\n\nThis vulnerability is mitigated by the fact that an attacker must trick a user with the permission \"Use Fasttoggle\" into visiting an attacker-controlled page.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/fasttoggle"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-283"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Nam Nguyen Le Thanh (yuwkaa)",
+      "contact": [
+        "https://www.drupal.org/u/yuwkaa"
+      ]
+    }
+  ]
+}

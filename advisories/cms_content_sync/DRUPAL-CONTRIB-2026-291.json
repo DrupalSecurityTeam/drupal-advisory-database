@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-291",
+  "modified": "2026-10-28T17:49:49.000Z",
+  "published": "2026-10-28T17:49:49.000Z",
+  "aliases": [
+    "CVE-2026-118568"
+  ],
+  "details": "This module enables you to share and reuse content across websites.\n\nThe module did not sufficiently encrypt the password of the system user used when synchronizing content. This can potentially allow unprivileged users to view the password.\n\nThis vulnerability is mitigated by the fact that an attacker must have access to a database dump or database read access to the user data table. This vulnerability is not exploitable without prior database access.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/cms_content_sync"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-291"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kalle Kipin\u00e4 (kekkis)",
+      "contact": [
+        "https://www.drupal.org/u/kekkis"
+      ]
+    }
+  ]
+}

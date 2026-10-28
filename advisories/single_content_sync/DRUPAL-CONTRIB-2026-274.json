@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-274",
+  "modified": "2026-10-28T17:17:30.000Z",
+  "published": "2026-10-28T17:17:30.000Z",
+  "aliases": [
+    "CVE-2026-118561"
+  ],
+  "details": "Single Content Sync enables exporting and importing content, referenced entities, and files between Drupal sites.\n\nThe module does not sufficiently validate file sources and destinations during content imports. An attacker can write arbitrary files, disclose sensitive local files accessible to the web server, or cause the server to make requests to internal or external resources. Depending on the server configuration, this may lead to remote code execution.\n\nExploitation requires the *import single content* permission. This permission is marked as restricted starting with version 1.4.18. Remote code execution additionally depends on the server permitting execution of attacker-controlled files.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/single_content_sync"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.19"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.19"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-274"
+    }
+  ],
+  "credits": [
+    {
+      "name": "K\u00e9vin Le lostec (klelostec)",
+      "contact": [
+        "https://www.drupal.org/u/klelostec"
+      ]
+    },
+    {
+      "name": "jvdkolk",
+      "contact": [
+        "https://www.drupal.org/u/jvdkolk"
+      ]
+    },
+    {
+      "name": "killianacc",
+      "contact": [
+        "https://www.drupal.org/u/killianacc"
+      ]
+    },
+    {
+      "name": "nicocha30",
+      "contact": [
+        "https://www.drupal.org/u/nicocha30"
+      ]
+    }
+  ]
+}

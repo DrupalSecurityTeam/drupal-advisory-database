@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-273",
+  "modified": "2026-10-28T17:10:21.000Z",
+  "published": "2026-10-28T17:10:21.000Z",
+  "aliases": [
+    "CVE-2026-118553"
+  ],
+  "details": "The AI module includes a submodule, AI Automator. This submodule allows you to automatically fill out fields using AI, based on other fields.\n\nThe module doesn't sufficiently check access to text formats, allowing users to author field data in text formats they should not have access to.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.0"
+            },
+            {
+              "fixed": "1.5.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.5.0 <1.5.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.11 || >=1.5.0 <1.5.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-273"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

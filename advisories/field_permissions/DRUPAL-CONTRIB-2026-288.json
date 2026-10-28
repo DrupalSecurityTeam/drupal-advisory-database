@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-288",
+  "modified": "2026-10-28T17:41:52.000Z",
+  "published": "2026-10-28T17:41:52.000Z",
+  "aliases": [
+    "CVE-2026-118583"
+  ],
+  "details": "This module enables you to set field-level permissions to create, update or view individual fields.\n\nThe module does not sufficiently verify administrative privileges when checking access to protected fields, potentially allowing users with a role named `administrator` to bypass field-level access restrictions and gain unauthorized view and edit access to protected fields.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the machine name `administrator` that is not flagged as the site's administrator role. Sites that use Drupal's default administrator role configuration are not affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/field_permissions"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-288"
+    }
+  ],
+  "credits": [
+    {
+      "name": "narbehm",
+      "contact": [
+        "https://www.drupal.org/u/narbehm"
+      ]
+    }
+  ]
+}

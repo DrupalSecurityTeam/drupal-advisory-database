@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-258",
+  "modified": "2026-10-28T16:55:58.000Z",
+  "published": "2026-10-28T16:55:58.000Z",
+  "aliases": [
+    "CVE-2026-118543"
+  ],
+  "details": "This module enables you to sell goods and services to customers through a shopping cart and checkout form. It shows an inbox on the Commerce dashboard with announcements from the Drupal Commerce project, including notices about security updates.\n\nRoutes for the inbox do not check for a CSRF token. As a result, an attacker can trick a user with the \"access commerce administration pages\" permission into visiting a crafted page that will dismiss notifications for the messages. The inbox is also shared by all users, so if one commerce administrator is tricked, this hides the messages from every administrator, including notices that a security update is available.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/commerce"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.41.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.41.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.3.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.3.13"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.41.0 || >=3.0.0 <3.3.13"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-258"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ivo  Van Geertruyen (mr.baileys)",
+      "contact": [
+        "https://www.drupal.org/u/mrbaileys"
+      ]
+    },
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

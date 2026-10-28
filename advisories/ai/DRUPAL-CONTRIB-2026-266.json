@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-266",
+  "modified": "2026-10-28T17:08:44.000Z",
+  "published": "2026-10-28T17:08:44.000Z",
+  "aliases": [
+    "CVE-2026-118545"
+  ],
+  "details": "This module enables you to use AI on the website.\n\nThe module does not sufficiently restrict HTML rendering, allowing cross-site scripting (XSS) under certain conditions.\n\nThis vulnerability is mitigated by the fact that an attacker must have access to a text format that can render HTML.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.0"
+            },
+            {
+              "fixed": "1.5.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.5.0 <1.5.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.11 || >=1.5.0 <1.5.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-266"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}
