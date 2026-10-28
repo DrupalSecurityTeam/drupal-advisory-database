@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-242",
-  "modified": "2026-10-21T17:54:41.000Z",
+  "modified": "2026-10-22T21:34:41.000Z",
   "published": "2026-10-21T17:54:41.000Z",
   "aliases": [
     "CVE-2026-114542"
@@ -58,6 +58,12 @@
       "name": "Mingsong  (mingsong)",
       "contact": [
         "https://www.drupal.org/u/mingsong"
+      ]
+    },
+    {
+      "name": "Stephan Huber (stmh)",
+      "contact": [
+        "https://www.drupal.org/u/stmh"
       ]
     },
     {
