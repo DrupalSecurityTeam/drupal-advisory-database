@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-269",
+  "modified": "2026-10-28T17:46:55.000Z",
+  "published": "2026-10-28T17:09:41.000Z",
+  "aliases": [
+    "CVE-2026-118549"
+  ],
+  "details": "This AI module enables you to interact with AI providers. It has a service that helps any consumer of the module to stop cross site scripting elements from appearing.\n\nThe module does not sufficiently validate Markdown links under certain conditions, potentially allowing cross-site scripting (XSS).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.0"
+            },
+            {
+              "fixed": "1.5.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.5.0 <1.5.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.11 || >=1.5.0 <1.5.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-269"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

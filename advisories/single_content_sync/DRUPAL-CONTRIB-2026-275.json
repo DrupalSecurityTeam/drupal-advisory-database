@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-275",
+  "modified": "2026-10-28T17:17:38.000Z",
+  "published": "2026-10-28T17:17:38.000Z",
+  "aliases": [
+    "CVE-2026-118562"
+  ],
+  "details": "Single Content Sync enables exporting and importing content, referenced entities, and files between Drupal sites.\n\nA maliciously crafted import file can cause untrusted data to be deserialized, potentially leading to remote code execution.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the \"import single content\" permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/single_content_sync"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.19"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.19"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-275"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}

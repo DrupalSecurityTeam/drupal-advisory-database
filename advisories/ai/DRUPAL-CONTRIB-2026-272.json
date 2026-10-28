@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-272",
+  "modified": "2026-10-28T17:10:11.000Z",
+  "published": "2026-10-28T17:10:11.000Z",
+  "aliases": [
+    "CVE-2026-118552"
+  ],
+  "details": "This module provides a framework for integrating AI providers and features into Drupal.\n\nThe module doesn't sufficiently sanitize certain HTMX attributes, which can lead to a cross-site scripting (XSS) vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.5.0"
+            },
+            {
+              "fixed": "1.5.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.5.0 <1.5.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.11 || >=1.5.0 <1.5.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-272"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

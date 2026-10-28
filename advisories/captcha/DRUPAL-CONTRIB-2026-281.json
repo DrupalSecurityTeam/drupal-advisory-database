@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-281",
+  "modified": "2026-10-28T17:36:20.000Z",
+  "published": "2026-10-28T17:27:47.000Z",
+  "aliases": [
+    "CVE-2026-118582"
+  ],
+  "details": "The CAPTCHA module places a configurable challenge on forms to block automated submissions. To skip the challenge on later steps of the same multi-step form, the module remembers that a CAPTCHA session has been solved.\n\nThe module does not fully invalidate a solved CAPTCHA session. As a result, a protected form that was already submitted once can be submitted again without solving a new CAPTCHA. This weakens the protection the module provides against automated submissions such as spam registrations, comment spam, and login brute-forcing.\n\nThis is a follow-up to the earlier CAPTCHA replay fix ([SA-CONTRIB-2026-015](https://www.drupal.org/sa-contrib-2026-015) / CVE-2026-3214), which closed one replay path but left this one open.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/captcha"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.18.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.18.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.11"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.18.0 || >=2.0.0 <2.0.11"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-281"
+    }
+  ],
+  "credits": [
+    {
+      "name": "James Gilliland (neclimdul)",
+      "contact": [
+        "https://www.drupal.org/u/neclimdul"
+      ]
+    },
+    {
+      "name": "Rodrigo Cabo (rodrigo-cabo)",
+      "contact": [
+        "https://www.drupal.org/u/rodrigo-cabo"
+      ]
+    }
+  ]
+}

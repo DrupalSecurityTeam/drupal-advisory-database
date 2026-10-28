@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-280",
+  "modified": "2026-10-28T17:33:50.000Z",
+  "published": "2026-10-28T17:33:50.000Z",
+  "aliases": [
+    "CVE-2026-118567"
+  ],
+  "details": "This module provides a bulk form for assigning or removing roles on multiple user accounts at once.\n\nThe bulk update form does not prevent access to users who do not have permission to assign roles.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer users\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/bulk_update_user_roles"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-280"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

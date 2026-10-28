@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-285",
+  "modified": "2026-10-28T17:36:44.000Z",
+  "published": "2026-10-28T17:36:44.000Z",
+  "aliases": [
+    "CVE-2026-118575"
+  ],
+  "details": "This module enables users to create and save signatures as SVG images.\n\nThe module did not sufficiently sanitize user-supplied content before saving it to the public file system. Under certain scenarios, a maliciously crafted file could contain active or otherwise unsafe content and may result in a cross-site scripting (XSS) vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/sign_widget"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.15.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.15.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.15.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-285"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    },
+    {
+      "name": "Ra M\u00e4nd (ram4nd)",
+      "contact": [
+        "https://www.drupal.org/u/ram4nd"
+      ]
+    }
+  ]
+}

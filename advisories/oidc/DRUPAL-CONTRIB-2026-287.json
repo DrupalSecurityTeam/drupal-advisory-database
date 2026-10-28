@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-287",
+  "modified": "2026-10-28T17:39:07.000Z",
+  "published": "2026-10-28T17:37:54.000Z",
+  "aliases": [
+    "CVE-2026-118554"
+  ],
+  "details": "The module enables authentication via the OpenID Connect (oAuth2) protocol.\n\nWhen a new user logs in via OpenID Connect, the module tries to link the user to an existing account with the same email address. Doing so it allows to take over any existing Drupal account (except user 1) that has not yet been linked to an OpenID Connect user.\n\nThis vulnerability is mitigated by the fact that the site must be configured to use a provider that doesn't verify the email address of the user.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/oidc"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-287"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sanjeev Kumar (ksanjeev284)",
+      "contact": [
+        "https://www.drupal.org/u/ksanjeev284"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-284",
+  "modified": "2026-10-28T17:35:17.000Z",
+  "published": "2026-10-28T17:35:17.000Z",
+  "aliases": [
+    "CVE-2026-118572"
+  ],
+  "details": "This module enables you to log in to your Drupal site using any OAuth 2.0 or OpenID Connect compliant identity provider.\n\nThe module doesn't sufficiently check access on a configuration route, or check whether the identity provider has verified the email address it returns. Together, these let an attacker log in as any existing user whose email address they know.\n\nThis vulnerability is mitigated by the fact that an attacker must have an account with an identity provider the site is configured to use. They must also be able to set the value of at least one attribute that provider returns, such as a username.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/oauth_login_oauth2"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-284"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sanjeev Kumar (ksanjeev284)",
+      "contact": [
+        "https://www.drupal.org/u/ksanjeev284"
+      ]
+    }
+  ]
+}
