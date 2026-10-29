@@ -1,9 +1,11 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-265",
-  "modified": "2026-10-28T16:57:01.000Z",
+  "modified": "2026-10-29T23:02:04.000Z",
   "published": "2026-10-28T16:57:01.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2026-118560"
+  ],
   "details": "This module enables you to use the Stripe Connect API to quickly configure your Drupal Commerce store to take payments via multiple Stripe APIs.\n\nUnder certain rare circumstances, the module may expose a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have administrator permissions to configure payment gateways and use the Stripe Connect in conjunction with the compromise of an external service.",
   "affected": [
     {
