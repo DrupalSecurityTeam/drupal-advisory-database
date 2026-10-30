@@ -1,9 +1,11 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CONTRIB-2026-246",
-  "modified": "2026-10-21T18:05:01.000Z",
+  "modified": "2026-10-29T23:03:17.000Z",
   "published": "2026-10-21T18:05:01.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2026-114547"
+  ],
   "details": "TinyPNG uses smart lossy compression techniques to reduce the file size of your PNG files.\n\nThe module doesn't sufficiently check access to image style derivatives when those files are served via a file stream other than `private://`.\n\nThis vulnerability is mitigated by the fact that Drupal must be configured to use a contributed (non-core) file scheme to serve private derived images.",
   "affected": [
     {
