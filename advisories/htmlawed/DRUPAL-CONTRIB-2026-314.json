@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-314",
+  "modified": "2026-11-04T17:52:30.000Z",
+  "published": "2026-11-04T17:52:30.000Z",
+  "aliases": [
+    "CVE-2026-122080"
+  ],
+  "details": "The htmLawed module enables use of the [htmLawed](https://bioinformatics.org/phplabware/internal_utilities/htmLawed/index.php) PHP library as a filter in a Text Format for restriction/filtering of HTML in textual input.\n\nThe module's filtering of malicious HTML can be bypassed by using a malformed UTF8 character, leading to a cross-site scripting (XSS) vulnerability.\n\nOnly sites using an SQLite database are affected with versions of the htmLawed library prior to 1.2.17.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/htmlawed"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.9.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.9.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.1.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.0.0 <4.1.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=3.0.0 <3.9.0 || >=4.0.0 <4.1.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-314"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

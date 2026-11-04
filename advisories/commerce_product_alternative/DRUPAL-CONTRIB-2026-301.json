@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-301",
+  "modified": "2026-11-04T18:01:25.000Z",
+  "published": "2026-11-04T17:33:18.000Z",
+  "aliases": [
+    "CVE-2026-122070"
+  ],
+  "details": "This module lets customers replace an item in their cart with one of the alternative product variations listed for it.\n\nThe module does not check that a cart belongs to the current visitor when the visitor is not logged in. An anonymous visitor can view items in other anonymous visitors' carts, including product names and prices, and replace those items with one of their listed alternatives.\n\nThe vulnerability is mitigated by the fact that only carts of anonymous visitors are affected; carts of authenticated customers are not.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/commerce_product_alternative"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-301"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tim de Jong (tim_dj)",
+      "contact": [
+        "https://www.drupal.org/u/tim_dj"
+      ]
+    }
+  ]
+}

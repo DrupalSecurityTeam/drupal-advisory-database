@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-309",
+  "modified": "2026-11-04T18:05:34.000Z",
+  "published": "2026-11-04T17:51:04.000Z",
+  "aliases": [
+    "CVE-2026-122078"
+  ],
+  "details": "The Extended HTML Filter module allows using style attributes in CKEditor.\n\nThe module XSS filter does not sufficiently sanitize certain HTMX attributes, which can lead to a cross-site scripting (XSS) vulnerability.\n\nThe vulnerability is mitigated by the fact an attacker must be able to insert HTML with specific attributes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/extended_html_filter"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-309"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-300",
+  "modified": "2026-11-04T20:03:50.000Z",
+  "published": "2026-11-04T17:33:04.000Z",
+  "aliases": [
+    "CVE-2026-122069"
+  ],
+  "details": "The AlternativeCommerce PayPal Checkout module provides an AlternativeCommerce method to embed payment services from PayPal.\n\nThe module does not sufficiently validate incoming PayPal webhook requests. An unauthenticated attacker can submit a crafted request that references a payment record, causing the associated order to be marked as paid without completing a payment.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/basket_paypal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-300"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-303",
+  "modified": "2026-11-04T17:34:10.000Z",
+  "published": "2026-11-04T17:34:10.000Z",
+  "aliases": [
+    "CVE-2026-122072"
+  ],
+  "details": "This module allows forums to be set private and to be given moderators.\n\nThe module doesn't sufficiently check access for creating forum topics in private forums. As a result, a user can post new topics in a forum where they should only have view access.\n\nThis vulnerability is mitigated by the fact that the vulnerability only exists where the forum field for the forum topic is not using the default select widget, or when content is created through a web services API.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/forum_access"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-303"
+    }
+  ],
+  "credits": [
+    {
+      "name": "nico.b",
+      "contact": [
+        "https://www.drupal.org/u/nicob"
+      ]
+    }
+  ]
+}
