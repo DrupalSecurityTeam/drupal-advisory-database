@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-298",
+  "modified": "2026-11-04T17:32:17.000Z",
+  "published": "2026-11-04T17:32:17.000Z",
+  "aliases": [
+    "CVE-2026-122067"
+  ],
+  "details": "The REST & JSON API Authentication module provides API authentication for Drupal sites.\n\nThe module does not properly reject requests when an API key is unconfigured, allowing unauthenticated attackers to bypass authentication and potentially access or modify protected resources. Sites are affected when API authentication is enabled but the application API key has not been generated.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/rest_api_authentication"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-298"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sanjeev Kumar (ksanjeev284)",
+      "contact": [
+        "https://www.drupal.org/u/ksanjeev284"
+      ]
+    }
+  ]
+}

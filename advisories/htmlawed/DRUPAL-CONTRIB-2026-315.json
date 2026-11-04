@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-315",
+  "modified": "2026-11-04T17:52:43.000Z",
+  "published": "2026-11-04T17:52:43.000Z",
+  "aliases": [
+    "CVE-2026-122079"
+  ],
+  "details": "The htmLawed module enables use of the [htmLawed](https://bioinformatics.org/phplabware/internal_utilities/htmLawed/index.php \"htmLawed website\") PHP library as a filter in a Text Format for restriction/filtering of HTML in textual input.\n\nThe htmLawed filter does not sufficiently filter attributes, leading to a cross-site scripting (XSS) vulnerability.\n\nThis vulnerability affects sites on Drupal core > 11.2 or any version of core with the HTMX library.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/htmlawed"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.1.0"
+            },
+            {
+              "fixed": "4.1.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.1.0 <4.1.11"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=4.1.0 <4.1.11"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-315"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

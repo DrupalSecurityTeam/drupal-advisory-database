@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-306",
+  "modified": "2026-11-04T19:20:53.000Z",
+  "published": "2026-11-04T17:35:07.000Z",
+  "aliases": [
+    "CVE-2026-122075"
+  ],
+  "details": "This module enables you to schedule content to be published or unpublished at a certain time in the future.\n\nThe module doesn't sufficiently check if a user has permission to change publication or unpublication dates. This might cause certain information to be publicly disclosed ahead of the scheduled time, or content to become inaccessible earlier or later than planned.\n\nThis vulnerability is mitigated by the fact that an attacker must already have permission to edit the affected content, and the content must be editable through a web services API like JSON:API or REST.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/scheduler"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.7.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.7.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.2.0"
+            },
+            {
+              "fixed": "2.2.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.2.0 <2.2.3"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.1.0"
+            },
+            {
+              "fixed": "2.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.1.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.3.0"
+            },
+            {
+              "fixed": "2.3.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 2.3.0 <2.3.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.7.0 || >=2.2.0 <2.2.3 || 2.0.* || 2.1.* || >= 2.3.0 <2.3.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-306"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcus Johansson (marcus_johansson)",
+      "contact": [
+        "https://www.drupal.org/u/marcus_johansson"
+      ]
+    },
+    {
+      "name": "Rodrigo Cabo (rodrigo-cabo)",
+      "contact": [
+        "https://www.drupal.org/u/rodrigo-cabo"
+      ]
+    }
+  ]
+}

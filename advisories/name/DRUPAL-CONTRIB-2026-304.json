@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-304",
+  "modified": "2026-11-04T18:02:40.000Z",
+  "published": "2026-11-04T17:34:29.000Z",
+  "aliases": [
+    "CVE-2026-122073"
+  ],
+  "details": "The Name Field module provides a field for storing a personal name as separate components.\n\nThe module does not sufficiently sanitize values under some circumstances. A name stored on the field can be interpreted as HTML, which can lead to a cross-site scripting (XSS) vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/name"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-304"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara (cmlara)",
+      "contact": [
+        "https://www.drupal.org/u/cmlara"
+      ]
+    }
+  ]
+}

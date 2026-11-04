@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-307",
+  "modified": "2026-11-04T18:04:26.000Z",
+  "published": "2026-11-04T17:35:41.000Z",
+  "aliases": [
+    "CVE-2026-122076"
+  ],
+  "details": "This module provides a separate page with a form for users to change their own password, which asks for the current password before accepting a new one.\n\nThe module doesn't sufficiently verify the current password in some cases.\n\nThis vulnerability is mitigated by the fact that an attacker must already have access to the victim's authenticated session (for example an unattended browser or a stolen session cookie). It allows that temporary session access to be turned into a persistent account takeover.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/change_pwd_page"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-307"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Motoki Kobayashi (otofu)",
+      "contact": [
+        "https://www.drupal.org/u/otofu"
+      ]
+    }
+  ]
+}
