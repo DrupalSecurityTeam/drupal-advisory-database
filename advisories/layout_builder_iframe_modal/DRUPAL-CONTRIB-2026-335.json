@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-335",
+  "modified": "2026-11-11T18:04:01.000Z",
+  "published": "2026-11-11T18:04:01.000Z",
+  "aliases": [
+    "CVE-2026-126744"
+  ],
+  "details": "This module renders Layout Builder forms inside an iframe in a modal dialog, using the admin theme.\n\nThe module provides its own Ajax command to open the iframe dialog. This command does not sanitize the dialog options the same way Drupal core does since [SA-CORE-2026-001](https://www.drupal.org/sa-core-2026-001), which can lead to a cross-site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to control the Ajax response, or be able to add markup with specific attributes to a page.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/layout_builder_iframe_modal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.9"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.9"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-335"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

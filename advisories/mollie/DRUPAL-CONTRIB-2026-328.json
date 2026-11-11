@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-328",
+  "modified": "2026-11-11T17:55:05.000Z",
+  "published": "2026-11-11T17:55:05.000Z",
+  "aliases": [
+    "CVE-2026-126737"
+  ],
+  "details": "This module enables you to accept online payments on your website using Mollie.\n\nThis module doesn't sufficiently validate an incoming webhook call, allowing payments to be applied incorrectly.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/mollie"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.3.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.3.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.3.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-328"
+    }
+  ],
+  "credits": [
+    {
+      "name": "hans rossel (hansrossel)",
+      "contact": [
+        "https://www.drupal.org/u/hansrossel"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-338",
+  "modified": "2026-11-11T18:06:58.000Z",
+  "published": "2026-11-11T18:06:58.000Z",
+  "aliases": [
+    "CVE-2026-126747"
+  ],
+  "details": "This module adds large file, multiple file, and resumable uploads to the File and Image field widgets.\n\nThe module doesn't sufficiently check access to resumable upload forms. This allows an unauthenticated user to start uploads against forms they are not permitted to use, and to store partial upload data on the server.\n\nThis vulnerability is mitigated by the fact that partial upload data is only attached to content through the normal entity form, which enforces its own access checks, and that stored partial upload data is not executable by the web server.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/file_resup"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-338"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Hien Doan (Uney) (caphe_phin)",
+      "contact": [
+        "https://www.drupal.org/u/caphe_phin"
+      ]
+    }
+  ]
+}

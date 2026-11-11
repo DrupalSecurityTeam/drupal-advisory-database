@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-327",
+  "modified": "2026-11-11T17:53:56.000Z",
+  "published": "2026-11-11T17:53:56.000Z",
+  "aliases": [
+    "CVE-2026-126736"
+  ],
+  "details": "This module enables you to print and export Drupal entities to PDF and other formats, using print engines such as Dompdf.\n\nWhen generating a PDF for a page that contains third-party resources, the module sends several kinds of private data to the third-party server (including the user's session cookie and their Dompdf HTTP authentication credentials), regardless of the host those resources are loaded from. A third-party site referenced in printed content can therefore obtain the session data of users printing that content and use it to impersonate them.\n\nThis vulnerability is mitigated by the fact that to deliberately exploit this vulnerability, an attacker must be able to create or edit content using a text format that allows images or stylesheets from arbitrary sites (such as \"Full HTML\").",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/entity_print"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.20.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.20.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.20.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-327"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Rodrigo Cabo (Igneva)",
+      "contact": [
+        "https://www.drupal.org/u/rodrigo-cabo"
+      ]
+    }
+  ]
+}

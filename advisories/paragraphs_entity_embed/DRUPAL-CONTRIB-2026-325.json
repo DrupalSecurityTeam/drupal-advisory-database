@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-325",
+  "modified": "2026-11-11T17:49:56.000Z",
+  "published": "2026-11-11T17:49:56.000Z",
+  "aliases": [
+    "CVE-2026-126734"
+  ],
+  "details": "This module enables you to provide a way to embed parapraphs in any rich-text field using the WYSIWYG editor.\n\nThe module doesn't sufficiently filter for malicious text in the autocomplete search filter, leading to a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to edit the label of the paragraph entity.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/paragraphs_entity_embed"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-325"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara (cmlara)",
+      "contact": [
+        "https://www.drupal.org/u/cmlara"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-333",
+  "modified": "2026-11-11T18:01:27.000Z",
+  "published": "2026-11-11T18:01:27.000Z",
+  "aliases": [
+    "CVE-2026-126742"
+  ],
+  "details": "The Commerce sermpea module provides Commerce support for Spanish banks that use Sermepa/Redsys systems.\n\nThe module does not verify that a Redsys payment response belongs to the order it is processed for, which can lead to incorrect order payment status.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/commerce_sermepa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-333"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ra M\u00e4nd (ram4nd)",
+      "contact": [
+        "https://www.drupal.org/u/ram4nd"
+      ]
+    },
+    {
+      "name": "Whippet (VenusTech ADLab) (whippet)",
+      "contact": [
+        "https://www.drupal.org/u/whippet"
+      ]
+    }
+  ]
+}
