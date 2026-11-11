@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-334",
+  "modified": "2026-11-11T18:02:50.000Z",
+  "published": "2026-11-11T18:02:50.000Z",
+  "aliases": [],
+  "details": "This module enables you to manage user consent for external services, such as embedded videos. The COOKiES Video submodule blocks external video elements until the visitor accepts the consent banner, then re-enables them.\n\nThe module doesn't sufficiently check the value of the `data-cookies-video-blazy-src` attribute when it converts it back to a `src` attribute for Blazy iframes. The protocol check added in [SA-CONTRIB-2025-092](https://www.drupal.org/sa-contrib-2025-092) covered the other conversion paths but missed this one.\n\nThis vulnerability is mitigated by the fact that an attacker must have the correct permissions to have a specific HTML element display for all users, and that element must have a specific class set.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/cookies"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.17"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.17"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.17"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-334"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Whippet (VenusTech ADLab) (whippet)",
+      "contact": [
+        "https://www.drupal.org/u/whippet"
+      ]
+    }
+  ]
+}

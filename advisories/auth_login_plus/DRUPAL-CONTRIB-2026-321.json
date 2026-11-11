@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-321",
+  "modified": "2026-11-11T17:44:57.000Z",
+  "published": "2026-11-11T17:44:57.000Z",
+  "aliases": [
+    "CVE-2026-126730"
+  ],
+  "details": "This module enables you to require a second authentication factor (a time-based one-time password from an authenticator app) when users log in.\n\nThe module does not enforce the second authentication factor correctly. As a result, an attacker who has only the first factor for an account with 2FA (for example, a valid one-time login link) could trigger actions that should only follow a fully authenticated login. These include updating the account's last login time, (which also invalidates other one-time login links) and running other modules' login hooks.\n\nThe vulnerability is mitigated by the fact that the attacker must already have the account's first factor (a valid one-time login link, or a login through another module), and the impact depends on which other modules react to user logins.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/auth_login_plus"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-321"
+    }
+  ],
+  "credits": [
+    {
+      "name": "J\u00fcrgen Haas (jurgenhaas)",
+      "contact": [
+        "https://www.drupal.org/u/jurgenhaas"
+      ]
+    }
+  ]
+}

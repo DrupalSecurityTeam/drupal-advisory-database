@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-337",
+  "modified": "2026-11-11T18:06:21.000Z",
+  "published": "2026-11-11T18:06:21.000Z",
+  "aliases": [
+    "CVE-2026-126746"
+  ],
+  "details": "The S3 File System CORS Upload module lets users upload files straight from the browser to Amazon S3 (or an S3-compatible service), using a file widget on entity forms.\n\nThe module doesn't sufficiently restrict the upload permission it gives the browser. A user who can upload through the widget can overwrite other files already stored in the bucket, including files they couldn't otherwise replace.\n\nThis vulnerability is mitigated by the fact that an attacker must have access to a form that uses the S3 File System CORS Upload widget.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/s3fs_cors"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-337"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lucas Hedding (heddn)",
+      "contact": [
+        "https://www.drupal.org/u/heddn"
+      ]
+    }
+  ]
+}

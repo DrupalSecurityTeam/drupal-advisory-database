@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-326",
+  "modified": "2026-11-11T17:51:14.000Z",
+  "published": "2026-11-11T17:51:14.000Z",
+  "aliases": [
+    "CVE-2026-126735"
+  ],
+  "details": "This module integrates the Campaign Monitor API into Drupal so that users can subscribe and unsubscribe for your Campaign Monitor. It manages lists through a block on your Drupal site.\n\nThe module doesn't sufficiently protect against cross-site request forgery (CSRF) on its admin routes.\n\nThis vulnerability is mitigated by the fact that an attacker must craft and embed into a Drupal site a link with exact ID of a Campaign Monitor list for user with *administer campaignmonitor* permission to click.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/campaignmonitor"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-326"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Juraj Nemec (poker10)",
+      "contact": [
+        "https://www.drupal.org/u/poker10"
+      ]
+    }
+  ]
+}

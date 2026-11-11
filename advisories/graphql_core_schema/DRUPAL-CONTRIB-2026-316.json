@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-316",
+  "modified": "2026-11-11T17:38:07.000Z",
+  "published": "2026-11-11T17:38:07.000Z",
+  "aliases": [
+    "CVE-2026-126725"
+  ],
+  "details": "This module provides a configurable GraphQL schema generator for Drupal entities and fields, along with optional schema extensions for common tasks such as user login and password management.\n\nThe module doesn't sufficiently check access when changing a user's password through the GraphQL API. A user who can view another user's account can change that account's password, including on administrator accounts. This can lead to a full account takeover.\n\nThis vulnerability is mitigated by the fact that the *User Login* schema extension must be enabled on a GraphQL server.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/graphql_core_schema"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.29"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.29"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.29"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-316"
+    }
+  ],
+  "credits": [
+    {
+      "name": "fabianrichter",
+      "contact": [
+        "https://www.drupal.org/u/fabianrichter"
+      ]
+    }
+  ]
+}

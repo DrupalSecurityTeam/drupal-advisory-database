@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-332",
+  "modified": "2026-11-11T18:00:00.000Z",
+  "published": "2026-11-11T18:00:00.000Z",
+  "aliases": [
+    "CVE-2026-126741"
+  ],
+  "details": "This module implements a field formatter for text fields that improves the *Summary or Trimmed* formatter built into Drupal core.\n\nThe module doesn't sufficiently escape unsafe HTML when passed through the module's Twig filter.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the ability to post content that gets passed through a Twig template with one of the `|smart_trim_*` filters provided by this module.\n\nIf a site uses only use the field formatter without the Twig filter, it is not vulnerable.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/smart_trim"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.2.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.3.0"
+            },
+            {
+              "fixed": "2.3.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.3.0 <2.3.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.2.2 || >=2.3.0 <2.3.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-332"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

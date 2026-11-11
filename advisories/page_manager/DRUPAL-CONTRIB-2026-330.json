@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-330",
+  "modified": "2026-11-11T17:57:27.000Z",
+  "published": "2026-11-11T17:57:27.000Z",
+  "aliases": [
+    "CVE-2026-126739"
+  ],
+  "details": "This module enables you to create custom pages and to override existing paths, such as node or user pages, with variants that are selected by conditions.\n\nThe Page Manager UI submodule doesn't sufficiently protect against cross-site request forgery (CSRF). An attacker could trick a user with permission to administer pages into enabling or disabling a page without their knowledge.\n\nThis vulnerability is mitigated by the fact that the Page Manager UI submodule must be enabled, and the targeted user must have the \"administer pages\" permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/page_manager"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-330"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Maksim Hayder (tr_jan)",
+      "contact": [
+        "https://www.drupal.org/u/tr_jan"
+      ]
+    }
+  ]
+}

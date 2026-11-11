@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-323",
+  "modified": "2026-11-11T17:47:32.000Z",
+  "published": "2026-11-11T17:47:32.000Z",
+  "aliases": [
+    "CVE-2026-126732"
+  ],
+  "details": "This module enables you to sell licenses that grant access to resources (such as roles) through Drupal Commerce.\n\nThe module doesn't sufficiently validate the license referenced by an order item, allowing an attacker to take over another user's license.\n\nThis vulnerability is mitigated by the fact that JSON:API or REST must be configured to allow writes to order items, which is not the default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/commerce_license"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-323"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jakub Piasecki (zaporylie)",
+      "contact": [
+        "https://www.drupal.org/u/zaporylie"
+      ]
+    }
+  ]
+}

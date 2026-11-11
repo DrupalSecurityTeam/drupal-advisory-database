@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2026-339",
+  "modified": "2026-11-11T18:08:08.000Z",
+  "published": "2026-11-11T18:08:08.000Z",
+  "aliases": [
+    "CVE-2026-126760"
+  ],
+  "details": "This module provides a field type for storing structured data with multiple sub-fields, along with several widgets including a *Search - autocomplete* widget.\n\nThe module\u2019s autocomplete endpoint does not sufficiently escape stored field values before returning them as suggestion labels, which can allow cross-site scripting.\n\nThis vulnerability is mitigated by the fact that the attacker must have permission to edit an entity carrying a Data Field field. The *Search - autocomplete* widget must also be configured on that field.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist:https://packages.drupal.org/8",
+        "name": "drupal/datafield"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.15"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.15"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.15 || >=3.0.0 <3.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2026-339"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "https://www.drupal.org/u/mcdruid"
+      ]
+    }
+  ]
+}
