@@ -22,6 +22,7 @@ from markdownify import markdownify
 
 from typings import drupal, osv
 from user_agent import user_agent
+from drupal_cvss import map_drupal_to_cvss31, parse_drupal_risk
 
 
 def fetch_drupal_node(nid: str) -> drupal.Node:
@@ -432,6 +433,10 @@ def build_osv_advisory(
 
   # handle severity
   risk = parse_drupal_risk(sa_advisory.get('field_sa_criticality'))
+  cvss = map_drupal_to_cvss31(
+    risk['metrics'] if risk else None,
+    sa_advisory.get('field_sa_type'),
+  )
 
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
@@ -446,7 +451,7 @@ def build_osv_advisory(
           'ecosystem': ecosystem,
           'name': composer_package_name,
         },
-        'severity': build_severity_from_drupal_risk(risk),
+        'severity': [{'type': 'CVSS_V3', 'score': cvss['vector']}] if cvss else [],
         'ranges': build_affected_ranges(sa_advisory),
         'database_specific': {
           'affected_versions': sa_advisory['field_affected_versions']
@@ -459,6 +464,12 @@ def build_osv_advisory(
 
   if risk:
     osv_advisory['affected'][0]['database_specific']['drupal_risk'] = risk
+  if cvss:
+    osv_advisory['affected'][0]['database_specific']['cvss_v31'] = {
+      'score': cvss['score'],
+      'severity': cvss['severity'],
+      'notes': cvss['notes'],
+    }
 
   # remove any entries related to Drupal 7 since those versions don't exist in
   # Packagist, and will get flagged as not existing by the osv-linter
@@ -506,103 +517,6 @@ def is_existing_advisory_ahead(
   except FileNotFoundError:
     return False
 
-# Points from drupalorg_security_risk_metrics().
-# https://www.drupal.org/drupal-security-team/security-risk-levels-defined
-DRUPAL_RISK_POINTS = {
-  'AC:None': 4, 'AC:Basic': 2, 'AC:Complex': 1,
-  'A:None': 4, 'A:User': 2, 'A:Admin': 1,
-  'CI:All': 5, 'CI:Some': 3, 'CI:None': 0,
-  'II:All': 5, 'II:Some': 3, 'II:None': 0,
-  'E:Exploit': 4, 'E:Proof': 2, 'E:Theoretical': 1,
-  'TD:All': 3, 'TD:Default': 2, 'TD:Uncommon': 1,
-}
-
-def parse_drupal_risk(criticality: str | dict | list | None) -> dict | None:
-  """
-  Parse field_sa_criticality.
-
-  Stored value is the terse calculator string, e.g.
-  "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default".
-  The displayed "13 / 25" and the label are the sum of those six metrics.
-  Also accepts a rendered string such as
-  "Critical 16 / 25 AC:..." or "6/25 ( Less Critical) AC:...".
-  """
-  if isinstance(criticality, list):
-    criticality = criticality[0] if criticality else None
-  if isinstance(criticality, dict):
-    criticality = criticality.get('value') or criticality.get('safe_value')
-  if not criticality or not isinstance(criticality, str):
-    return None
-
-  raw = criticality.strip()
-  found = re.findall(r'(AC|A|CI|II|E|TD):([A-Za-z]+)', raw)
-  metrics: dict[str, str] = {}
-  score = 0
-  for code, value in found:
-    if code in metrics:
-      continue
-    points = DRUPAL_RISK_POINTS.get(f'{code}:{value}')
-    if points is None:
-      continue
-    metrics[code] = value
-    score += points
-
-  if len(metrics) != 6:
-    return None
-
-  if score <= 4:
-    level = 'NOT_CRITICAL'
-  elif score <= 9:
-    level = 'LESS_CRITICAL'
-  elif score <= 14:
-    level = 'MODERATELY_CRITICAL'
-  elif score <= 19:
-    level = 'CRITICAL'
-  else:
-    level = 'HIGHLY_CRITICAL'
-
-  return {
-    'score': score,
-    'level': level,
-    'metrics': metrics,
-    'raw': raw,
-  }
-
-def build_severity_from_drupal_risk(risk: dict | None) -> list[dict]:
-  """
-  Build OSV severity entries from a parsed Drupal risk.
-
-  Approximate mapping of the 0-25 score:
-    20-25 → Critical
-    15-19 → High
-    10-14 → Medium
-     0-9  → Low
-
-  TODO: the CVSS vector is generic. Drupal metrics (AC, A, CI, II, E, TD)
-    do not map 1:1 onto CVSS, so a precise vector cannot be derived.
-    Prefer a real CVSS from the CVE alias when one exists.
-  """
-
-  if not risk:
-    return []
-
-  score = risk['score']
-
-  if score >= 20:
-    vector = 'CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H'
-  elif score >= 15:
-    vector = 'CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N'
-  elif score >= 10:
-    vector = 'CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N'
-  else:
-    vector = 'CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:N'
-
-  return [
-    {
-      'type': 'CVSS_V3',
-      'score': vector,
-    }
-  ]
 
 def generate_osv_advisories() -> None:
   generated_advisories = []
