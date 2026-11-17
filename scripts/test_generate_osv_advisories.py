@@ -184,6 +184,13 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # (this is an exception to how ^ works, since 0.x versions can have breaking changes)
       ('>=0.0.3 <0.0.4', [{'introduced': '0.0.3'}, {'fixed': '0.0.4'}], []),
       ('^0.0.3', [{'introduced': '0.0.3'}, {'fixed': '0.0.4'}], []),
+      # the upper bound of ^ and ~ should not be affected by the stability
+      ('~1.0-beta', [{'introduced': '1.0.0-beta'}, {'fixed': '2.0.0'}], []),
+      ('~1.2.0-beta1', [{'introduced': '1.2.0-beta1'}, {'fixed': '1.3.0'}], []),
+      ('~1.2.3-beta', [{'introduced': '1.2.3-beta'}, {'fixed': '1.3.0'}], []),
+      ('^1.0.0-beta', [{'introduced': '1.0.0-beta'}, {'fixed': '2.0.0'}], []),
+      ('^0.3.0-RC2', [{'introduced': '0.3.0-RC2'}, {'fixed': '0.4.0'}], []),
+      ('^0.0.3-dev', [{'introduced': '0.0.3-dev'}, {'fixed': '0.0.4'}], []),
       # technically invalid constraints
       # leading zeros
       (

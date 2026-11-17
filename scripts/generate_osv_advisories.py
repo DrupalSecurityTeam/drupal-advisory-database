@@ -88,7 +88,12 @@ class ComposerVersionConstraintPart:
 
       return f'{str(self).removesuffix(self.stability)}{token}{number + 1}'
 
-    return str(semver.Version.parse(str(self)).next_version(part))
+    # omit the stability, as the semver library treats the next major/minor/patch
+    # of a prerelease as the release it precedes if that is itself a major/minor/patch
+    # release (e.g. the next major of "1.0.0-beta" is "1.0.0" rather than "2.0.0")
+    return str(
+      semver.Version.parse(str(self).removesuffix(self.stability)).next_version(part)
+    )
 
   def __str__(self) -> str:
     first_component = int(self.first_component or '0')
