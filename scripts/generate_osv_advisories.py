@@ -128,12 +128,15 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
   are and are not affected by the advisory the constraint was sourced from,
   along with any warnings about the constraints validity
   """
+  # collapse repeated spaces and attach operators to their versions (">= 1.0" -> ">=1.0")
+  # so that splitting on spaces gives one part per bound
   constraint = re.sub(r'([<>]=?) +', r'\1', re.sub(r' +', ' ', constraint.strip()))
 
   # todo: make sure this doesn't generate an empty range?
   if constraint == '':
     return [], ['constraint is empty']
 
+  # every version is affected
   if constraint == '*':
     return [typing.cast(osv.Event, {'introduced': '0'})], []
 
@@ -156,6 +159,9 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
       ]
       if len(component) > 1 and component.startswith('0')
     )
+
+  # the *, ~, and ^ shorthands are each rewritten as an explicit ">=x <y" range,
+  # and then parsed again so that they share the same handling as everything else
 
   # https://getcomposer.org/doc/articles/versions.md#wildcard-version-range-
   if parts[0].second_component == '*' or parts[0].third_component == '*':
@@ -215,8 +221,10 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
 
   # determine the first event, which will be an "introduced"
   introduced = str(parts[0])
+  # an upper bound on its own means every version before it is affected
   if parts[0].operator == '<' or parts[0].operator == '<=':
     introduced = '0'
+  # > excludes the version itself, so start from the smallest version after it
   elif parts[0].operator == '>':
     warnings.append(
       'the > operator should be avoided as it does not provide a concrete version'
@@ -227,6 +235,10 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
   events.append({'introduced': introduced})
 
   # determine the second event, which will be either "fixed" or "last_affected"
+  # (a lone lower bound like ">=1.0" gets no second event, as it is open-ended)
+
+  # the first part is an exact version or an upper bound, so it is also the end of
+  # the range, meaning there should not be any more parts
   if parts[0].operator == '' or parts[0].operator.startswith('<'):
     if parts[0].operator == '' and (
       parts[0].first_component is None
@@ -247,10 +259,16 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
       events.append({'fixed': str(parts[0])})
     else:
       events.append({'last_affected': str(parts[0])})
+  # the first part is a lower bound, so the second part should be the upper bound
   elif len(parts) > 1:
     if len(parts) > 2:
       warnings.append('there should not be more than two parts in a version constraint')
 
+    # if the lower bound is more stable than the upper bound (e.g. ">=1.1.0 <1.1.0-beta3")
+    # then the range would be empty, as stable releases come after their prereleases;
+    # assume what was meant is "from the start of development"
+    #
+    # note: this only compares stabilities, not versions
     if (
       parts[1].operator.startswith('<')
       and parts[0].operator.startswith('>')
@@ -264,6 +282,7 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
       events.append({'fixed': str(parts[1])})
     elif parts[1].operator == '<=':
       events.append({'last_affected': str(parts[1])})
+    # the second part is not an upper bound, so the range is left open-ended
     else:
       warnings.append(
         f'the {parts[1].operator} operator should not be used for the second part'
