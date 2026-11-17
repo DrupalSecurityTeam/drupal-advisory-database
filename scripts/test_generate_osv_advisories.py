@@ -487,6 +487,17 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-alpha'}],
         ['stability does not make sense, using -dev instead'],
       ),
+      # stability should be compared case-insensitively
+      (
+        '>=1.1.0-RC1 <1.1.0-beta1',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta1'}],
+        ['stability does not make sense, using -dev instead'],
+      ),
+      (
+        '>=1.1.0-beta1 <1.1.0-RC1',
+        [{'introduced': '1.1.0-beta1'}, {'fixed': '1.1.0-RC1'}],
+        [],
+      ),
     ],
   )
 
