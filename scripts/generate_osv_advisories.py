@@ -76,21 +76,16 @@ class ComposerVersionConstraintPart:
       self.stability = ''
 
   def next_version(self, part: str) -> str:
-    next_version = str(semver.Version.parse(str(self)).next_version(part))
+    # bump the prerelease number manually since Composer compares those numerically,
+    # whereas vanilla SemVer treats them as strings (e.g. "rc10" < "rc9"), so the
+    # semver library would end up bumping the patch version for the "next version"
+    if part == 'prerelease' and self.stability != '':
+      token = self.stability.rstrip('0123456789')
+      number = int(self.stability[len(token) :] or '0')
 
-    # semver.Version does not seem to increment the prerelease version if it does
-    # not have a number already, so we've got to add that manually
-    #
-    # todo: this is possibly a bug in the semver library, though also it might be
-    #  something we should warn on?
-    #  see https://github.com/python-semver/python-semver/issues/369
-    if (
-      part == 'prerelease'
-      and self.stability != ''
-      and not self.stability[-1:].isdigit()
-    ):
-      next_version += '1'
-    return next_version
+      return f'{str(self).removesuffix(self.stability)}{token}{number + 1}'
+
+    return str(semver.Version.parse(str(self)).next_version(part))
 
   def __str__(self) -> str:
     first_component = int(self.first_component or '0')

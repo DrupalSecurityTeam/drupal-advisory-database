@@ -91,6 +91,11 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
+      (
+        '>1.0.0-RC9 <1.0.2',
+        [{'introduced': '1.0.0-RC10'}, {'fixed': '1.0.2'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
       ('>=7.0 <7.86', [{'introduced': '7.0.0'}, {'fixed': '7.86.0'}], []),
       (
         '>7.0 <7.86',
