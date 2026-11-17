@@ -253,7 +253,7 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
 
     if (
       parts[1].operator.startswith('<')
-      and parts[0].operator.startswith('>')
+      and parts[0].operator == '>='
       and weigh_stability(parts[0].stability) < weigh_stability(parts[1].stability)
     ):
       parts[0].stability = '-dev'
