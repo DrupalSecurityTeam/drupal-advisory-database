@@ -71,6 +71,9 @@ class ComposerVersionConstraintPart:
     self.third_component: str | None = result.group('patch')
     self.stability: str = result.group('stability') or ''
 
+    # Composer strips build metadata, as it does not affect precedence
+    self.stability = self.stability.partition('+')[0]
+
     # prefer representing stable implicitly
     if self.stability == '-stable':
       self.stability = ''
