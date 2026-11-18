@@ -91,6 +91,33 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
+      # build metadata is ignored, as it does not affect precedence
+      (
+        '>1.0.0-beta2+build3 <1.0.2',
+        [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
+      (
+        '>1.0.0+build3 <1.0.2',
+        [{'introduced': '1.0.1'}, {'fixed': '1.0.2'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
+      (
+        '>=1.0.0-stable+build3 <1.0.2',
+        [{'introduced': '1.0.0'}, {'fixed': '1.0.2'}],
+        [],
+      ),
+      (
+        '>=1.0.0+build3 <1.0.2+build1',
+        [{'introduced': '1.0.0'}, {'fixed': '1.0.2'}],
+        [],
+      ),
+      ('^1.2.3+build3', [{'introduced': '1.2.3'}, {'fixed': '2.0.0'}], []),
+      (
+        '>1.0.0-RC9 <1.0.2',
+        [{'introduced': '1.0.0-RC10'}, {'fixed': '1.0.2'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
       ('>=7.0 <7.86', [{'introduced': '7.0.0'}, {'fixed': '7.86.0'}], []),
       (
         '>7.0 <7.86',
