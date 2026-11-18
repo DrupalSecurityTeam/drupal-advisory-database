@@ -108,10 +108,7 @@ def weigh_stability(stability: str) -> int:
   Weighs the given stability based on the order specified in
   https://getcomposer.org/doc/04-schema.md#version
   """
-  stability = stability.removeprefix('-')
-
-  if stability.startswith('RC'):
-    return 3
+  stability = stability.removeprefix('-').lower()
 
   # the '#' is used when a version is pointed at a VSC repository
   # and takes priority over patch versions but not anything else
