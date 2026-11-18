@@ -267,11 +267,11 @@ def parse_version_constraint(  # noqa: PLR0912, PLR0915
     # if the lower bound is more stable than the upper bound (e.g. ">=1.1.0 <1.1.0-beta3")
     # then the range would be empty, as stable releases come after their prereleases;
     # assume what was meant is "from the start of development"
-    #
-    # note: this only compares stabilities, not versions
     if (
       parts[1].operator.startswith('<')
       and parts[0].operator.startswith('>')
+      and str(parts[0]).removesuffix(parts[0].stability)
+      == str(parts[1]).removesuffix(parts[1].stability)
       and weigh_stability(parts[0].stability) < weigh_stability(parts[1].stability)
     ):
       parts[0].stability = '-dev'
