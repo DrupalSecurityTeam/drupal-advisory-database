@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-017",
+  "modified": "2026-11-18T17:43:11.000Z",
+  "published": "2026-11-18T17:43:11.000Z",
+  "aliases": [
+    "CVE-2026-132165"
+  ],
+  "details": "Drupal core ships with an `install.php` file for installing Drupal core.\n\nUnder specific conditions, an attacker can use the installer to attempt to reinstall Drupal. This can lead to a site takeover or remote code execution.\n\nSome exploit paths are mitigated if the web server cannot write to or change permissions on `settings.php`. In addition to upgrading, the Drupal Security Team recommends [securing the Drupal installer](https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/securing-the-installer-installphp) after installation.\n\n*Discovered by Anthropic's OSS Scanner, as vulnerability ANT-2026-GMRPK0BU.*\n\n#### Drupal Steward protection:\n\nThis issue is being protected by [Drupal Steward](https://www.drupal.org/steward). Sites that use Drupal Steward are already protected from some known attack vectors, but the protection offered will not cover all possible exploits. Sites should upgrade in the near future in case additional attack vectors are discovered.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "10.6.22"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<10.6.22"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.3.22"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.0.0 <11.3.22"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.4.0 <11.4.13"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<10.6.22 || >=11.0.0 <11.3.22 || >=11.4.0 <11.4.13"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-017"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lee Rowlands (larowlan)",
+      "contact": [
+        "https://www.drupal.org/u/larowlan"
+      ]
+    },
+    {
+      "name": "Pamela Barone (pameeela)",
+      "contact": [
+        "https://www.drupal.org/u/pameeela"
+      ]
+    },
+    {
+      "name": "Scott Euser (scott_euser)",
+      "contact": [
+        "https://www.drupal.org/u/scott_euser"
+      ]
+    },
+    {
+      "name": "Stephan Zeidler (szeidler)",
+      "contact": [
+        "https://www.drupal.org/u/szeidler"
+      ]
+    },
+    {
+      "name": "Tyler Nighswander (tylerni7-ant)",
+      "contact": [
+        "https://www.drupal.org/u/tylerni7-ant"
+      ]
+    }
+  ]
+}
