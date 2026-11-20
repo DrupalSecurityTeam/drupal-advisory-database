@@ -22,6 +22,7 @@ from markdownify import markdownify
 
 from typings import drupal, osv
 from user_agent import user_agent
+from drupal_cvss import map_drupal_to_cvss31, parse_drupal_risk
 
 
 def fetch_drupal_node(nid: str) -> drupal.Node:
@@ -449,6 +450,13 @@ def build_osv_advisory(
   ):
     ecosystem += ':https://packages.drupal.org/8'
 
+  # handle severity
+  risk = parse_drupal_risk(sa_advisory.get('field_sa_criticality'))
+  cvss = map_drupal_to_cvss31(
+    risk['metrics'] if risk else None,
+    sa_advisory.get('field_sa_type'),
+  )
+
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
     'id': osv_id,
@@ -462,11 +470,7 @@ def build_osv_advisory(
           'ecosystem': ecosystem,
           'name': composer_package_name,
         },
-        # todo: figure out how to map field_sa_criticality to severity
-        #  https://ossf.github.io/osv-schema/#severitytype-field
-        #  https://www.drupal.org/drupal-security-team/security-risk-levels-defined
-        #  https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
-        'severity': [],
+        'severity': [{'type': 'CVSS_V3', 'score': cvss['vector']}] if cvss else [],
         'ranges': build_affected_ranges(sa_advisory),
         'database_specific': {
           'affected_versions': sa_advisory['field_affected_versions']
@@ -476,6 +480,15 @@ def build_osv_advisory(
     'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
     'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
   }
+
+  if risk:
+    osv_advisory['affected'][0]['database_specific']['drupal_risk'] = risk
+  if cvss:
+    osv_advisory['affected'][0]['database_specific']['cvss_v31'] = {
+      'score': cvss['score'],
+      'severity': cvss['severity'],
+      'notes': cvss['notes'],
+    }
 
   # remove any entries related to Drupal 7 since those versions don't exist in
   # Packagist, and will get flagged as not existing by the osv-linter
