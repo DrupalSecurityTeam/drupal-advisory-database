@@ -487,6 +487,35 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-alpha'}],
         ['stability does not make sense, using -dev instead'],
       ),
+      (
+        '>1.1.0 <1.1.0-beta3',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta3'}],
+        [
+          'the > operator should be avoided as it does not provide a concrete version',
+          'stability does not make sense, using -dev instead',
+        ],
+      ),
+      (
+        '>=1.1 <1.1.0-beta3',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta3'}],
+        ['stability does not make sense, using -dev instead'],
+      ),
+      # mixed stabilities are fine when the bounds are for different versions
+      (
+        '>=1.0.0 <1.0.2-beta',
+        [{'introduced': '1.0.0'}, {'fixed': '1.0.2-beta'}],
+        [],
+      ),
+      (
+        '>1.0.0 <1.0.2-beta',
+        [{'introduced': '1.0.1'}, {'fixed': '1.0.2-beta'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
+      (
+        '>1.0.0-rc1 <1.0.2-beta',
+        [{'introduced': '1.0.0-rc2'}, {'fixed': '1.0.2-beta'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
       # stability should be compared case-insensitively
       (
         '>=1.1.0-RC1 <1.1.0-beta1',
