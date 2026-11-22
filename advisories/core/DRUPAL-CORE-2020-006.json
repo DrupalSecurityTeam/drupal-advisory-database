@@ -1,10 +1,10 @@
 {
   "schema_version": "1.7.0",
   "id": "DRUPAL-CORE-2020-006",
-  "modified": "2026-09-19T18:42:43.000Z",
+  "modified": "2026-11-22T17:47:15.000Z",
   "published": "2020-06-17T18:10:58.000Z",
   "aliases": [
-    "CVE-2020-13665 "
+    "CVE-2020-13665"
   ],
   "details": "JSON:API PATCH requests may bypass validation for certain fields.\n\nBy default, JSON:API works in a read-only mode which makes it impossible to exploit the vulnerability. Only sites that have the `read_only` set to `FALSE` under `jsonapi.settings` config are vulnerable.",
   "affected": [
