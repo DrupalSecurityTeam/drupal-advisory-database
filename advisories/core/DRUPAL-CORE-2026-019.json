@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2026-019",
+  "modified": "2026-11-25T17:21:35.000Z",
+  "published": "2026-11-25T17:04:39.000Z",
+  "aliases": [
+    "CVE-2026-136716"
+  ],
+  "details": "Drupal core ships with an `install.php` file for installing Drupal core.\n\nIf you have already [secured the installer](https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/securing-the-installer-installphp), you are not vulnerable.\n\n[SA-CORE-2026-017](https://www.drupal.org/sa-core-2026-017) recently fixed several vulnerabilities within the Drupal core installer. However, certain sites in unusual or incomplete install states remain vulnerable to site takeover following that advisory, including production sites. It is not apparent in the user interface if a site is in the affected vulnerable state, and sites that are already compromised may no longer be in the vulnerable state.\n\n**This is being exploited in the wild**. Any site that left its installer remotely accessible following SA-CORE-2026-017 may still have been compromised.\n\n* Check your site logs for unauthorized access, especially unexpected changes to or by the user 1 account.\n* Ensure the user 1 email address is set to something you control, and consider resetting user 1's password.\n* If it appears your site may have been compromised based on the above, review [Your Drupal site got hacked. Now what?](https://www.drupal.org/docs/develop/security/your-drupal-site-got-hacked-now-what).\n\n#### Drupal Steward information:\n\nThis issue and [SA-CORE-2026-017](https://www.drupal.org/sa-core-2026-017) are both being protected by [Drupal Steward](https://www.drupal.org/steward). Sites and platforms that use Drupal Steward's recommended mitigations are already protected from known attack vectors, but sites should upgrade in the near future in case additional attack vectors are discovered.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "10.6.23"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<10.6.23"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.3.23"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 <11.3.23"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.4.0"
+            },
+            {
+              "fixed": "11.4.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=11.4.0 <11.4.14"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<10.6.23 || >= 11.0.0 <11.3.23 || >=11.4.0 <11.4.14"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2026-019"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andrew Berry (deviantintegral)",
+      "contact": [
+        "https://www.drupal.org/u/deviantintegral"
+      ]
+    },
+    {
+      "name": "Cathy Theys (yesct)",
+      "contact": [
+        "https://www.drupal.org/u/yesct"
+      ]
+    },
+    {
+      "name": "Dave Long (longwave)",
+      "contact": [
+        "https://www.drupal.org/u/longwave"
+      ]
+    },
+    {
+      "name": "James Sherwin (very_random_man)",
+      "contact": [
+        "https://www.drupal.org/u/very_random_man"
+      ]
+    },
+    {
+      "name": "Tim Hestenes Lehnen (hestenet)",
+      "contact": [
+        "https://www.drupal.org/u/hestenet"
+      ]
+    }
+  ]
+}
